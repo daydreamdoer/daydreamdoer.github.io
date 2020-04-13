@@ -1,0 +1,2441 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="ysxBlog">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="ysxBlog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="ysx">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>ysxBlog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ysxBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/13/leetcode/22generateParentheses/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/13/leetcode/22generateParentheses/" itemprop="url">匹配括号</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-13T18:18:06+08:00">
+                2020-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="匹配括号"><a href="#匹配括号" class="headerlink" title="匹配括号"></a>匹配括号</h2><p><a href="https://leetcode-cn.com/problems/generate-parentheses/" target="_blank" rel="noopener">题目链接</a> </p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>这题这届枚举一下就好了，但是生成时候前括号的数一定要大于后括号</p>
+<h3 id="go解体犯法"><a href="#go解体犯法" class="headerlink" title="go解体犯法"></a>go解体犯法</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">generateParenthesis</span><span class="params">(n <span class="keyword">int</span>)</span> []<span class="title">string</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> par []<span class="keyword">string</span></span><br><span class="line">	pair(n, n, <span class="string">""</span>, &amp;par)</span><br><span class="line">	<span class="keyword">return</span> par</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">pair</span><span class="params">(pre, end <span class="keyword">int</span>, sum <span class="keyword">string</span>, par *[]<span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> pre == <span class="number">0</span> &amp;&amp; end == <span class="number">0</span> &#123;</span><br><span class="line">		*par = <span class="built_in">append</span>(*par, sum)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> pre &lt;= end &#123;</span><br><span class="line">		<span class="keyword">if</span> pre &gt;= <span class="number">0</span> &#123;</span><br><span class="line">			pair(pre<span class="number">-1</span>, end, sum+<span class="string">"("</span>, par)</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> pre &lt; end &#123;</span><br><span class="line">			pair(pre, end<span class="number">-1</span>, sum+<span class="string">")"</span>, par)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/13/leetcode/289%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/13/leetcode/289%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F/" itemprop="url">生命游戏</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-13T09:33:46+08:00">
+                2020-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="生命游戏"><a href="#生命游戏" class="headerlink" title="生命游戏"></a>生命游戏</h2><p><a href="https://leetcode-cn.com/problems/game-of-life/submissions/" target="_blank" rel="noopener">题目链接</a> </p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>这题 所有的细胞复活和死亡式在同一时间的, 所以我们采用另一个数组来代替他下一轮的状态, 对原数组进行遍历判断周围活细胞的数量即可。 注意要判断边界，要不然会数组越界</p>
+<h3 id="go-语言实现"><a href="#go-语言实现" class="headerlink" title="go 语言实现"></a>go 语言实现</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">gameOfLife</span><span class="params">(board [][]<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	dx := []<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">-1</span>&#125;</span><br><span class="line">	dy := []<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>&#125;</span><br><span class="line">	m := <span class="built_in">len</span>(board)</span><br><span class="line">	n := <span class="built_in">len</span>(board[<span class="number">0</span>])</span><br><span class="line">	<span class="keyword">var</span> tmp = <span class="built_in">make</span>([][]<span class="keyword">int</span>, m, m)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; m; i++ &#123;</span><br><span class="line">		tmp[i] = <span class="built_in">make</span>([]<span class="keyword">int</span>, n, n)</span><br><span class="line">		<span class="keyword">for</span> j := <span class="number">0</span>; j &lt; n; j++ &#123;</span><br><span class="line">			sum := <span class="number">0</span></span><br><span class="line">			<span class="keyword">for</span> k := <span class="number">0</span>; k &lt; <span class="number">8</span>; k++ &#123;</span><br><span class="line">				tx := i + dx[k]</span><br><span class="line">				ty := j + dy[k]</span><br><span class="line">				<span class="keyword">if</span> tx &lt; <span class="number">0</span> || tx &gt;= m || ty &lt; <span class="number">0</span> || ty &gt;= n &#123;</span><br><span class="line">					<span class="keyword">continue</span></span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> board[tx][ty] == <span class="number">1</span> &#123;</span><br><span class="line">					sum++</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> board[i][j] == <span class="number">0</span> &amp;&amp; sum == <span class="number">3</span> &#123;</span><br><span class="line">				tmp[i][j] = <span class="number">1</span></span><br><span class="line">				<span class="keyword">continue</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> board[i][j] == <span class="number">1</span> &#123;</span><br><span class="line">				<span class="keyword">if</span> sum &lt; <span class="number">2</span> || sum &gt; <span class="number">3</span> &#123;</span><br><span class="line">					tmp[i][j] = <span class="number">0</span></span><br><span class="line">					<span class="keyword">continue</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			tmp[i][j] = board[i][j]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="built_in">copy</span>(board, tmp)</span><br><span class="line">	<span class="comment">//fmt.Println(tmp)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/12/leetcode/122%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BAII/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/12/leetcode/122%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BAII/" itemprop="url">买卖股票最佳时机II</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-12T21:04:06+08:00">
+                2020-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="买卖股票最佳时机II"><a href="#买卖股票最佳时机II" class="headerlink" title="买卖股票最佳时机II"></a>买卖股票最佳时机II</h2><p><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/submissions/" target="_blank" rel="noopener">题目链接</a> </p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>这题思路是先找股票如果遇到更便宜的话吧最小值给他，遇到比最小值大的值在与最小值相见在取和最大的利润相比，如果今天的股票价格大于昨天的股票价格直接取前面最大利润的那次</p>
+<h3 id="go阶梯代码"><a href="#go阶梯代码" class="headerlink" title="go阶梯代码"></a>go阶梯代码</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxProfit</span><span class="params">(prices []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> maxSum, minNum, Sum <span class="keyword">int</span></span><br><span class="line">	minNum = prices[<span class="number">0</span>]</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt; <span class="built_in">len</span>(prices); i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> minNum &gt;= prices[i] || prices[i] &lt; prices[i<span class="number">-1</span>] &#123;</span><br><span class="line">			minNum = prices[i]</span><br><span class="line">			Sum += maxSum</span><br><span class="line">			maxSum = <span class="number">0</span></span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> maxSum &lt; prices[i]-minNum &#123;</span><br><span class="line">			maxSum = prices[i] - minNum</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> maxSum != <span class="number">0</span> &#123;</span><br><span class="line">		Sum += maxSum</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> Sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&lt;++&gt;</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/12/leetcode/169%E5%A4%9A%E7%BB%84%E5%85%83%E7%B4%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/12/leetcode/169%E5%A4%9A%E7%BB%84%E5%85%83%E7%B4%A0/" itemprop="url">多组元素</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-12T20:04:15+08:00">
+                2020-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="多组元素"><a href="#多组元素" class="headerlink" title="多组元素"></a>多组元素</h2><p><a href="https://leetcode-cn.com/problems/majority-element/" target="_blank" rel="noopener">题目链接</a> </p>
+<h3 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h3><p>这个题目必有人有半数人以上得票, 所以可以用摩尔投票法进行操作。对每两个不同的元素相消, 最后可以得到一个数即为数组中多于半数的数值, 这题还有个投机取巧的方法就是快排后在取数组前半部分的任意值</p>
+<h4 id="摩尔投票法"><a href="#摩尔投票法" class="headerlink" title="摩尔投票法"></a>摩尔投票法</h4><p>摩尔投票算法是一种使用线性时间和常数空间查找大部分元素序列的算法。它以1981年出版的Robert S. Boyer和J Strother Moore的名字命名，并且是流式算法的典型例子。</p>
+<p>最简单的形式就是，查找输入中重复出现超过一半以上(n/2)的元素。如果序列中没有这种元素，算法不能检测到正确结果，将输出其中的一个元素之一。如果不能保证输入数据中有占有一半以上的元素，需要再遍历一下验证。</p>
+<h3 id="go语言实现"><a href="#go语言实现" class="headerlink" title="go语言实现"></a>go语言实现</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">majorityElement</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> maxNum, count <span class="keyword">int</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(nums); i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> count == <span class="number">0</span> &#123;</span><br><span class="line">			maxNum = nums[i]</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> maxNum == nums[i] &#123;</span><br><span class="line">			count++</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			count--</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> maxNum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="投机取巧方法"><a href="#投机取巧方法" class="headerlink" title="投机取巧方法"></a>投机取巧方法</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">majorityElementEasy</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	sort.Ints(nums)</span><br><span class="line">	<span class="keyword">return</span> nums[<span class="number">0</span>] <span class="comment">//0--len(nums)/2 都可以</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/12/leetcode/9%E5%9B%9E%E6%96%87%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/12/leetcode/9%E5%9B%9E%E6%96%87%E6%95%B0/" itemprop="url">回文数字</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-12T18:04:23+08:00">
+                2020-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://leetcode-cn.com/problems/palindrome-number/" target="_blank" rel="noopener">题目链接</a> </p>
+<h2 id="回文数字"><a href="#回文数字" class="headerlink" title="回文数字"></a>回文数字</h2><p>这题比较简单，直接转成字符串然后判断对应回文位置的正确即可</p>
+<h3 id="go-解法"><a href="#go-解法" class="headerlink" title="go 解法"></a>go 解法</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isPalindrome</span><span class="params">(x <span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> x &lt; <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> s <span class="keyword">string</span> = strconv.Itoa(x)</span><br><span class="line">	slen := <span class="built_in">len</span>(s)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; slen/<span class="number">2</span>; i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> s[i] != s[slen-i<span class="number">-1</span>] &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/12/leetcode/121%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E6%9C%80%E4%BD%B3%E6%97%B6%E9%97%B4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/12/leetcode/121%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E6%9C%80%E4%BD%B3%E6%97%B6%E9%97%B4/" itemprop="url">买卖股票的最佳时间</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-12T12:58:10+08:00">
+                2020-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="买卖股票最佳时间"><a href="#买卖股票最佳时间" class="headerlink" title="买卖股票最佳时间"></a>买卖股票最佳时间</h2><p><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/" target="_blank" rel="noopener">题目链接</a> </p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>这题思路是遍历数组同时记录最小的数，然后遇到比他大的数和他相减与最大利润相比取最大值，遇到比自己小的数就吧最小值替换成那该数</p>
+<h3 id="go语言实现"><a href="#go语言实现" class="headerlink" title="go语言实现"></a>go语言实现</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxProfit</span><span class="params">(prices []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(prices)==<span class="number">0</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">	maxNum, initNum := <span class="number">0</span>, prices[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt; <span class="built_in">len</span>(prices); i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> initNum &gt;= prices[i] &#123;</span><br><span class="line">			initNum = prices[i]</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> maxNum == <span class="number">0</span> &#123;</span><br><span class="line">				maxNum = prices[i] - initNum</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> maxNum &lt; prices[i]-initNum &#123;</span><br><span class="line">				maxNum = prices[i] - initNum</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> maxNum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/10/dailyWord/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/10/dailyWord/" itemprop="url">dailyWord</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-10T10:20:13+08:00">
+                2020-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index">
+                    <span itemprop="name">英语单词</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <div class="table-container">
+<table>
+<thead>
+<tr>
+<th>word</th>
+<th>means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Indian Ocean</td>
+<td>印度洋</td>
+</tr>
+<tr>
+<td>Atlantic Ocean</td>
+<td>大西洋</td>
+</tr>
+<tr>
+<td>Pacific Ocean</td>
+<td>太平洋</td>
+</tr>
+<tr>
+<td>Arctic</td>
+<td>北冰洋</td>
+</tr>
+<tr>
+<td>range from to to</td>
+<td>范围包括 …到…</td>
+</tr>
+<tr>
+<td>sparingly</td>
+<td>节约，很少</td>
+</tr>
+<tr>
+<td>spare</td>
+<td>v. 节约， 救命， 出让， adj, 空闲，备用，简陋的</td>
+</tr>
+<tr>
+<td>devour</td>
+<td>吞没,狼吞虎咽</td>
+</tr>
+<tr>
+<td>quietscent</td>
+<td>静止</td>
+</tr>
+<tr>
+<td>spoil</td>
+<td>破坏,宠爱</td>
+</tr>
+<tr>
+<td>condemnation</td>
+<td>谴责</td>
+</tr>
+<tr>
+<td>be beneficial to / be benefit from</td>
+<td>从什么收益</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/06/%E5%80%92%E8%A3%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/06/%E5%80%92%E8%A3%85/" itemprop="url">倒装</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-06T17:01:52+08:00">
+                2020-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">英语语法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>否定词语放句首<ul>
+<li>Hardly can I speak japanese</li>
+</ul>
+</li>
+<li>so, nor/neither 位于句首，表明承前句子的肯定或否定时用到装<ul>
+<li>I can cook ==&gt; So can I</li>
+<li>I can not cook ==&gt; Nor can I</li>
+</ul>
+</li>
+<li>so…that结构句子将so应到的部分放在句首时用到装<ul>
+<li>I feel so rejoiced that I lose my sleep for the whole night</li>
+<li>so rejoiced do I feel that I lose my sleep for the whole night</li>
+<li>so exhausted am I that I have no energy throughout</li>
+</ul>
+</li>
+<li>only+状语 放在句首到装<ul>
+<li>only deeply I love you= only at home do I feel safe and relexed</li>
+</ul>
+</li>
+<li><p>as 引导让步装语从句，从句表语可以放在句首构成到装</p>
+</li>
+<li><p>省略if的虚拟语气用到装</p>
+<ul>
+<li>had you obeyed my instructure at the ouset, you could have passed the examination</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/06/%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/06/%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5/" itemprop="url">状语从句</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-06T21:50:37+08:00">
+                2020-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">英语语法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="状语修饰成分"><a href="#状语修饰成分" class="headerlink" title="状语修饰成分"></a>状语修饰成分</h2><p><strong>状语就是在一个句子中修饰实意动词,形容词,副词或者整个句子的成分</strong>   </p>
+<h2 id="时间状语从句"><a href="#时间状语从句" class="headerlink" title="时间状语从句"></a>时间状语从句</h2><ul>
+<li>when=while=as 当什么的时候<ul>
+<li>当while翻译成当什么的时候 后面一定到是进行时</li>
+</ul>
+</li>
+<li>before</li>
+<li>after</li>
+<li>since 自从<ul>
+<li>since 后面要更现在完成时<strong>I have fallen in love with you ,since I met you.</strong>   </li>
+</ul>
+</li>
+<li>the moment=as soon as</li>
+<li>by the time</li>
+<li>until</li>
+<li>not… until</li>
+</ul>
+<hr>
+<blockquote>
+<p><strong>区别</strong><br>I will wait here until you com<br>I will not leave until you com.<br>看主句的动词是瞬间动词还是延续性动词<br>如果是瞬间动词用not… until 如果是延续性动词就用 until</p>
+</blockquote>
+<ul>
+<li>when 做引导的时间状语从句省略的情况<br>when 引导的状语从句 从句和主句的主语一致,从句有be动词,从句主语和be动词可以省略<br>when a kid, I enjoyed singing songs</li>
+</ul>
+<h2 id="地点状语从句"><a href="#地点状语从句" class="headerlink" title="地点状语从句"></a>地点状语从句</h2><p><strong>做地点状语通常是介词短语</strong><br><strong>The kind of trees grow well in moist place</strong> </p>
+<ul>
+<li>where  </li>
+</ul>
+<h2 id="原因状语从句"><a href="#原因状语从句" class="headerlink" title="原因状语从句"></a>原因状语从句</h2><h3 id="引导词"><a href="#引导词" class="headerlink" title="引导词"></a>引导词</h3><ul>
+<li>because</li>
+<li>as</li>
+<li>since</li>
+<li>in that</li>
+<li>seeing that</li>
+<li>considering that</li>
+<li>now that</li>
+<li><p>given that  </p>
+<h3 id="连词"><a href="#连词" class="headerlink" title="连词"></a>连词</h3></li>
+<li><p>for</p>
+<h3 id="介词短语"><a href="#介词短语" class="headerlink" title="介词短语"></a>介词短语</h3></li>
+<li>because of</li>
+<li>due to</li>
+<li>owing to </li>
+<li>thanks to</li>
+<li>for the sake of</li>
+<li>as a result of</li>
+</ul>
+<h2 id="目的状语从句"><a href="#目的状语从句" class="headerlink" title="目的状语从句"></a>目的状语从句</h2><h3 id="引导词-1"><a href="#引导词-1" class="headerlink" title="引导词"></a>引导词</h3><ul>
+<li>to , in order to, so as to 后面只加动词原型  </li>
+<li>so that 表示目的 通常句末 不放在句首</li>
+<li>in order that<br>例句: We will ascend higher in order to overlook farther</li>
+</ul>
+<h2 id="结果状语从句"><a href="#结果状语从句" class="headerlink" title="结果状语从句"></a>结果状语从句</h2><h3 id="引导词-2"><a href="#引导词-2" class="headerlink" title="引导词"></a>引导词</h3><ul>
+<li>so…that so后面跟形容词和副词 可以替换very , 作文遇到形容词或者副词 都可以写成so…that</li>
+<li>such that  such 后面跟着名词<br>My mather proves so kind that she is respected by all her staff. </li>
+</ul>
+<h3 id="让步状语从句"><a href="#让步状语从句" class="headerlink" title="让步状语从句"></a>让步状语从句</h3><ul>
+<li>although</li>
+<li>though</li>
+<li>even though</li>
+<li>even if</li>
+<li>上面位置随便放 </li>
+<li>as<ul>
+<li>as 的部分倒装<br>ugly As I seem , I keep gentle.<br>simple as the chart looks, the outlook behind proves far-reaching —— national products become increasingly popular with chinese customer</li>
+</ul>
+</li>
+<li>while 只能放在句首,不能放在句中</li>
+<li>例句: Raising pets can cultivate the loving heart of kids although they might be injuryious to their familier .</li>
+</ul>
+<h2 id="方式状语从句"><a href="#方式状语从句" class="headerlink" title="方式状语从句"></a>方式状语从句</h2><h3 id="引导词-3"><a href="#引导词-3" class="headerlink" title="引导词"></a>引导词</h3><ul>
+<li>好像似乎</li>
+<li>as</li>
+<li>the way</li>
+<li>as if/though</li>
+<li><p>例句: She looks as if she were made of ice.</p>
+<h3 id="介词短语-1"><a href="#介词短语-1" class="headerlink" title="介词短语"></a>介词短语</h3></li>
+<li><p>by/through/ by means of</p>
+</li>
+<li>in …. way/meanner</li>
+</ul>
+<h2 id="条件状语从句"><a href="#条件状语从句" class="headerlink" title="条件状语从句"></a>条件状语从句</h2><h3 id="引导词-4"><a href="#引导词-4" class="headerlink" title="引导词"></a>引导词</h3><ul>
+<li>除了unless 都翻译成如果</li>
+<li>suppose that</li>
+<li>supposing that</li>
+<li>if</li>
+<li>unless</li>
+<li>provided that</li>
+<li>as long as</li>
+<li>so long as</li>
+<li>例句: If there exists a ghost of hope, I will never give up. </li>
+</ul>
+<h3 id="比较状语从句"><a href="#比较状语从句" class="headerlink" title="比较状语从句"></a>比较状语从句</h3><h3 id="引导词-5"><a href="#引导词-5" class="headerlink" title="引导词"></a>引导词</h3><ul>
+<li>as …as</li>
+<li>比较结构:than</li>
+<li>例句: you are as beautiful as I .</li>
+</ul>
+<h2 id="写作中的使用"><a href="#写作中的使用" class="headerlink" title="写作中的使用"></a>写作中的使用</h2><p>写作中的任何一句话都可以加一状语把句子拉长</p>
+<ul>
+<li>例句: since I meet you , I had loved you.<br>I love you for my whole life.<br>I love you in my mind because of you are kind.  </li>
+<li>eg: One can live as if he were a pig. Conversely, he can never be as delighted as a pig.</li>
+</ul>
+<h2 id="一些引导词语"><a href="#一些引导词语" class="headerlink" title="一些引导词语"></a>一些引导词语</h2><ul>
+<li>if 如果</li>
+<li>unless 除非 </li>
+<li>as long as 只要</li>
+<li>in case 万一</li>
+<li>suppose that/ supposing 假设</li>
+<li>on the condition that 条件是 </li>
+</ul>
+<h2 id="小贴士"><a href="#小贴士" class="headerlink" title="小贴士"></a>小贴士</h2><ul>
+<li>丛属连词 while/if 引导的时间状语从句和条件状语从句 ，经常会吧从句中和主语和主动词一致的部分省略<ul>
+<li>We convet their food, their wine and theri confuonding ability to say slim while( they are) consuming</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/mathFormula/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/03/mathFormula/" itemprop="url">mathFormula</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-03T20:27:42+08:00">
+                2020-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">数学公式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="初等代数"><a href="#初等代数" class="headerlink" title="初等代数"></a>初等代数</h2><h3 id="乘法公式和因式分解"><a href="#乘法公式和因式分解" class="headerlink" title="乘法公式和因式分解"></a>乘法公式和因式分解</h3><p><br></p>
+<script type="math/tex; mode=display">(a±b)^2=a^2±2ab+b^2 \\
+(a+b+c)^2=a^2+b^2+c^2+2ab+2ac+2ab\\
+a^2-b^2=(a-b)(a+b)\\
+(a±b)^3=a^3±3a^2b+3ab^2±b^3\\
+a^3+b^3=(a\pm b)(a^2\mp ab+b^2)\\
+a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+...+ab^{n-2}+b^{n-1})</script><p><br></p>
+<h3 id="指数"><a href="#指数" class="headerlink" title="指数"></a>指数</h3><script type="math/tex; mode=display">
+    a^m.a^n=a^{m+n}\\
+    (a^m)^n=a^{mn}\\
+    (ab)^n=a^nb^n\\
+    (\frac{a}{b})^m= \frac{a^m}{b^n}\\
+
+    a^{-m}= \frac{1}{a^m}\\</script><h3 id="对数-log-aN-a-gt-0-a-neq1-N-gt-0"><a href="#对数-log-aN-a-gt-0-a-neq1-N-gt-0" class="headerlink" title="对数$log_aN( a&gt;0 . a\neq1. N&gt;0)$"></a>对数$log_aN( a&gt;0 . a\neq1. N&gt;0)$</h3><script type="math/tex; mode=display">
+    N=a^{log_aN}, N=e^{lnN}\\
+    log_a{MN}=log_aM+log_aN\\
+    log_aM^n=n log_aM\\
+    log_a{\sqrt[n](M)}= \frac{1}{n}log_aM\\  
+
+    log_aM= \frac{log_bM}{log_ba}\\</script><h3 id="数列"><a href="#数列" class="headerlink" title="数列"></a>数列</h3><script type="math/tex; mode=display">
+    等差数列\\
+    a_n=a_1+(n-1)d\\
+    S_n= \frac{n(a_1+a_n)}{2}= na_1+ \frac{n(n-1)d}{2}\\
+    等比数列\\
+
+    a_n=a_1q^{n-1}\\
+    S_n= \frac{a_1(1-q^n)}{1-q}\\</script><h2 id="三角函数公式"><a href="#三角函数公式" class="headerlink" title="三角函数公式"></a>三角函数公式</h2><h3 id="倍角公式和半角公式"><a href="#倍角公式和半角公式" class="headerlink" title="倍角公式和半角公式"></a>倍角公式和半角公式</h3><script type="math/tex; mode=display">
+    sin2x=2sinxcosx\\
+    cos2x=cos^2x-sin^2x=2cos^2x-1=1-2sin^2x\\
+    tan2x= \frac{2tanx}{1-tan^2x}\\
+    cot2x= \frac{cot^2x-1}{2cotx}\\
+    cos^2 \frac{x}{2}= \frac{1+cosx}{2}\\
+    sin^2 \frac{x}{2}= \frac{1-cosx}{2}\\
+
+    tan^2 \frac{x}{2}= \frac{1+cosx}{1-cosx}\\</script><h3 id="三角函数恒等式"><a href="#三角函数恒等式" class="headerlink" title="三角函数恒等式"></a>三角函数恒等式</h3><script type="math/tex; mode=display">
+    sin^2x+cos^2x=1\\
+    sec^2-tan^2=1\\
+    csc^2-cot^2=1\\
+    tanx.cotx=1\\
+    secx.cosx=1\\
+    cscx.sinx=1\\
+    tanx= \frac{sinx}{cosx}\\
+
+    cotx= \frac{cosx}{sinx}\\</script><h3 id="诱导公式"><a href="#诱导公式" class="headerlink" title="诱导公式"></a>诱导公式</h3><script type="math/tex; mode=display">
+    sin(2n\pi + \alpha)=sin\alpha\\
+    cos(2n\pi + \alpha)= cos\alpha\\
+    sin( \frac{\pi}{2}\pm\alpha)=cos\alpha \\
+    cos( \frac{\pi}{2}\pm\alpha    )=\mp sin\alpha\\
+
+    tan( \frac{\pi}{2}\pm \alpha )=\mp cot\alpha\\
+    cot( \frac{\pi}{2}\pm \alpha) = \mp tan\alpha\\
+
+    sin(\pi\pm\alpha)= \mp sin\alpha\\
+    cos(\pi\pm\alpha)= -cos\alpha\\
+    tan(\pi\pm\alpha)= \pm tan\alpha\\
+    cot(\pi\pm\alpha)= \pm cot\alpha\\
+
+    sin(-\alpha)=-sin\alpha\\
+    cos(-\alpha)= cos\alpha\\
+    tan(-\alpha)= -tan\alpha\\
+    cot(-\alpha)= -cot(\alpha)\\
+
+    sin(n\pi+\alpha)=(-1)^nsin\alpha\\
+    cos(n\pi+\alpha)=(-1)^ncos\alpha\\</script><h3 id="两角和与差-和差化积-积化和差公式"><a href="#两角和与差-和差化积-积化和差公式" class="headerlink" title="两角和与差,和差化积,积化和差公式"></a>两角和与差,和差化积,积化和差公式</h3><script type="math/tex; mode=display">
+    sin(a\pm b)=sinacosb\pm cosasinb\\
+    cos(a\pm b)=cosacosb\mp sinasinb\\
+    tan(a\pm b)= \frac{tana \pm tanb}{1\mp tanatanb}\\
+    sina+sinb=2sin \frac{a+b}{2}cos \frac{a-b}{2}\\
+    sina-sinb=2cos \frac{a+b}{2}sin    \frac{a-b}{2}\\
+    cosa+cosb=2cos \frac{a+b}{2}cos \frac{a-b}{2}\\
+    cosa - cosb = 2sin  \frac{a+b}{2}cos \frac{a-b}{2}\\
+    sinacosb= \frac{1}{2}[sin(a+b)+sin(a-b)]\\
+    cosacosb = \frac{1}{2}[cos(a+b)+cos(a-b)]\\
+    sinainb =- \ \frac{1}{2}[cos(a+b)-cos(a-b)]\\</script><h3 id="反三角函数的基本关系式"><a href="#反三角函数的基本关系式" class="headerlink" title="反三角函数的基本关系式"></a>反三角函数的基本关系式</h3><script type="math/tex; mode=display">
+
+    arcsin(-x)=-arcsinx (-1 \leq x \leq 1 )\\
+    arccos(-x)=\pi-arccosx(-1 \leq x \leq 1 )\\
+
+    arctan(-x)=-aractanx\\
+    arccot(-x)=\pi - arccotx\\
+    arcsinx+arccosx= \frac{\pi}{2}(-1 \leq x \leq 1 )\\
+
+    arctanx+arccotx= \frac{\pi}{2}\\
+    arctanx=acrcot \frac{1}{x} (x \geq 1)</script><h3 id="常用三角函数表"><a href="#常用三角函数表" class="headerlink" title="常用三角函数表"></a>常用三角函数表</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>角度\函数</th>
+<th>sinx</th>
+<th>cosx</th>
+<th>tanx</th>
+<th>cotx</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>—-</td>
+</tr>
+<tr>
+<td>$\frac{\pi}{6}$</td>
+<td>$\frac{1}{2}$</td>
+<td>$\frac{\sqrt3}{2}$</td>
+<td>$\frac{\sqrt3}{3}$</td>
+<td>$\sqrt3$</td>
+</tr>
+<tr>
+<td>$\frac{\pi}{4}$</td>
+<td>$\frac{\sqrt2}{2}$</td>
+<td>$\frac{\sqrt2}{2}$</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>$\frac{\pi}{3}$</td>
+<td>$\frac{\sqrt3}{2}$</td>
+<td>$\frac{1}{2}$</td>
+<td>$\sqrt3$</td>
+<td>$\frac{\sqrt3}{3}$</td>
+</tr>
+<tr>
+<td>$\frac{\pi}{2}$</td>
+<td>1</td>
+<td>0</td>
+<td>—-</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">ysx</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7Carchive">
+              
+                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ysx</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
