@@ -259,6 +259,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/18/leetcode/11-container-with-most-water/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/18/leetcode/11-container-with-most-water/" itemprop="url">11-container-with-most-water</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-18T12:50:43+08:00">
+                2020-04-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="存水最多的容器"><a href="#存水最多的容器" class="headerlink" title="存水最多的容器"></a>存水最多的容器</h2><p><a href="https://leetcode-cn.com/problems/container-with-most-water/" target="_blank" rel="noopener">题目链接</a> </p>
+<h3 id="解体思路"><a href="#解体思路" class="headerlink" title="解体思路"></a>解体思路</h3><p>这题想法式我们给两个索引先分别指向开头和末尾, 再去计算两个索引间的最大的存水量与最大存水量判断, 然后再去判断下索引位置的高度，低的那一面往对方靠近,以此类推直到两方索引相等</p>
+<h3 id="go解法"><a href="#go解法" class="headerlink" title="go解法"></a>go解法</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxArea</span><span class="params">(height []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	secondIndex, firstIndex := <span class="built_in">len</span>(height)<span class="number">-1</span>, <span class="number">0</span></span><br><span class="line">	maxValue := <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> &#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> secondIndex &lt;= firstIndex &#123;</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">var</span> num <span class="keyword">int</span></span><br><span class="line">		lens := secondIndex - firstIndex</span><br><span class="line">		<span class="keyword">if</span> height[secondIndex] &gt; height[firstIndex] &#123;</span><br><span class="line">			num = height[firstIndex]</span><br><span class="line">			firstIndex++</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			num = height[secondIndex]</span><br><span class="line">			secondIndex--</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> maxValue &lt; lens*num &#123;</span><br><span class="line">			maxValue = lens * num</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> maxValue</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/17/leetcode/55-jump-game/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -357,6 +501,150 @@
 <h3 id="go解法"><a href="#go解法" class="headerlink" title="go解法"></a>go解法</h3><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">canJump</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	n := <span class="number">1</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="built_in">len</span>(nums) - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i-- &#123;</span><br><span class="line">		<span class="keyword">if</span> nums[i] &gt;= n &#123;</span><br><span class="line">			n = <span class="number">1</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			n++</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> i == <span class="number">0</span> &amp;&amp; n != <span class="number">1</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">canJump</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">1</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">	&#125;</span><br><span class="line">	max := nums[<span class="number">0</span>]</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(nums)<span class="number">-1</span>; i++ &#123;</span><br><span class="line">		max--</span><br><span class="line">		<span class="keyword">if</span> max &lt; <span class="number">0</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> nums[i] &gt; max &#123;</span><br><span class="line">			max = nums[i]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> max &lt; <span class="number">1</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">canJump3</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	m := <span class="built_in">len</span>(nums)</span><br><span class="line">	dp := <span class="built_in">make</span>([]<span class="keyword">int</span>, m)</span><br><span class="line">	dp[<span class="number">0</span>] = nums[<span class="number">0</span>] - <span class="number">1</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt; m<span class="number">-1</span>; i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> nums[i] &gt;= dp[i<span class="number">-1</span>] &#123;</span><br><span class="line">			dp[i] = nums[i]</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			dp[i] = dp[i<span class="number">-1</span>]</span><br><span class="line">		&#125;</span><br><span class="line">		dp[i]--</span><br><span class="line">		<span class="keyword">if</span> dp[i] &lt; <span class="number">0</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> dp[<span class="number">0</span>] &lt; <span class="number">0</span> &amp;&amp; m != <span class="number">1</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/16/leetcode/56-merge-intervals/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/16/leetcode/56-merge-intervals/" itemprop="url">56-merge-intervals</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-16T09:53:36+08:00">
+                2020-04-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="合并区间"><a href="#合并区间" class="headerlink" title="合并区间"></a>合并区间</h2><p><a href="https://leetcode-cn.com/problems/merge-intervals/" target="_blank" rel="noopener">题目链接</a> </p>
+<h3 id="解题目思路"><a href="#解题目思路" class="headerlink" title="解题目思路"></a>解题目思路</h3><p>这题先排序,然后再去判断区间是否有交集，有交集就合并</p>
+<h3 id="go语言思路"><a href="#go语言思路" class="headerlink" title="go语言思路"></a>go语言思路</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">merge</span><span class="params">(intervals [][]<span class="keyword">int</span>)</span> [][]<span class="title">int</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(intervals) == <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> intervals</span><br><span class="line">	&#125;</span><br><span class="line">	sort.Slice(intervals, <span class="function"><span class="keyword">func</span><span class="params">(i, j <span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">		<span class="keyword">return</span> intervals[i][<span class="number">0</span>] &lt; intervals[j][<span class="number">0</span>]</span><br><span class="line">	&#125;)</span><br><span class="line">	start := <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt; <span class="built_in">len</span>(intervals); i++ &#123;</span><br><span class="line">		fmt.Println(intervals[start][<span class="number">1</span>] &gt;= intervals[i][<span class="number">0</span>])</span><br><span class="line">		<span class="keyword">if</span> intervals[start][<span class="number">1</span>] &lt; intervals[i][<span class="number">0</span>] &#123;</span><br><span class="line">			<span class="keyword">if</span> start != i &#123;</span><br><span class="line">				start++</span><br><span class="line">				<span class="built_in">copy</span>(intervals[start], intervals[i])</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">continue</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> intervals[start][<span class="number">1</span>] &lt; intervals[i][<span class="number">1</span>] &#123;</span><br><span class="line">			intervals[start][<span class="number">1</span>] = intervals[i][<span class="number">1</span>]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> intervals[:start+<span class="number">1</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1415,631 +1703,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/12/leetcode/121-best-time-to-buy-and-sell-stock/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ysx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ysxBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/04/12/leetcode/121-best-time-to-buy-and-sell-stock/" itemprop="url">121-best-time-to-buy-and-sell-stock</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-12T12:58:10+08:00">
-                2020-04-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="买卖股票最佳时间"><a href="#买卖股票最佳时间" class="headerlink" title="买卖股票最佳时间"></a>买卖股票最佳时间</h2><p><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/" target="_blank" rel="noopener">题目链接</a> </p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>这题思路是遍历数组同时记录最小的数，然后遇到比他大的数和他相减与最大利润相比取最大值，遇到比自己小的数就吧最小值替换成那该数</p>
-<h3 id="go语言实现"><a href="#go语言实现" class="headerlink" title="go语言实现"></a>go语言实现</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxProfit</span><span class="params">(prices []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(prices)==<span class="number">0</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">	maxNum, initNum := <span class="number">0</span>, prices[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt; <span class="built_in">len</span>(prices); i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> initNum &gt;= prices[i] &#123;</span><br><span class="line">			initNum = prices[i]</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> maxNum == <span class="number">0</span> &#123;</span><br><span class="line">				maxNum = prices[i] - initNum</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> maxNum &lt; prices[i]-initNum &#123;</span><br><span class="line">				maxNum = prices[i] - initNum</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> maxNum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/10/dailyWord/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ysx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ysxBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/04/10/dailyWord/" itemprop="url">dailyWord</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-10T10:20:13+08:00">
-                2020-04-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index">
-                    <span itemprop="name">英语单词</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <div class="table-container">
-<table>
-<thead>
-<tr>
-<th>word</th>
-<th>means</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Indian Ocean</td>
-<td>印度洋</td>
-</tr>
-<tr>
-<td>Atlantic Ocean</td>
-<td>大西洋</td>
-</tr>
-<tr>
-<td>Pacific Ocean</td>
-<td>太平洋</td>
-</tr>
-<tr>
-<td>Arctic</td>
-<td>北冰洋</td>
-</tr>
-<tr>
-<td>range from to to</td>
-<td>范围包括 …到…</td>
-</tr>
-<tr>
-<td>sparingly</td>
-<td>节约，很少</td>
-</tr>
-<tr>
-<td>spare</td>
-<td>v. 节约， 救命， 出让， adj, 空闲，备用，简陋的</td>
-</tr>
-<tr>
-<td>devour</td>
-<td>吞没,狼吞虎咽</td>
-</tr>
-<tr>
-<td>quiescent</td>
-<td>静止</td>
-</tr>
-<tr>
-<td>spoil</td>
-<td>破坏,宠爱</td>
-</tr>
-<tr>
-<td>condemnation</td>
-<td>谴责</td>
-</tr>
-<tr>
-<td>be beneficial to / be benefit from</td>
-<td>从什么收益</td>
-</tr>
-<tr>
-<td>shorthand</td>
-<td>速写，简称</td>
-</tr>
-<tr>
-<td>absent-minded</td>
-<td>健忘的</td>
-</tr>
-<tr>
-<td>no longer</td>
-<td>不再</td>
-</tr>
-<tr>
-<td>out of</td>
-<td>由与，用什么材料 , 缺乏… ，从…中(出来离开)</td>
-</tr>
-<tr>
-<td>neuron</td>
-<td>神经</td>
-</tr>
-<tr>
-<td>thirst</td>
-<td>渴望,渴的</td>
-</tr>
-<tr>
-<td>skinny</td>
-<td>瘦的</td>
-</tr>
-<tr>
-<td>betrayal</td>
-<td>背叛</td>
-</tr>
-<tr>
-<td>take …for</td>
-<td>认为</td>
-</tr>
-<tr>
-<td>take in</td>
-<td>吸收,欺骗</td>
-</tr>
-<tr>
-<td>bring in</td>
-<td>挣到</td>
-</tr>
-<tr>
-<td>thrilled</td>
-<td>兴奋的，恐惧的</td>
-</tr>
-<tr>
-<td>left over</td>
-<td>留下</td>
-</tr>
-<tr>
-<td>give back</td>
-<td>归还</td>
-</tr>
-<tr>
-<td>make fortune /make money</td>
-<td>赚钱</td>
-</tr>
-<tr>
-<td>what goes around comes around</td>
-<td>种瓜得瓜</td>
-</tr>
-<tr>
-<td>be grateful to</td>
-<td>对…感激</td>
-</tr>
-<tr>
-<td>be  content with</td>
-<td>对…满意</td>
-</tr>
-<tr>
-<td>convince sb of sth</td>
-<td>使某人相信某事</td>
-</tr>
-<tr>
-<td>in addition to</td>
-<td>另外</td>
-</tr>
-<tr>
-<td>be separate with</td>
-<td>与…分割</td>
-</tr>
-<tr>
-<td>vote for</td>
-<td>投…票</td>
-</tr>
-<tr>
-<td>be remote from</td>
-<td>远离…</td>
-</tr>
-<tr>
-<td>break in</td>
-<td>闯入,插话</td>
-</tr>
-<tr>
-<td>be sure of</td>
-<td>确信</td>
-</tr>
-<tr>
-<td>cut off</td>
-<td>切断</td>
-</tr>
-<tr>
-<td>boast about</td>
-<td>吹嘘</td>
-</tr>
-<tr>
-<td>get away</td>
-<td>逃离</td>
-</tr>
-<tr>
-<td>die away</td>
-<td>逐渐消失</td>
-</tr>
-<tr>
-<td>turn down</td>
-<td>拆毁,调小</td>
-</tr>
-<tr>
-<td>stand for</td>
-<td>代表</td>
-</tr>
-<tr>
-<td>come up with</td>
-<td>想出(计划,回答);作出反应;产生</td>
-</tr>
-<tr>
-<td>do away with</td>
-<td>废除;消灭;去掉;涤除</td>
-</tr>
-<tr>
-<td>live up to</td>
-<td>达到高度,不辜负,实行</td>
-</tr>
-<tr>
-<td>give rise to</td>
-<td>引起</td>
-</tr>
-<tr>
-<td>be impressed with</td>
-<td>对…影响深刻</td>
-</tr>
-<tr>
-<td>take on</td>
-<td>雇佣</td>
-</tr>
-<tr>
-<td>make fun of</td>
-<td>开玩笑</td>
-</tr>
-<tr>
-<td>pay off</td>
-<td>付清</td>
-</tr>
-<tr>
-<td>eventually</td>
-<td>最终的</td>
-</tr>
-<tr>
-<td>unfortunately</td>
-<td>不幸的</td>
-</tr>
-<tr>
-<td>generously</td>
-<td>大方</td>
-</tr>
-<tr>
-<td>purposefully</td>
-<td>有目的的</td>
-</tr>
-<tr>
-<td>deliberate</td>
-<td>故意的</td>
-</tr>
-<tr>
-<td>inconsistent</td>
-<td>不一致</td>
-</tr>
-<tr>
-<td>contending</td>
-<td>争论</td>
-</tr>
-<tr>
-<td>prevent sb from doing sth</td>
-<td>阻止某人做某事</td>
-</tr>
-<tr>
-<td>prevent + N</td>
-<td>预防某事</td>
-</tr>
-<tr>
-<td>provoke</td>
-<td>激发，引起</td>
-</tr>
-<tr>
-<td>seriously</td>
-<td>认真的,严肃的</td>
-</tr>
-<tr>
-<td></td>
-<td>&lt;++&gt;</td>
-</tr>
-<tr>
-<td>&lt;++&gt;</td>
-<td>&lt;++&gt;</td>
-</tr>
-<tr>
-<td>&lt;++&gt;</td>
-<td>&lt;++&gt;</td>
-</tr>
-<tr>
-<td>&lt;++&gt;</td>
-<td>&lt;++&gt;</td>
-</tr>
-<tr>
-<td>&lt;++&gt;</td>
-<td>&lt;++&gt;</td>
-</tr>
-<tr>
-<td>&lt;++&gt;</td>
-<td>&lt;++&gt;</td>
-</tr>
-<tr>
-<td>&lt;++&gt;</td>
-<td>&lt;++&gt;</td>
-</tr>
-<tr>
-<td>&lt;++&gt;</td>
-<td>&lt;++&gt;</td>
-</tr>
-<tr>
-<td>&lt;++&gt;</td>
-<td>&lt;++&gt;</td>
-</tr>
-<tr>
-<td>&lt;++&gt;</td>
-<td>&lt;++&gt;</td>
-</tr>
-<tr>
-<td>&lt;++&gt;</td>
-<td>&lt;++&gt;</td>
-</tr>
-<tr>
-<td>&lt;++&gt;</td>
-<td>&lt;++&gt;</td>
-</tr>
-<tr>
-<td>&lt;++&gt;</td>
-<td>&lt;++&gt;</td>
-</tr>
-<tr>
-<td>&lt;++&gt;</td>
-<td>&lt;++&gt;</td>
-</tr>
-<tr>
-<td>&lt;++&gt;</td>
-<td>&lt;++&gt;</td>
-</tr>
-<tr>
-<td>&lt;++&gt;</td>
-<td>&lt;++&gt;</td>
-</tr>
-<tr>
-<td>&lt;++&gt;</td>
-<td>&lt;++&gt;</td>
-</tr>
-<tr>
-<td>&lt;++&gt;</td>
-<td>&lt;++&gt;</td>
-</tr>
-<tr>
-<td>&lt;++&gt;</td>
-<td>&lt;++&gt;</td>
-</tr>
-<tr>
-<td>&lt;++&gt;</td>
-<td>&lt;++&gt;</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2090,7 +1753,7 @@
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2112,7 +1775,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
