@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="code math," />
+  <meta name="keywords" content="greedy algorithm," />
 
 
 
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="买卖股票最佳时机II题目链接  思路这题思路是先找股票如果遇到更便宜的话吧最小值给他，遇到比最小值大的值在与最小值相见在取和最大的利润相比，如果今天的股票价格大于昨天的股票价格直接取前面最大利润的那次 go阶梯代码1234567891011121314151617func maxProfit(prices []int) int &amp;#123;	var maxSum, minNum, Sum int">
+<meta name="description" content="跳跃游戏题目链接  题目思路我们从倒数第二个数开始倒序遍历, 先设置初始要走的步数为n&#x3D;1，当我们可以走的步数小于n的时候n+1, 当步数够用时候我们再把n还原到1，最后再在0点判断他是否步数为1 go解法方法一123456789101112131415func canJump(nums []int) bool &amp;#123;	n :&#x3D; 1	for i :&#x3D; len(nums) - 2; i &amp;gt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="买卖股票最佳时机II">
-<meta property="og:url" content="http://yoursite.com/2020/04/12/leetcode/122%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BAII/index.html">
+<meta property="og:title" content="55-jump-game">
+<meta property="og:url" content="http://yoursite.com/2020/04/17/leetcode/55-jump-game/index.html">
 <meta property="og:site_name" content="ysxBlog">
-<meta property="og:description" content="买卖股票最佳时机II题目链接  思路这题思路是先找股票如果遇到更便宜的话吧最小值给他，遇到比最小值大的值在与最小值相见在取和最大的利润相比，如果今天的股票价格大于昨天的股票价格直接取前面最大利润的那次 go阶梯代码1234567891011121314151617func maxProfit(prices []int) int &amp;#123;	var maxSum, minNum, Sum int">
+<meta property="og:description" content="跳跃游戏题目链接  题目思路我们从倒数第二个数开始倒序遍历, 先设置初始要走的步数为n&#x3D;1，当我们可以走的步数小于n的时候n+1, 当步数够用时候我们再把n还原到1，最后再在0点判断他是否步数为1 go解法方法一123456789101112131415func canJump(nums []int) bool &amp;#123;	n :&#x3D; 1	for i :&#x3D; len(nums) - 2; i &amp;gt">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-12T13:04:06.000Z">
-<meta property="article:modified_time" content="2020-04-13T01:43:01.438Z">
+<meta property="article:published_time" content="2020-04-17T09:46:21.000Z">
+<meta property="article:modified_time" content="2020-04-17T10:20:37.443Z">
 <meta property="article:author" content="ysx">
-<meta property="article:tag" content="code math">
+<meta property="article:tag" content="greedy algorithm">
 <meta name="twitter:card" content="summary">
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/04/12/leetcode/122买卖股票最佳时机II/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/04/17/leetcode/55-jump-game/"/>
 
 
 
 
 
-  <title>买卖股票最佳时机II | ysxBlog</title>
+  <title>55-jump-game | ysxBlog</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/12/leetcode/122%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BAII/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/17/leetcode/55-jump-game/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ysx">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">买卖股票最佳时机II</h1>
+          <h1 class="post-title" itemprop="name headline">55-jump-game</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-12T21:04:06+08:00">
-                2020-04-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-17T17:46:21+08:00">
+                2020-04-17
               </time>
             
 
@@ -352,10 +352,11 @@
       
 
       
-        <h2 id="买卖股票最佳时机II"><a href="#买卖股票最佳时机II" class="headerlink" title="买卖股票最佳时机II"></a>买卖股票最佳时机II</h2><p><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/submissions/" target="_blank" rel="noopener">题目链接</a> </p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>这题思路是先找股票如果遇到更便宜的话吧最小值给他，遇到比最小值大的值在与最小值相见在取和最大的利润相比，如果今天的股票价格大于昨天的股票价格直接取前面最大利润的那次</p>
-<h3 id="go阶梯代码"><a href="#go阶梯代码" class="headerlink" title="go阶梯代码"></a>go阶梯代码</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxProfit</span><span class="params">(prices []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> maxSum, minNum, Sum <span class="keyword">int</span></span><br><span class="line">	minNum = prices[<span class="number">0</span>]</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt; <span class="built_in">len</span>(prices); i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> minNum &gt;= prices[i] || prices[i] &lt; prices[i<span class="number">-1</span>] &#123;</span><br><span class="line">			minNum = prices[i]</span><br><span class="line">			Sum += maxSum</span><br><span class="line">			maxSum = <span class="number">0</span></span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> maxSum &lt; prices[i]-minNum &#123;</span><br><span class="line">			maxSum = prices[i] - minNum</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> maxSum != <span class="number">0</span> &#123;</span><br><span class="line">		Sum += maxSum</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> Sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>&lt;++&gt;</p>
+        <h3 id="跳跃游戏"><a href="#跳跃游戏" class="headerlink" title="跳跃游戏"></a>跳跃游戏</h3><p><a href="https://leetcode-cn.com/problems/jump-game/" target="_blank" rel="noopener">题目链接</a> </p>
+<h3 id="题目思路"><a href="#题目思路" class="headerlink" title="题目思路"></a>题目思路</h3><p>我们从倒数第二个数开始倒序遍历, 先设置初始要走的步数为n=1，当我们可以走的步数小于n的时候n+1, 当步数够用时候我们再把n还原到1，最后再在0点判断他是否步数为1</p>
+<h3 id="go解法"><a href="#go解法" class="headerlink" title="go解法"></a>go解法</h3><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">canJump</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	n := <span class="number">1</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="built_in">len</span>(nums) - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i-- &#123;</span><br><span class="line">		<span class="keyword">if</span> nums[i] &gt;= n &#123;</span><br><span class="line">			n = <span class="number">1</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			n++</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> i == <span class="number">0</span> &amp;&amp; n != <span class="number">1</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">canJump</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">1</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">	&#125;</span><br><span class="line">	max := nums[<span class="number">0</span>]</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(nums)<span class="number">-1</span>; i++ &#123;</span><br><span class="line">		max--</span><br><span class="line">		<span class="keyword">if</span> max &lt; <span class="number">0</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> nums[i] &gt; max &#123;</span><br><span class="line">			max = nums[i]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> max &lt; <span class="number">1</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">canJump3</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	m := <span class="built_in">len</span>(nums)</span><br><span class="line">	dp := <span class="built_in">make</span>([]<span class="keyword">int</span>, m)</span><br><span class="line">	dp[<span class="number">0</span>] = nums[<span class="number">0</span>] - <span class="number">1</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt; m<span class="number">-1</span>; i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> nums[i] &gt;= dp[i<span class="number">-1</span>] &#123;</span><br><span class="line">			dp[i] = nums[i]</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			dp[i] = dp[i<span class="number">-1</span>]</span><br><span class="line">		&#125;</span><br><span class="line">		dp[i]--</span><br><span class="line">		<span class="keyword">if</span> dp[i] &lt; <span class="number">0</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> dp[<span class="number">0</span>] &lt; <span class="number">0</span> &amp;&amp; m != <span class="number">1</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -373,7 +374,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/code-math/" rel="tag"># code math</a>
+            <a href="/tags/greedy-algorithm/" rel="tag"># greedy algorithm</a>
           
         </div>
       
@@ -386,8 +387,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/04/12/leetcode/169%E5%A4%9A%E7%BB%84%E5%85%83%E7%B4%A0/" rel="next" title="多组元素">
-                <i class="fa fa-chevron-left"></i> 多组元素
+              <a href="/2020/04/15/leetcode/542-01-matrix/" rel="next" title="542-01-matrix">
+                <i class="fa fa-chevron-left"></i> 542-01-matrix
               </a>
             
           </div>
@@ -395,10 +396,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/04/13/leetcode/289%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F/" rel="prev" title="生命游戏">
-                生命游戏 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -475,7 +472,7 @@
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">56</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -486,7 +483,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -497,7 +494,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -530,7 +527,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#买卖股票最佳时机II"><span class="nav-number">1.</span> <span class="nav-text">买卖股票最佳时机II</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">1.1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#go阶梯代码"><span class="nav-number">1.2.</span> <span class="nav-text">go阶梯代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#跳跃游戏"><span class="nav-number">1.</span> <span class="nav-text">跳跃游戏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目思路"><span class="nav-number">2.</span> <span class="nav-text">题目思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#go解法"><span class="nav-number">3.</span> <span class="nav-text">go解法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一"><span class="nav-number">3.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二"><span class="nav-number">3.2.</span> <span class="nav-text">方法二</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法三"><span class="nav-number">3.3.</span> <span class="nav-text">方法三</span></a></li></ol></li></ol></div>
             
 
           </div>
