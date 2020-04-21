@@ -259,6 +259,161 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/14/leetcode/interview-rotate-matrix-lcci/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/14/leetcode/interview-rotate-matrix-lcci/" itemprop="url">rotate-matrix-lcci</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-14T12:20:34+08:00">
+                2020-04-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/interview/" itemprop="url" rel="index">
+                    <span itemprop="name">interview</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="旋转矩阵"><a href="#旋转矩阵" class="headerlink" title="旋转矩阵"></a>旋转矩阵</h2><p><a href="https://leetcode-cn.com/problems/rotate-matrix-lcci/" target="_blank" rel="noopener">题目链接</a> </p>
+<h3 id="解体思路"><a href="#解体思路" class="headerlink" title="解体思路"></a>解体思路</h3><p>这题思路式数组每个元素按照对应的方位顺时针旋转 四个方块对应位置式(i,j) , (j, n-i-1) , (n-i-1, n-j-1), (n-j-1, i)</p>
+<h3 id="go语言实现"><a href="#go语言实现" class="headerlink" title="go语言实现"></a>go语言实现</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">rotate</span><span class="params">(matrix [][]<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	n := <span class="built_in">len</span>(matrix)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; n/<span class="number">2</span>; i++ &#123;</span><br><span class="line">		<span class="keyword">for</span> j := i; j &lt; n<span class="number">-1</span>-i; j++ &#123;</span><br><span class="line">			matrix[i][j], matrix[j][n-i<span class="number">-1</span>], matrix[n-i<span class="number">-1</span>][n-j<span class="number">-1</span>], matrix[n<span class="number">-1</span>-j][i] = matrix[n<span class="number">-1</span>-j][i], matrix[i][j], matrix[j][n-i<span class="number">-1</span>], matrix[n-i<span class="number">-1</span>][n-j<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">			fmt.Println(i, j)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Println(matrix)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/13/leetcode/22-generate-parentheses/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2600,280 +2755,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/Math/mathFormula/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ysx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ysxBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/03/Math/mathFormula/" itemprop="url">mathFormula</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-03T20:27:42+08:00">
-                2020-03-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" itemprop="url" rel="index">
-                    <span itemprop="name">数学公式</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="初等代数"><a href="#初等代数" class="headerlink" title="初等代数"></a>初等代数</h2><h3 id="乘法公式和因式分解"><a href="#乘法公式和因式分解" class="headerlink" title="乘法公式和因式分解"></a>乘法公式和因式分解</h3><p><br></p>
-<script type="math/tex; mode=display">(a±b)^2=a^2±2ab+b^2 \\
-(a+b+c)^2=a^2+b^2+c^2+2ab+2ac+2ab\\
-a^2-b^2=(a-b)(a+b)\\
-(a±b)^3=a^3±3a^2b+3ab^2±b^3\\
-a^3+b^3=(a\pm b)(a^2\mp ab+b^2)\\
-a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+...+ab^{n-2}+b^{n-1})</script><p><br></p>
-<h3 id="指数"><a href="#指数" class="headerlink" title="指数"></a>指数</h3><script type="math/tex; mode=display">
-    a^m.a^n=a^{m+n}\\
-    (a^m)^n=a^{mn}\\
-    (ab)^n=a^nb^n\\
-    (\frac{a}{b})^m= \frac{a^m}{b^n}\\
-
-    a^{-m}= \frac{1}{a^m}\\</script><h3 id="对数-log-aN-a-gt-0-a-neq1-N-gt-0"><a href="#对数-log-aN-a-gt-0-a-neq1-N-gt-0" class="headerlink" title="对数$log_aN( a&gt;0 . a\neq1. N&gt;0)$"></a>对数$log_aN( a&gt;0 . a\neq1. N&gt;0)$</h3><script type="math/tex; mode=display">
-    N=a^{log_aN}, N=e^{lnN}\\
-    log_a{MN}=log_aM+log_aN\\
-    log_aM^n=n log_aM\\
-    log_a{\sqrt[n](M)}= \frac{1}{n}log_aM\\  
-
-    log_aM= \frac{log_bM}{log_ba}\\</script><h3 id="数列"><a href="#数列" class="headerlink" title="数列"></a>数列</h3><script type="math/tex; mode=display">
-    等差数列\\
-    a_n=a_1+(n-1)d\\
-    S_n= \frac{n(a_1+a_n)}{2}= na_1+ \frac{n(n-1)d}{2}\\
-    等比数列\\
-
-    a_n=a_1q^{n-1}\\
-    S_n= \frac{a_1(1-q^n)}{1-q}\\</script><h2 id="三角函数公式"><a href="#三角函数公式" class="headerlink" title="三角函数公式"></a>三角函数公式</h2><h3 id="倍角公式和半角公式"><a href="#倍角公式和半角公式" class="headerlink" title="倍角公式和半角公式"></a>倍角公式和半角公式</h3><script type="math/tex; mode=display">
-    sin2x=2sinxcosx\\
-    cos2x=cos^2x-sin^2x=2cos^2x-1=1-2sin^2x\\
-    tan2x= \frac{2tanx}{1-tan^2x}\\
-    cot2x= \frac{cot^2x-1}{2cotx}\\
-    cos^2 \frac{x}{2}= \frac{1+cosx}{2}\\
-    sin^2 \frac{x}{2}= \frac{1-cosx}{2}\\
-
-    tan^2 \frac{x}{2}= \frac{1+cosx}{1-cosx}\\</script><h3 id="三角函数恒等式"><a href="#三角函数恒等式" class="headerlink" title="三角函数恒等式"></a>三角函数恒等式</h3><script type="math/tex; mode=display">
-    sin^2x+cos^2x=1\\
-    sec^2-tan^2=1\\
-    csc^2-cot^2=1\\
-    tanx.cotx=1\\
-    secx.cosx=1\\
-    cscx.sinx=1\\
-    tanx= \frac{sinx}{cosx}\\
-
-    cotx= \frac{cosx}{sinx}\\</script><h3 id="诱导公式"><a href="#诱导公式" class="headerlink" title="诱导公式"></a>诱导公式</h3><script type="math/tex; mode=display">
-    sin(2n\pi + \alpha)=sin\alpha\\
-    cos(2n\pi + \alpha)= cos\alpha\\
-    sin( \frac{\pi}{2}\pm\alpha)=cos\alpha \\
-    cos( \frac{\pi}{2}\pm\alpha    )=\mp sin\alpha\\
-
-    tan( \frac{\pi}{2}\pm \alpha )=\mp cot\alpha\\
-    cot( \frac{\pi}{2}\pm \alpha) = \mp tan\alpha\\
-
-    sin(\pi\pm\alpha)= \mp sin\alpha\\
-    cos(\pi\pm\alpha)= -cos\alpha\\
-    tan(\pi\pm\alpha)= \pm tan\alpha\\
-    cot(\pi\pm\alpha)= \pm cot\alpha\\
-
-    sin(-\alpha)=-sin\alpha\\
-    cos(-\alpha)= cos\alpha\\
-    tan(-\alpha)= -tan\alpha\\
-    cot(-\alpha)= -cot(\alpha)\\
-
-    sin(n\pi+\alpha)=(-1)^nsin\alpha\\
-    cos(n\pi+\alpha)=(-1)^ncos\alpha\\</script><h3 id="两角和与差-和差化积-积化和差公式"><a href="#两角和与差-和差化积-积化和差公式" class="headerlink" title="两角和与差,和差化积,积化和差公式"></a>两角和与差,和差化积,积化和差公式</h3><script type="math/tex; mode=display">
-    sin(a\pm b)=sinacosb\pm cosasinb\\
-    cos(a\pm b)=cosacosb\mp sinasinb\\
-    tan(a\pm b)= \frac{tana \pm tanb}{1\mp tanatanb}\\
-    sina+sinb=2sin \frac{a+b}{2}cos \frac{a-b}{2}\\
-    sina-sinb=2cos \frac{a+b}{2}sin    \frac{a-b}{2}\\
-    cosa+cosb=2cos \frac{a+b}{2}cos \frac{a-b}{2}\\
-    cosa - cosb = 2sin  \frac{a+b}{2}cos \frac{a-b}{2}\\
-    sinacosb= \frac{1}{2}[sin(a+b)+sin(a-b)]\\
-    cosacosb = \frac{1}{2}[cos(a+b)+cos(a-b)]\\
-    sinainb =- \ \frac{1}{2}[cos(a+b)-cos(a-b)]\\</script><h3 id="反三角函数的基本关系式"><a href="#反三角函数的基本关系式" class="headerlink" title="反三角函数的基本关系式"></a>反三角函数的基本关系式</h3><script type="math/tex; mode=display">
-
-    arcsin(-x)=-arcsinx (-1 \leq x \leq 1 )\\
-    arccos(-x)=\pi-arccosx(-1 \leq x \leq 1 )\\
-
-    arctan(-x)=-aractanx\\
-    arccot(-x)=\pi - arccotx\\
-    arcsinx+arccosx= \frac{\pi}{2}(-1 \leq x \leq 1 )\\
-
-    arctanx+arccotx= \frac{\pi}{2}\\
-    arctanx=acrcot \frac{1}{x} (x \geq 1)</script><h3 id="常用三角函数表"><a href="#常用三角函数表" class="headerlink" title="常用三角函数表"></a>常用三角函数表</h3><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>角度\函数</th>
-<th>sinx</th>
-<th>cosx</th>
-<th>tanx</th>
-<th>cotx</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>—-</td>
-</tr>
-<tr>
-<td>$\frac{\pi}{6}$</td>
-<td>$\frac{1}{2}$</td>
-<td>$\frac{\sqrt3}{2}$</td>
-<td>$\frac{\sqrt3}{3}$</td>
-<td>$\sqrt3$</td>
-</tr>
-<tr>
-<td>$\frac{\pi}{4}$</td>
-<td>$\frac{\sqrt2}{2}$</td>
-<td>$\frac{\sqrt2}{2}$</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<td>$\frac{\pi}{3}$</td>
-<td>$\frac{\sqrt3}{2}$</td>
-<td>$\frac{1}{2}$</td>
-<td>$\sqrt3$</td>
-<td>$\frac{\sqrt3}{3}$</td>
-</tr>
-<tr>
-<td>$\frac{\pi}{2}$</td>
-<td>1</td>
-<td>0</td>
-<td>—-</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2924,7 +2805,7 @@ a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+...+ab^{n-2}+b^{n-1})</script><p><br></p>
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">63</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
