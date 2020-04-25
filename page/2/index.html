@@ -259,6 +259,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/18/leetcode/11-container-with-most-water/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/18/leetcode/11-container-with-most-water/" itemprop="url">11-container-with-most-water</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-18T12:50:43+08:00">
+                2020-04-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="存水最多的容器"><a href="#存水最多的容器" class="headerlink" title="存水最多的容器"></a>存水最多的容器</h2><p><a href="https://leetcode-cn.com/problems/container-with-most-water/" target="_blank" rel="noopener">题目链接</a> </p>
+<h3 id="解体思路"><a href="#解体思路" class="headerlink" title="解体思路"></a>解体思路</h3><p>这题想法式我们给两个索引先分别指向开头和末尾, 再去计算两个索引间的最大的存水量与最大存水量判断, 然后再去判断下索引位置的高度，低的那一面往对方靠近,以此类推直到两方索引相等</p>
+<h3 id="go解法"><a href="#go解法" class="headerlink" title="go解法"></a>go解法</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxArea</span><span class="params">(height []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	secondIndex, firstIndex := <span class="built_in">len</span>(height)<span class="number">-1</span>, <span class="number">0</span></span><br><span class="line">	maxValue := <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> &#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> secondIndex &lt;= firstIndex &#123;</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">var</span> num <span class="keyword">int</span></span><br><span class="line">		lens := secondIndex - firstIndex</span><br><span class="line">		<span class="keyword">if</span> height[secondIndex] &gt; height[firstIndex] &#123;</span><br><span class="line">			num = height[firstIndex]</span><br><span class="line">			firstIndex++</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			num = height[secondIndex]</span><br><span class="line">			secondIndex--</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> maxValue &lt; lens*num &#123;</span><br><span class="line">			maxValue = lens * num</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> maxValue</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/17/leetcode/55-jump-game/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1559,150 +1703,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/12/leetcode/121-best-time-to-buy-and-sell-stock/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ysx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ysxBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/04/12/leetcode/121-best-time-to-buy-and-sell-stock/" itemprop="url">121-best-time-to-buy-and-sell-stock</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-12T12:58:10+08:00">
-                2020-04-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="买卖股票最佳时间"><a href="#买卖股票最佳时间" class="headerlink" title="买卖股票最佳时间"></a>买卖股票最佳时间</h2><p><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/" target="_blank" rel="noopener">题目链接</a> </p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>这题思路是遍历数组同时记录最小的数，然后遇到比他大的数和他相减与最大利润相比取最大值，遇到比自己小的数就吧最小值替换成那该数</p>
-<h3 id="go语言实现"><a href="#go语言实现" class="headerlink" title="go语言实现"></a>go语言实现</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxProfit</span><span class="params">(prices []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(prices)==<span class="number">0</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">	maxNum, initNum := <span class="number">0</span>, prices[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt; <span class="built_in">len</span>(prices); i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> initNum &gt;= prices[i] &#123;</span><br><span class="line">			initNum = prices[i]</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> maxNum == <span class="number">0</span> &#123;</span><br><span class="line">				maxNum = prices[i] - initNum</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> maxNum &lt; prices[i]-initNum &#123;</span><br><span class="line">				maxNum = prices[i] - initNum</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> maxNum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1753,7 +1753,7 @@
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
