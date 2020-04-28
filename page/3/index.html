@@ -259,6 +259,298 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/12/leetcode/122-best-time-to-buy-and-sell-stock-ii/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/12/leetcode/122-best-time-to-buy-and-sell-stock-ii/" itemprop="url">122-best-time-to-buy-and-sell-stock-ii</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-12T21:04:06+08:00">
+                2020-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="买卖股票最佳时机II"><a href="#买卖股票最佳时机II" class="headerlink" title="买卖股票最佳时机II"></a>买卖股票最佳时机II</h2><p><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/submissions/" target="_blank" rel="noopener">题目链接</a> </p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>这题思路是先找股票如果遇到更便宜的话吧最小值给他，遇到比最小值大的值在与最小值相见在取和最大的利润相比，如果今天的股票价格大于昨天的股票价格直接取前面最大利润的那次</p>
+<h3 id="go阶梯代码"><a href="#go阶梯代码" class="headerlink" title="go阶梯代码"></a>go阶梯代码</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxProfit</span><span class="params">(prices []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> maxSum, minNum, Sum <span class="keyword">int</span></span><br><span class="line">	minNum = prices[<span class="number">0</span>]</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt; <span class="built_in">len</span>(prices); i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> minNum &gt;= prices[i] || prices[i] &lt; prices[i<span class="number">-1</span>] &#123;</span><br><span class="line">			minNum = prices[i]</span><br><span class="line">			Sum += maxSum</span><br><span class="line">			maxSum = <span class="number">0</span></span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> maxSum &lt; prices[i]-minNum &#123;</span><br><span class="line">			maxSum = prices[i] - minNum</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> maxSum != <span class="number">0</span> &#123;</span><br><span class="line">		Sum += maxSum</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> Sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&lt;++&gt;</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/12/leetcode/169-majority-element/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/12/leetcode/169-majority-element/" itemprop="url">169-majority-element</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-12T20:04:15+08:00">
+                2020-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="多组元素"><a href="#多组元素" class="headerlink" title="多组元素"></a>多组元素</h2><p><a href="https://leetcode-cn.com/problems/majority-element/" target="_blank" rel="noopener">题目链接</a> </p>
+<h3 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h3><p>这个题目必有人有半数人以上得票, 所以可以用摩尔投票法进行操作。对每两个不同的元素相消, 最后可以得到一个数即为数组中多于半数的数值, 这题还有个投机取巧的方法就是快排后在取数组前半部分的任意值</p>
+<h4 id="摩尔投票法"><a href="#摩尔投票法" class="headerlink" title="摩尔投票法"></a>摩尔投票法</h4><p>摩尔投票算法是一种使用线性时间和常数空间查找大部分元素序列的算法。它以1981年出版的Robert S. Boyer和J Strother Moore的名字命名，并且是流式算法的典型例子。</p>
+<p>最简单的形式就是，查找输入中重复出现超过一半以上(n/2)的元素。如果序列中没有这种元素，算法不能检测到正确结果，将输出其中的一个元素之一。如果不能保证输入数据中有占有一半以上的元素，需要再遍历一下验证。</p>
+<h3 id="go语言实现"><a href="#go语言实现" class="headerlink" title="go语言实现"></a>go语言实现</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">majorityElement</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> maxNum, count <span class="keyword">int</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(nums); i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> count == <span class="number">0</span> &#123;</span><br><span class="line">			maxNum = nums[i]</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> maxNum == nums[i] &#123;</span><br><span class="line">			count++</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			count--</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> maxNum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="投机取巧方法"><a href="#投机取巧方法" class="headerlink" title="投机取巧方法"></a>投机取巧方法</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">majorityElementEasy</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	sort.Ints(nums)</span><br><span class="line">	<span class="keyword">return</span> nums[<span class="number">0</span>] <span class="comment">//0--len(nums)/2 都可以</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/12/leetcode/9-palindrome-number/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2566,988 +2858,6 @@ a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+...+ab^{n-2}+b^{n-1})</script><p><br></p>
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/English/EnglishWord/%E8%8B%B1%E8%AF%AD2018%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ysx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ysxBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/11/English/EnglishWord/%E8%8B%B1%E8%AF%AD2018%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/" itemprop="url">英语2018真题单词</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-11T12:52:36+08:00">
-                2020-02-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index">
-                    <span itemprop="name">英语真题单词</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <div class="table-container">
-<table>
-<thead>
-<tr>
-<th>单词</th>
-<th>意思</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>in demand= wanted</td>
-<td>被需要</td>
-</tr>
-<tr>
-<td>surface n.</td>
-<td>表面；表层</td>
-</tr>
-<tr>
-<td>release n.</td>
-<td>释放；发布</td>
-</tr>
-<tr>
-<td>describe v.</td>
-<td>描述，形容</td>
-</tr>
-<tr>
-<td>forum n.</td>
-<td>论坛，讨论会</td>
-</tr>
-<tr>
-<td>shortage n.</td>
-<td>缺乏，缺少</td>
-</tr>
-<tr>
-<td>infrastructure n.</td>
-<td>基础设施</td>
-</tr>
-<tr>
-<td>moisture n.</td>
-<td>水分；湿度</td>
-</tr>
-<tr>
-<td>proposal n.</td>
-<td>提议，建议</td>
-</tr>
-<tr>
-<td>insufficient adj.</td>
-<td>不足的，不充足的</td>
-</tr>
-<tr>
-<td>consumption n.</td>
-<td>消费；消耗</td>
-</tr>
-<tr>
-<td>artificial adj.</td>
-<td>人造的；仿造的</td>
-</tr>
-<tr>
-<td>sustain v.</td>
-<td>维持；支撑</td>
-</tr>
-<tr>
-<td>elusive adj.</td>
-<td>难懂的；难捉摸的</td>
-</tr>
-<tr>
-<td>introvert n.</td>
-<td>内向的人</td>
-</tr>
-<tr>
-<td>reserved adj.</td>
-<td>保留的；冷淡的；高冷的</td>
-</tr>
-<tr>
-<td>guarded adj.</td>
-<td>谨慎的；警戒着的</td>
-</tr>
-<tr>
-<td>appreciate v.</td>
-<td>欣赏；感激</td>
-</tr>
-<tr>
-<td>trick n.</td>
-<td>窍门；花招</td>
-</tr>
-<tr>
-<td>passion n.</td>
-<td>激情；热情</td>
-</tr>
-<tr>
-<td>reveal v.</td>
-<td>透露；揭露</td>
-</tr>
-<tr>
-<td>fascinating adj.</td>
-<td>迷人的；吸引人的</td>
-</tr>
-<tr>
-<td>monarch n.</td>
-<td>君主，帝王</td>
-</tr>
-<tr>
-<td>beloved adj.</td>
-<td>心爱的；挚爱的</td>
-</tr>
-<tr>
-<td>frustrating adj.</td>
-<td>令人沮丧的</td>
-</tr>
-<tr>
-<td>aspiring adj.</td>
-<td>有抱负的</td>
-</tr>
-<tr>
-<td>trait n.</td>
-<td>特性，特点</td>
-</tr>
-<tr>
-<td>pessimistic adj.</td>
-<td>悲观的，厌世的</td>
-</tr>
-<tr>
-<td>vision n.</td>
-<td>眼力；想象力</td>
-</tr>
-<tr>
-<td>magical adj.</td>
-<td>魔术的；有魔力的</td>
-</tr>
-<tr>
-<td>witness  v.</td>
-<td>目击</td>
-</tr>
-<tr>
-<td>funding n.</td>
-<td>提供资金</td>
-</tr>
-<tr>
-<td>map v.</td>
-<td>计划；绘制地图</td>
-</tr>
-<tr>
-<td>frenzied adj.</td>
-<td>疯狂的；狂乱的</td>
-</tr>
-<tr>
-<td>similarity n.</td>
-<td>类似；相似点</td>
-</tr>
-<tr>
-<td>tunnel n.</td>
-<td>隧道</td>
-</tr>
-<tr>
-<td>initial adj.</td>
-<td>最初的</td>
-</tr>
-<tr>
-<td>focal adj.</td>
-<td>焦点的，在焦点上的</td>
-</tr>
-<tr>
-<td>fortress n.</td>
-<td>堡垒；要塞</td>
-</tr>
-<tr>
-<td>massive adj.</td>
-<td>大量的；巨大的</td>
-</tr>
-<tr>
-<td>intricate adj.</td>
-<td>复杂的；错综的</td>
-</tr>
-<tr>
-<td>astronaut n.</td>
-<td>宇航员，航天员</td>
-</tr>
-<tr>
-<td>manage to</td>
-<td>设法；达成</td>
-</tr>
-<tr>
-<td>navigate v.</td>
-<td>驾驶；航行</td>
-</tr>
-<tr>
-<td>board v.</td>
-<td>上（飞机、车、船等）</td>
-</tr>
-<tr>
-<td>book v.</td>
-<td>预订；登记</td>
-</tr>
-<tr>
-<td>hassle n.</td>
-<td>困难；麻烦</td>
-</tr>
-<tr>
-<td>quality adj.</td>
-<td>优质的；高品质的</td>
-</tr>
-<tr>
-<td>awake adj.</td>
-<td>醒着的</td>
-</tr>
-<tr>
-<td>natural adj.</td>
-<td>自然的;本能的</td>
-</tr>
-<tr>
-<td>alleviate v.</td>
-<td>减轻；缓和</td>
-</tr>
-<tr>
-<td>equilibrium n.</td>
-<td>均衡；平静</td>
-</tr>
-<tr>
-<td>susceptible adj.</td>
-<td>易受影响的</td>
-</tr>
-<tr>
-<td>infection n.</td>
-<td>影响</td>
-</tr>
-<tr>
-<td>altitude n.</td>
-<td>高度；海拔</td>
-</tr>
-<tr>
-<td>dull adj.</td>
-<td>钝的；迟钝的</td>
-</tr>
-<tr>
-<td>terminal  n.</td>
-<td>集散站，终点站</td>
-</tr>
-<tr>
-<td>symptoms n</td>
-<td>症状；症候</td>
-</tr>
-<tr>
-<td>amuse v.</td>
-<td>娱乐；消遣</td>
-</tr>
-<tr>
-<td>stretch v.</td>
-<td>消耗（金钱，时间）</td>
-</tr>
-<tr>
-<td>specialist n.</td>
-<td>专家</td>
-</tr>
-<tr>
-<td>proposition n.</td>
-<td>提议；主题</td>
-</tr>
-<tr>
-<td>property n.</td>
-<td>性质，性能</td>
-</tr>
-<tr>
-<td>discount n.</td>
-<td>折扣</td>
-</tr>
-<tr>
-<td>multiple adj.</td>
-<td>多重的；多样的</td>
-</tr>
-<tr>
-<td>occasionally adv.</td>
-<td>偶尔</td>
-</tr>
-<tr>
-<td>cuisine n.</td>
-<td>烹饪</td>
-</tr>
-<tr>
-<td>renowned adj.</td>
-<td>著名的；有声望的</td>
-</tr>
-<tr>
-<td>be fond of</td>
-<td>爱好；喜爱</td>
-</tr>
-<tr>
-<td>accommodation n.</td>
-<td>住处，膳宿</td>
-</tr>
-<tr>
-<td>tangle v.</td>
-<td>使纠缠；处于混乱状态</td>
-</tr>
-<tr>
-<td>obligation n.</td>
-<td>义务；职责</td>
-</tr>
-<tr>
-<td>alienate v.</td>
-<td>使疏远，离间</td>
-</tr>
-<tr>
-<td>entire adj.</td>
-<td>全部的</td>
-</tr>
-<tr>
-<td>bratty adj.</td>
-<td>讨厌的</td>
-</tr>
-<tr>
-<td>responsibility n.</td>
-<td>责任，职责</td>
-</tr>
-<tr>
-<td>dismiss v.</td>
-<td>解散；解雇</td>
-</tr>
-<tr>
-<td>specific adj.</td>
-<td>特殊的;明确的</td>
-</tr>
-<tr>
-<td>refugee n.</td>
-<td>难民，避难者</td>
-</tr>
-<tr>
-<td>filter v.</td>
-<td>滤过；渗入</td>
-</tr>
-<tr>
-<td>strategist n.</td>
-<td>战略家；军事家</td>
-</tr>
-<tr>
-<td>interior adj.</td>
-<td>内部的</td>
-</tr>
-<tr>
-<td>annoyance n.</td>
-<td>烦恼；可厌之事</td>
-</tr>
-<tr>
-<td>cater v.</td>
-<td>投合，迎合</td>
-</tr>
-<tr>
-<td>affiliated adj.</td>
-<td>附属的；有关连的</td>
-</tr>
-<tr>
-<td>wipe v.</td>
-<td>擦；消除</td>
-</tr>
-<tr>
-<td>undertake v.</td>
-<td>承担;保证</td>
-</tr>
-<tr>
-<td>recognize v.</td>
-<td>认出，识别</td>
-</tr>
-<tr>
-<td>invasive adj.</td>
-<td>侵略性的；攻击性的</td>
-</tr>
-<tr>
-<td>current adj.</td>
-<td>现在的；流通的</td>
-</tr>
-<tr>
-<td>ease v.</td>
-<td>减轻，缓和</td>
-</tr>
-<tr>
-<td>diagnose v.</td>
-<td>诊断；断定</td>
-</tr>
-<tr>
-<td>intervention n.</td>
-<td>介入；调停</td>
-</tr>
-<tr>
-<td>detect  v.</td>
-<td>探测</td>
-</tr>
-<tr>
-<td>originate v.</td>
-<td>发源；引起</td>
-</tr>
-<tr>
-<td>flourish n.</td>
-<td>兴旺；繁荣</td>
-</tr>
-<tr>
-<td>throughout   prep.</td>
-<td>贯穿;遍及</td>
-</tr>
-<tr>
-<td>compete v.</td>
-<td>竞争；比赛</td>
-</tr>
-<tr>
-<td>cognitive adj.</td>
-<td>认知的，认识的</td>
-</tr>
-<tr>
-<td>sensation n.</td>
-<td>感觉</td>
-</tr>
-<tr>
-<td>insight n.</td>
-<td>洞察力；洞悉</td>
-</tr>
-<tr>
-<td>weapon n.</td>
-<td>武器，兵器</td>
-</tr>
-<tr>
-<td>autonomous adj.</td>
-<td>自治的；自主的</td>
-</tr>
-<tr>
-<td>exhibit v.</td>
-<td>展览；显示</td>
-</tr>
-<tr>
-<td>military adj.</td>
-<td>军事的</td>
-</tr>
-<tr>
-<td>stupidity n.</td>
-<td>愚蠢</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/English/EnglishWord/%E8%8B%B1%E8%AF%AD2017%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ysx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ysxBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/11/English/EnglishWord/%E8%8B%B1%E8%AF%AD2017%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/" itemprop="url">英语2017真题单词</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-11T12:52:27+08:00">
-                2020-02-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index">
-                    <span itemprop="name">英语真题单词</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <div class="table-container">
-<table>
-<thead>
-<tr>
-<th>单词</th>
-<th>意思</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>heighten v.</td>
-<td>提高；加强</td>
-</tr>
-<tr>
-<td>suicide  n&amp;v.</td>
-<td>自杀</td>
-</tr>
-<tr>
-<td>addict  v.</td>
-<td>使沉溺；使上瘾</td>
-</tr>
-<tr>
-<td>mild  adj.</td>
-<td>温和的；轻微的</td>
-</tr>
-<tr>
-<td>squeeze v.</td>
-<td>挤；压榨</td>
-</tr>
-<tr>
-<td>regardless adv.</td>
-<td>不管怎样，无论如何</td>
-</tr>
-<tr>
-<td>justify v.</td>
-<td>证明…是正当的；替…辩护</td>
-</tr>
-<tr>
-<td>cure v.</td>
-<td>治愈</td>
-</tr>
-<tr>
-<td>hostile adj.</td>
-<td>敌对的；怀敌意的</td>
-</tr>
-<tr>
-<td>tough adj.</td>
-<td>不屈不挠的；坚硬的</td>
-</tr>
-<tr>
-<td>decline v.</td>
-<td>下降</td>
-</tr>
-<tr>
-<td>emerged v.</td>
-<td>浮现；摆脱</td>
-</tr>
-<tr>
-<td>narrative n.</td>
-<td>故事；讲述</td>
-</tr>
-<tr>
-<td>grasp v.</td>
-<td>抓住</td>
-</tr>
-<tr>
-<td>biologist n.</td>
-<td>生物学家</td>
-</tr>
-<tr>
-<td>melt v.</td>
-<td>融化</td>
-</tr>
-<tr>
-<td>track v.</td>
-<td>追踪</td>
-</tr>
-<tr>
-<td>dip n.</td>
-<td>下沉，下降</td>
-</tr>
-<tr>
-<td>rarely adv.</td>
-<td>很少地；难得</td>
-</tr>
-<tr>
-<td>picture  v.</td>
-<td>画；描写</td>
-</tr>
-<tr>
-<td>creature n.</td>
-<td>动物，生物</td>
-</tr>
-<tr>
-<td>emphasize v.</td>
-<td>强调，着重</td>
-</tr>
-<tr>
-<td>numerous adj.</td>
-<td>许多的，很多的</td>
-</tr>
-<tr>
-<td>operation n.</td>
-<td>操作；经营</td>
-</tr>
-<tr>
-<td>coordination n.</td>
-<td>协调，调和</td>
-</tr>
-<tr>
-<td>dedicate v.</td>
-<td>奉献</td>
-</tr>
-<tr>
-<td>cohesive adj.</td>
-<td>紧密结合的</td>
-</tr>
-<tr>
-<td>colonial adj.</td>
-<td>殖民地的，殖民的</td>
-</tr>
-<tr>
-<td>precede v.</td>
-<td>在…之前</td>
-</tr>
-<tr>
-<td>bondage n.</td>
-<td>奴役</td>
-</tr>
-<tr>
-<td>courageous adj.</td>
-<td>有胆量的，勇敢的</td>
-</tr>
-<tr>
-<td>flee v.</td>
-<td>逃离</td>
-</tr>
-<tr>
-<td>guaranteed adj.</td>
-<td>有保证的；有人担保的</td>
-</tr>
-<tr>
-<td>debate n.</td>
-<td>辩论；辩论会</td>
-</tr>
-<tr>
-<td>weigh v.</td>
-<td>权衡；考虑</td>
-</tr>
-<tr>
-<td>academic adj.</td>
-<td>学术的</td>
-</tr>
-<tr>
-<td>dishonesty n.</td>
-<td>不诚实；欺诈</td>
-</tr>
-<tr>
-<td>crisis n.</td>
-<td>危机；危险期</td>
-</tr>
-<tr>
-<td>dean n.</td>
-<td>院长</td>
-</tr>
-<tr>
-<td>compose v.</td>
-<td>构成</td>
-</tr>
-<tr>
-<td>concrete adj.</td>
-<td>具体的</td>
-</tr>
-<tr>
-<td>highlight v.</td>
-<td>突出；强调</td>
-</tr>
-<tr>
-<td>attire n.</td>
-<td>服装;打扮</td>
-</tr>
-<tr>
-<td>appropriate adj.</td>
-<td>适当的；恰当的</td>
-</tr>
-<tr>
-<td>shady adj.</td>
-<td>成荫的</td>
-</tr>
-<tr>
-<td>bump n.</td>
-<td>肿块，隆起物</td>
-</tr>
-<tr>
-<td>edible adj.</td>
-<td>可食用的</td>
-</tr>
-<tr>
-<td>exclaim v.</td>
-<td>大声叫嚷</td>
-</tr>
-<tr>
-<td>surround v.</td>
-<td>围绕；包围</td>
-</tr>
-<tr>
-<td>beam v.</td>
-<td>发送</td>
-</tr>
-<tr>
-<td>miserable adj.</td>
-<td>悲惨的；痛苦的</td>
-</tr>
-<tr>
-<td>fable n.</td>
-<td>寓言</td>
-</tr>
-<tr>
-<td>outlasting v.</td>
-<td>比…长久；从…中逃生</td>
-</tr>
-<tr>
-<td>perseverance n.</td>
-<td>耐性；毅力</td>
-</tr>
-<tr>
-<td>maturity n.</td>
-<td>成熟</td>
-</tr>
-<tr>
-<td>vulnerable adj.</td>
-<td>易受伤害的</td>
-</tr>
-<tr>
-<td>severity n.</td>
-<td>严重；严格</td>
-</tr>
-<tr>
-<td>concerted adj.</td>
-<td>协调的；协定的</td>
-</tr>
-<tr>
-<td>conservation n.</td>
-<td>保存，保持</td>
-</tr>
-<tr>
-<td>extinct adj.</td>
-<td>灭绝的，绝种的</td>
-</tr>
-<tr>
-<td>armored adj.</td>
-<td>装甲的</td>
-</tr>
-<tr>
-<td>astound v.</td>
-<td>使惊骇；使震惊</td>
-</tr>
-<tr>
-<td>tempt v.</td>
-<td>诱惑；使感兴趣</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3598,7 +2908,7 @@ a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+...+ab^{n-2}+b^{n-1})</script><p><br></p>
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">68</span>
+                  <span class="site-state-item-count">70</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
