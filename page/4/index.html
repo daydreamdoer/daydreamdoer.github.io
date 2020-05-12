@@ -259,6 +259,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/12/leetcode/9-palindrome-number/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/12/leetcode/9-palindrome-number/" itemprop="url">9-palindrome-number</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-12T18:04:23+08:00">
+                2020-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://leetcode-cn.com/problems/palindrome-number/" target="_blank" rel="noopener">题目链接</a> </p>
+<h2 id="回文数字"><a href="#回文数字" class="headerlink" title="回文数字"></a>回文数字</h2><p>这题比较简单，直接转成字符串然后判断对应回文位置的正确即可</p>
+<h3 id="go-解法"><a href="#go-解法" class="headerlink" title="go 解法"></a>go 解法</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isPalindrome</span><span class="params">(x <span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> x &lt; <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> s <span class="keyword">string</span> = strconv.Itoa(x)</span><br><span class="line">	slen := <span class="built_in">len</span>(s)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; slen/<span class="number">2</span>; i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> s[i] != s[slen-i<span class="number">-1</span>] &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/12/leetcode/121-best-time-to-buy-and-sell-stock/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -506,60 +650,256 @@
 </thead>
 <tbody>
 <tr>
-<td>Indian Ocean</td>
-<td>印度洋</td>
+<td>Arctic</td>
+<td>北冰洋</td>
 </tr>
 <tr>
 <td>Atlantic Ocean</td>
 <td>大西洋</td>
 </tr>
 <tr>
+<td>Indian Ocean</td>
+<td>印度洋</td>
+</tr>
+<tr>
 <td>Pacific Ocean</td>
 <td>太平洋</td>
 </tr>
 <tr>
-<td>Arctic</td>
-<td>北冰洋</td>
+<td>absent-minded</td>
+<td>健忘的</td>
 </tr>
 <tr>
-<td>range from to to</td>
-<td>范围包括 …到…</td>
+<td>aim at</td>
+<td>目的在于</td>
 </tr>
 <tr>
-<td>sparingly</td>
-<td>节约，很少</td>
+<td>apologize for</td>
+<td>为什么道歉</td>
 </tr>
 <tr>
-<td>spare</td>
-<td>v. 节约， 救命， 出让， adj, 空闲，备用，简陋的</td>
+<td>apparent</td>
+<td>显而易见的</td>
 </tr>
 <tr>
-<td>devour</td>
-<td>吞没,狼吞虎咽</td>
+<td>at the sight of</td>
+<td>一看见</td>
 </tr>
 <tr>
-<td>quiescent</td>
-<td>静止</td>
+<td>at the speed of</td>
+<td>以。。。的数度</td>
 </tr>
 <tr>
-<td>spoil</td>
-<td>破坏,宠爱</td>
+<td>automatic</td>
+<td>自动的</td>
 </tr>
 <tr>
-<td>condemnation</td>
-<td>谴责</td>
+<td>be  content with</td>
+<td>对…满意</td>
 </tr>
 <tr>
 <td>be beneficial to / be benefit from</td>
 <td>从什么收益</td>
 </tr>
 <tr>
-<td>shorthand</td>
-<td>速写，简称</td>
+<td>be crazy about</td>
+<td>对什么痴迷</td>
 </tr>
 <tr>
-<td>absent-minded</td>
-<td>健忘的</td>
+<td>be grateful to</td>
+<td>对…感激</td>
+</tr>
+<tr>
+<td>be impressed with</td>
+<td>对…影响深刻</td>
+</tr>
+<tr>
+<td>be particular about</td>
+<td>对…挑剔</td>
+</tr>
+<tr>
+<td>be remote from</td>
+<td>远离…</td>
+</tr>
+<tr>
+<td>be responsible for</td>
+<td>对…负责</td>
+</tr>
+<tr>
+<td>be separate with</td>
+<td>与…分割</td>
+</tr>
+<tr>
+<td>be sick/tired of</td>
+<td>厌倦</td>
+</tr>
+<tr>
+<td>be skillful at</td>
+<td>对…熟练</td>
+</tr>
+<tr>
+<td>be suitable for</td>
+<td>适合于</td>
+</tr>
+<tr>
+<td>be sure of</td>
+<td>确信</td>
+</tr>
+<tr>
+<td>be tired from</td>
+<td>因…疲劳</td>
+</tr>
+<tr>
+<td>betrayal</td>
+<td>背叛</td>
+</tr>
+<tr>
+<td>bid</td>
+<td>n.出价 v.出价</td>
+</tr>
+<tr>
+<td>boast about</td>
+<td>吹嘘</td>
+</tr>
+<tr>
+<td>break in</td>
+<td>闯入,插话</td>
+</tr>
+<tr>
+<td>bring in</td>
+<td>挣到</td>
+</tr>
+<tr>
+<td>come up with</td>
+<td>想出(计划,回答);作出反应;产生</td>
+</tr>
+<tr>
+<td>competitive/intense job market</td>
+<td>竞争强烈的工作市场</td>
+</tr>
+<tr>
+<td>condemnation</td>
+<td>谴责</td>
+</tr>
+<tr>
+<td>consistently</td>
+<td>一向</td>
+</tr>
+<tr>
+<td>contend</td>
+<td>竞争</td>
+</tr>
+<tr>
+<td>contending</td>
+<td>争论</td>
+</tr>
+<tr>
+<td>content</td>
+<td>内容</td>
+</tr>
+<tr>
+<td>convince sb of sth</td>
+<td>使某人相信某事</td>
+</tr>
+<tr>
+<td>cut down</td>
+<td>砍伐</td>
+</tr>
+<tr>
+<td>cut off</td>
+<td>切断</td>
+</tr>
+<tr>
+<td>deliberate</td>
+<td>故意的</td>
+</tr>
+<tr>
+<td>devour</td>
+<td>吞没,狼吞虎咽</td>
+</tr>
+<tr>
+<td>die away</td>
+<td>逐渐消失</td>
+</tr>
+<tr>
+<td>do away with</td>
+<td>废除;消灭;去掉;涤除</td>
+</tr>
+<tr>
+<td>effort</td>
+<td>努力</td>
+</tr>
+<tr>
+<td>eventually</td>
+<td>最终的</td>
+</tr>
+<tr>
+<td>flee away</td>
+<td>逃离</td>
+</tr>
+<tr>
+<td>flour</td>
+<td>面粉</td>
+</tr>
+<tr>
+<td>generously</td>
+<td>大方</td>
+</tr>
+<tr>
+<td>get away</td>
+<td>逃离</td>
+</tr>
+<tr>
+<td>give away</td>
+<td>赠送，泄露</td>
+</tr>
+<tr>
+<td>give back</td>
+<td>归还</td>
+</tr>
+<tr>
+<td>give rise to</td>
+<td>引起</td>
+</tr>
+<tr>
+<td>glance at</td>
+<td>匆匆一瞥</td>
+</tr>
+<tr>
+<td>in addition to</td>
+<td>另外</td>
+</tr>
+<tr>
+<td>inconsistent</td>
+<td>不一致</td>
+</tr>
+<tr>
+<td>intensity</td>
+<td>强度</td>
+</tr>
+<tr>
+<td>left over</td>
+<td>留下</td>
+</tr>
+<tr>
+<td>let down</td>
+<td>使失望</td>
+</tr>
+<tr>
+<td>live up to</td>
+<td>达到高度,不辜负,实行</td>
+</tr>
+<tr>
+<td>look/watch out</td>
+<td>小心</td>
+</tr>
+<tr>
+<td>make fortune /make money</td>
+<td>赚钱</td>
+</tr>
+<tr>
+<td>make fun of</td>
+<td>开玩笑</td>
 </tr>
 <tr>
 <td>no longer</td>
@@ -573,335 +913,139 @@
 <td>神经</td>
 </tr>
 <tr>
-<td>thirst</td>
-<td>渴望,渴的</td>
-</tr>
-<tr>
-<td>skinny</td>
-<td>瘦的</td>
-</tr>
-<tr>
-<td>betrayal</td>
-<td>背叛</td>
-</tr>
-<tr>
-<td>take …for</td>
-<td>认为</td>
-</tr>
-<tr>
-<td>take in</td>
-<td>吸收,欺骗</td>
-</tr>
-<tr>
-<td>bring in</td>
-<td>挣到</td>
-</tr>
-<tr>
-<td>thrilled</td>
-<td>兴奋的，恐惧的</td>
-</tr>
-<tr>
-<td>left over</td>
-<td>留下</td>
-</tr>
-<tr>
-<td>give back</td>
-<td>归还</td>
-</tr>
-<tr>
-<td>make fortune /make money</td>
-<td>赚钱</td>
-</tr>
-<tr>
-<td>what goes around comes around</td>
-<td>种瓜得瓜</td>
-</tr>
-<tr>
-<td>be grateful to</td>
-<td>对…感激</td>
-</tr>
-<tr>
-<td>be  content with</td>
-<td>对…满意</td>
-</tr>
-<tr>
-<td>convince sb of sth</td>
-<td>使某人相信某事</td>
-</tr>
-<tr>
-<td>in addition to</td>
-<td>另外</td>
-</tr>
-<tr>
-<td>be separate with</td>
-<td>与…分割</td>
-</tr>
-<tr>
-<td>vote for</td>
-<td>投…票</td>
-</tr>
-<tr>
-<td>be remote from</td>
-<td>远离…</td>
-</tr>
-<tr>
-<td>break in</td>
-<td>闯入,插话</td>
-</tr>
-<tr>
-<td>be sure of</td>
-<td>确信</td>
-</tr>
-<tr>
-<td>cut off</td>
-<td>切断</td>
-</tr>
-<tr>
-<td>boast about</td>
-<td>吹嘘</td>
-</tr>
-<tr>
-<td>get away</td>
-<td>逃离</td>
-</tr>
-<tr>
-<td>die away</td>
-<td>逐渐消失</td>
-</tr>
-<tr>
-<td>turn down</td>
-<td>拆毁,调小</td>
-</tr>
-<tr>
-<td>stand for</td>
-<td>代表</td>
-</tr>
-<tr>
-<td>come up with</td>
-<td>想出(计划,回答);作出反应;产生</td>
-</tr>
-<tr>
-<td>do away with</td>
-<td>废除;消灭;去掉;涤除</td>
-</tr>
-<tr>
-<td>live up to</td>
-<td>达到高度,不辜负,实行</td>
-</tr>
-<tr>
-<td>give rise to</td>
-<td>引起</td>
-</tr>
-<tr>
-<td>be impressed with</td>
-<td>对…影响深刻</td>
-</tr>
-<tr>
-<td>take on</td>
-<td>雇佣</td>
-</tr>
-<tr>
-<td>make fun of</td>
-<td>开玩笑</td>
+<td>pay a visit to</td>
+<td>访问</td>
 </tr>
 <tr>
 <td>pay off</td>
 <td>付清</td>
 </tr>
 <tr>
-<td>eventually</td>
-<td>最终的</td>
-</tr>
-<tr>
-<td>unfortunately</td>
-<td>不幸的</td>
-</tr>
-<tr>
-<td>generously</td>
-<td>大方</td>
-</tr>
-<tr>
-<td>purposefully</td>
-<td>有目的的</td>
-</tr>
-<tr>
-<td>deliberate</td>
-<td>故意的</td>
-</tr>
-<tr>
-<td>inconsistent</td>
-<td>不一致</td>
-</tr>
-<tr>
-<td>contending</td>
-<td>争论</td>
-</tr>
-<tr>
-<td>prevent sb from doing sth</td>
-<td>阻止某人做某事</td>
+<td>persist in</td>
+<td>坚持</td>
 </tr>
 <tr>
 <td>prevent + N</td>
 <td>预防某事</td>
 </tr>
 <tr>
+<td>prevent sb from doing sth</td>
+<td>阻止某人做某事</td>
+</tr>
+<tr>
 <td>provoke</td>
 <td>激发，引起</td>
 </tr>
 <tr>
-<td>seriously</td>
-<td>认真的,严肃的</td>
-</tr>
-<tr>
-<td>consistently</td>
-<td>一向</td>
-</tr>
-<tr>
-<td>automatic</td>
-<td>自动的</td>
-</tr>
-<tr>
-<td>apparent</td>
-<td>显而易见的</td>
-</tr>
-<tr>
-<td>content</td>
-<td>内容</td>
-</tr>
-<tr>
-<td>effort</td>
-<td>努力</td>
-</tr>
-<tr>
-<td>contend</td>
-<td>竞争</td>
-</tr>
-<tr>
-<td>flour</td>
-<td>面粉</td>
-</tr>
-<tr>
-<td>intensity</td>
-<td>强度</td>
-</tr>
-<tr>
-<td>rationally</td>
-<td>理性的</td>
-</tr>
-<tr>
-<td>ration</td>
-<td>定量</td>
-</tr>
-<tr>
-<td>competitive/intense job market</td>
-<td>竞争强烈的工作市场</td>
-</tr>
-<tr>
-<td>bid</td>
-<td>n.出价 v.出价</td>
-</tr>
-<tr>
-<td>be crazy about</td>
-<td>对什么痴迷</td>
-</tr>
-<tr>
-<td>glance at</td>
-<td>匆匆一瞥</td>
-</tr>
-<tr>
-<td>throw away</td>
-<td>扔掉</td>
+<td>purposefully</td>
+<td>有目的的</td>
 </tr>
 <tr>
 <td>put down</td>
 <td>写下</td>
 </tr>
 <tr>
-<td>be suitable for</td>
-<td>适合于</td>
-</tr>
-<tr>
 <td>put through</td>
 <td>接通电话，完成</td>
 </tr>
 <tr>
-<td>be sick/tired of</td>
-<td>厌倦</td>
+<td>quiescent</td>
+<td>静止</td>
 </tr>
 <tr>
-<td>look/watch out</td>
-<td>小心</td>
+<td>range from to to</td>
+<td>范围包括 …到…</td>
 </tr>
 <tr>
-<td>take advantage of</td>
-<td>利用</td>
+<td>ration</td>
+<td>定量</td>
 </tr>
 <tr>
-<td>pay a visit to</td>
-<td>访问</td>
+<td>rationally</td>
+<td>理性的</td>
 </tr>
 <tr>
-<td>at the sight of</td>
-<td>一看见</td>
-</tr>
-<tr>
-<td>cut down</td>
-<td>砍伐</td>
-</tr>
-<tr>
-<td>be responsible for</td>
-<td>对…负责</td>
-</tr>
-<tr>
-<td>be tired from</td>
-<td>因…疲劳</td>
-</tr>
-<tr>
-<td>persist in</td>
-<td>坚持</td>
-</tr>
-<tr>
-<td>be particular about</td>
-<td>对…挑剔</td>
-</tr>
-<tr>
-<td>be skillful at</td>
-<td>对…熟练</td>
-</tr>
-<tr>
-<td>aim at</td>
-<td>目的在于</td>
-</tr>
-<tr>
-<td>give away</td>
-<td>赠送，泄露</td>
-</tr>
-<tr>
-<td>let down</td>
-<td>使失望</td>
-</tr>
-<tr>
-<td>at the speed of</td>
-<td>以。。。的数度</td>
-</tr>
-<tr>
-<td>flee away</td>
-<td>逃离</td>
+<td>seriously</td>
+<td>认真的,严肃的</td>
 </tr>
 <tr>
 <td>set down</td>
 <td>指定，记下</td>
 </tr>
 <tr>
-<td>apologize for</td>
-<td>为什么道歉</td>
+<td>shorthand</td>
+<td>速写，简称</td>
+</tr>
+<tr>
+<td>skinny</td>
+<td>瘦的</td>
+</tr>
+<tr>
+<td>spare</td>
+<td>v. 节约， 救命， 出让， adj, 空闲，备用，简陋的</td>
+</tr>
+<tr>
+<td>sparingly</td>
+<td>节约，很少</td>
+</tr>
+<tr>
+<td>spoil</td>
+<td>破坏,宠爱</td>
+</tr>
+<tr>
+<td>stand for</td>
+<td>代表</td>
+</tr>
+<tr>
+<td>take …for</td>
+<td>认为</td>
+</tr>
+<tr>
+<td>take advantage of</td>
+<td>利用</td>
+</tr>
+<tr>
+<td>take in</td>
+<td>吸收,欺骗</td>
+</tr>
+<tr>
+<td>take on</td>
+<td>雇佣</td>
+</tr>
+<tr>
+<td>thirst</td>
+<td>渴望,渴的</td>
+</tr>
+<tr>
+<td>thrilled</td>
+<td>兴奋的，恐惧的</td>
+</tr>
+<tr>
+<td>throw away</td>
+<td>扔掉</td>
+</tr>
+<tr>
+<td>turn down</td>
+<td>拆毁,调小</td>
+</tr>
+<tr>
+<td>unfortunately</td>
+<td>不幸的</td>
 </tr>
 <tr>
 <td>up to now</td>
 <td>至今</td>
 </tr>
 <tr>
-<td>&lt;++&gt;</td>
+<td>vote for</td>
+<td>投…票</td>
+</tr>
+<tr>
+<td>what goes around comes around</td>
+<td>种瓜得瓜</td>
+</tr>
+<tr>
+<td></td>
 <td>&lt;++&gt;</td>
 </tr>
 <tr>
@@ -1578,6 +1722,26 @@
 <li><p>省略if的虚拟语气用到装</p>
 <ul>
 <li>had you obeyed my instructive at the outset, you could have passed the examination</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Not until he could sing , (did he register for the talent show)</p>
+</li>
+<li><p>Only when he grow up ,(did he take part in the driving test)</p>
+</li>
+<li><p>(So passionate was she about dance ) ,that she couldn’t give it up.</p>
+</li>
+<li><p>I has never seem him cry, neither have I seem him smile.</p>
+</li>
+<li><p>( Had he obeyed the school rules ) , he wouldn’t have been punished</p>
+<ul>
+<li>If he had obeyed the school rules</li>
+</ul>
+</li>
+<li><p>Curious ( about the life of rich as she was ).</p>
+<ul>
+<li>As she was curious about the life of the rich</li>
 </ul>
 </li>
 </ul>
@@ -3404,379 +3568,6 @@ a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+...+ab^{n-2}+b^{n-1})</script><p><br></p>
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/English/EnglishWord/%E8%8B%B1%E8%AF%AD2016%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ysx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ysxBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/11/English/EnglishWord/%E8%8B%B1%E8%AF%AD2016%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/" itemprop="url">英语2016真题单词</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-11T12:52:21+08:00">
-                2020-02-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index">
-                    <span itemprop="name">英语真题单词</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <div class="table-container">
-<table>
-<thead>
-<tr>
-<th>单词</th>
-<th>意思</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>lay v.</td>
-<td>搁放；放置</td>
-</tr>
-<tr>
-<td>acquaintance n.</td>
-<td>相识的人</td>
-</tr>
-<tr>
-<td>capture v.</td>
-<td>捕捉，拍摄</td>
-</tr>
-<tr>
-<td>quicksilver n.</td>
-<td>变化莫测的事物</td>
-</tr>
-<tr>
-<td>personality n.</td>
-<td>个性；品格</td>
-</tr>
-<tr>
-<td>radiate v.</td>
-<td>传播；流露</td>
-</tr>
-<tr>
-<td>arrogance n.</td>
-<td>自大；傲慢态度</td>
-</tr>
-<tr>
-<td>boyishness n.</td>
-<td>孩子气；幼稚</td>
-</tr>
-<tr>
-<td>awkwardness n.</td>
-<td>尴尬；笨拙</td>
-</tr>
-<tr>
-<td>sketch n.</td>
-<td>素描；略图</td>
-</tr>
-<tr>
-<td>puzzled adj.</td>
-<td>困惑的；茫然的</td>
-</tr>
-<tr>
-<td>mumble v.</td>
-<td>含糊地说</td>
-</tr>
-<tr>
-<td>stare v.</td>
-<td>凝视，盯着看</td>
-</tr>
-<tr>
-<td>stimulus n.</td>
-<td>刺激；刺激物；促进因素</td>
-</tr>
-<tr>
-<td>spin v.</td>
-<td>旋转</td>
-</tr>
-<tr>
-<td>mental adj.</td>
-<td>精神的</td>
-</tr>
-<tr>
-<td>accurately adv.</td>
-<td>精确地，准确地</td>
-</tr>
-<tr>
-<td>expectation n.</td>
-<td>期待；预期</td>
-</tr>
-<tr>
-<td>peek v.</td>
-<td>窥视，偷看</td>
-</tr>
-<tr>
-<td>valve n.</td>
-<td>阀门</td>
-</tr>
-<tr>
-<td>generous adj.</td>
-<td>慷慨的，大方的</td>
-</tr>
-<tr>
-<td>string n.</td>
-<td>线，弦</td>
-</tr>
-<tr>
-<td>pluck v.</td>
-<td>拉；拽</td>
-</tr>
-<tr>
-<td>revolutionize v.</td>
-<td>发动革命；使彻底变革</td>
-</tr>
-<tr>
-<td>assembly n.</td>
-<td>装配</td>
-</tr>
-<tr>
-<td>material n.</td>
-<td>材料，原料</td>
-</tr>
-<tr>
-<td>instrument n.</td>
-<td>仪器；乐器</td>
-</tr>
-<tr>
-<td>precisely adv.</td>
-<td>精确地；恰恰</td>
-</tr>
-<tr>
-<td>rescue v&amp;n.</td>
-<td>营救；援救</td>
-</tr>
-<tr>
-<td>exhausted adj.</td>
-<td>疲惫的；耗尽的</td>
-</tr>
-<tr>
-<td>yelp v.</td>
-<td>叫喊；狗吠</td>
-</tr>
-<tr>
-<td>shiver v.</td>
-<td>颤抖</td>
-</tr>
-<tr>
-<td>scent n.</td>
-<td>气味；痕迹</td>
-</tr>
-<tr>
-<td>urgent adj.</td>
-<td>紧急的；急迫的</td>
-</tr>
-<tr>
-<td>victim n.</td>
-<td>受害人；牺牲者</td>
-</tr>
-<tr>
-<td>convey v.</td>
-<td>传达</td>
-</tr>
-<tr>
-<td>subtlety n.</td>
-<td>微妙；敏锐</td>
-</tr>
-<tr>
-<td>knead v.</td>
-<td>揉合，揉捏</td>
-</tr>
-<tr>
-<td>ethics n.</td>
-<td>伦理学；道德标准</td>
-</tr>
-<tr>
-<td>handle n.</td>
-<td>把手</td>
-</tr>
-<tr>
-<td>spread v&amp;n.</td>
-<td>传播；伸展</td>
-</tr>
-<tr>
-<td>panicked   adj.</td>
-<td>受到惊吓的</td>
-</tr>
-<tr>
-<td>agitation n.</td>
-<td>激动；搅动</td>
-</tr>
-<tr>
-<td>violent adj.</td>
-<td>暴力的；猛烈的</td>
-</tr>
-<tr>
-<td>attempt n.</td>
-<td>尝试</td>
-</tr>
-<tr>
-<td>desperately adv.</td>
-<td>拼命地；绝望地</td>
-</tr>
-<tr>
-<td>flexible adj.</td>
-<td>灵活的</td>
-</tr>
-<tr>
-<td>prescription  n.</td>
-<td>处方</td>
-</tr>
-<tr>
-<td>heal v.</td>
-<td>治疗</td>
-</tr>
-<tr>
-<td>stir v.</td>
-<td>搅动；激起</td>
-</tr>
-<tr>
-<td>enhance   v.</td>
-<td>提高；增加</td>
-</tr>
-<tr>
-<td>compassion  n.</td>
-<td>同情；怜悯</td>
-</tr>
-<tr>
-<td>remarkable adj.</td>
-<td>卓越的；非凡的</td>
-</tr>
-<tr>
-<td>master v.</td>
-<td>掌握；精通</td>
-</tr>
-<tr>
-<td>destruction n.</td>
-<td>破坏，毁灭</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3827,7 +3618,7 @@ a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+...+ab^{n-2}+b^{n-1})</script><p><br></p>
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">76</span>
+                  <span class="site-state-item-count">77</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -3838,7 +3629,7 @@ a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+...+ab^{n-2}+b^{n-1})</script><p><br></p>
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -3849,7 +3640,7 @@ a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+...+ab^{n-2}+b^{n-1})</script><p><br></p>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
