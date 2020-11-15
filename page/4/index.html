@@ -259,6 +259,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/21/Leetcode/14-longest-common-prefix/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/21/Leetcode/14-longest-common-prefix/" itemprop="url">14-longest-common-prefix</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-21T10:32:15+08:00">
+                2020-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="最大公共前缀"><a href="#最大公共前缀" class="headerlink" title="最大公共前缀"></a>最大公共前缀</h2><p><a href="https://leetcode-cn.com/problems/longest-common-prefix" target="_blank" rel="noopener">题目链接</a> </p>
+<h3 id="题目思路"><a href="#题目思路" class="headerlink" title="题目思路"></a>题目思路</h3><p>这题直接暴力算就好了，先找最少的单词数， 然后进行遍历所有字符串数组, 不同直接返回当前最长前缀，相同加上前缀</p>
+<h3 id="go解题思路"><a href="#go解题思路" class="headerlink" title="go解题思路"></a>go解题思路</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">longestCommonPrefix</span><span class="params">(strs []<span class="keyword">string</span>)</span> <span class="title">string</span></span> &#123;</span><br><span class="line">	str := <span class="string">""</span></span><br><span class="line">	m := <span class="built_in">len</span>(strs)</span><br><span class="line">	<span class="keyword">if</span> m == <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> str</span><br><span class="line">	&#125;</span><br><span class="line">	min := math.MaxInt32</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; m; i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> <span class="built_in">len</span>(strs[i]) &lt; min &#123;</span><br><span class="line">			min = <span class="built_in">len</span>(strs[i])</span><br><span class="line">			<span class="comment">// fmt.Println(min)</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; min; i++ &#123;</span><br><span class="line">		<span class="keyword">for</span> j := <span class="number">0</span>; j &lt; m; j++ &#123;</span><br><span class="line">			<span class="keyword">if</span> strs[j][i] != strs[<span class="number">0</span>][i] &#123;</span><br><span class="line">				<span class="comment">// fmt.Printf("%c %c", strs[j][i], strs[0][i])</span></span><br><span class="line">				<span class="keyword">return</span> str</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		str += <span class="keyword">string</span>(strs[<span class="number">0</span>][i])</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> str</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/20/Leetcode/8-string-to-integer-atoi/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1555,150 +1699,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/13/Leetcode/289-game-of-life/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ysx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ysxBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/04/13/Leetcode/289-game-of-life/" itemprop="url">289-game-of-life</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-13T09:33:46+08:00">
-                2020-04-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="生命游戏"><a href="#生命游戏" class="headerlink" title="生命游戏"></a>生命游戏</h2><p><a href="https://leetcode-cn.com/problems/game-of-life/submissions/" target="_blank" rel="noopener">题目链接</a> </p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>这题 所有的细胞复活和死亡式在同一时间的, 所以我们采用另一个数组来代替他下一轮的状态, 对原数组进行遍历判断周围活细胞的数量即可。 注意要判断边界，要不然会数组越界</p>
-<h3 id="go-语言实现"><a href="#go-语言实现" class="headerlink" title="go 语言实现"></a>go 语言实现</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">gameOfLife</span><span class="params">(board [][]<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	dx := []<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">-1</span>&#125;</span><br><span class="line">	dy := []<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>&#125;</span><br><span class="line">	m := <span class="built_in">len</span>(board)</span><br><span class="line">	n := <span class="built_in">len</span>(board[<span class="number">0</span>])</span><br><span class="line">	<span class="keyword">var</span> tmp = <span class="built_in">make</span>([][]<span class="keyword">int</span>, m, m)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; m; i++ &#123;</span><br><span class="line">		tmp[i] = <span class="built_in">make</span>([]<span class="keyword">int</span>, n, n)</span><br><span class="line">		<span class="keyword">for</span> j := <span class="number">0</span>; j &lt; n; j++ &#123;</span><br><span class="line">			sum := <span class="number">0</span></span><br><span class="line">			<span class="keyword">for</span> k := <span class="number">0</span>; k &lt; <span class="number">8</span>; k++ &#123;</span><br><span class="line">				tx := i + dx[k]</span><br><span class="line">				ty := j + dy[k]</span><br><span class="line">				<span class="keyword">if</span> tx &lt; <span class="number">0</span> || tx &gt;= m || ty &lt; <span class="number">0</span> || ty &gt;= n &#123;</span><br><span class="line">					<span class="keyword">continue</span></span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> board[tx][ty] == <span class="number">1</span> &#123;</span><br><span class="line">					sum++</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> board[i][j] == <span class="number">0</span> &amp;&amp; sum == <span class="number">3</span> &#123;</span><br><span class="line">				tmp[i][j] = <span class="number">1</span></span><br><span class="line">				<span class="keyword">continue</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> board[i][j] == <span class="number">1</span> &#123;</span><br><span class="line">				<span class="keyword">if</span> sum &lt; <span class="number">2</span> || sum &gt; <span class="number">3</span> &#123;</span><br><span class="line">					tmp[i][j] = <span class="number">0</span></span><br><span class="line">					<span class="keyword">continue</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			tmp[i][j] = board[i][j]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="built_in">copy</span>(board, tmp)</span><br><span class="line">	<span class="comment">//fmt.Println(tmp)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1749,7 +1749,7 @@
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">89</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1760,7 +1760,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1771,7 +1771,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
