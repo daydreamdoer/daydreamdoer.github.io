@@ -259,6 +259,163 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/26/Code/codeforces/div3/Round697/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/01/26/Code/codeforces/div3/Round697/" itemprop="url">codeforces#697(div3)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-26T21:12:00+08:00">
+                2021-01-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/codeforces/" itemprop="url" rel="index">
+                    <span itemprop="name">codeforces</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://codeforces.com/contest/1475" target="_blank" rel="noopener">比赛地址</a> </p>
+<h2 id="A-Odd-Divisor"><a href="#A-Odd-Divisor" class="headerlink" title="A. Odd Divisor"></a>A. Odd Divisor</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给一个数字然后看能否找出能整除它的奇数(1 除外)能就输出YES 不能就输出NO</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>如果是奇数直接输出YES 如果是偶数就一直除以2看是否是奇知道数字小于1 其中有奇数就输出YES 没有就输出NO ### code<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 0x3f3f3f3f;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Fep(i,a,b) for(int i=(int)(a);i&lt;=(int)(b);i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Rep(i,a,b) for(int i=(int)(a);i&gt;=(int)(b);i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> see(x) cout &lt;&lt; (x) &lt;&lt; <span class="meta-string">'\n'</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> db;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">check</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(x&gt;<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(x%<span class="number">2</span>)&#123;<span class="built_in">cout</span>&lt;&lt;<span class="string">"YES"</span>&lt;&lt;<span class="built_in">endl</span>;<span class="keyword">return</span>;&#125;</span><br><span class="line">        x&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"NO"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll t, n;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">        check(n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="B-New-Year’s-Number"><a href="#B-New-Year’s-Number" class="headerlink" title="B. New Year’s Number"></a>B. New Year’s Number</h2><h3 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h3><p>给出一个数字看它是否有a个2020和b个2021组成 ($a,b&gt;=0$)</p>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>因为2020 和2021相差1 所以我们先把所有数字出以2020 然后看余数是否大于整除的结果如果是将没有足够的2020变成2021就输出NO,如果不是输出YES</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 0x3f3f3f3f;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Fep(i,a,b) for(int i=(int)(a);i&lt;=(int)(b);i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Rep(i,a,b) for(int i=(int)(a);i&gt;=(int)(b);i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> see(x) cout &lt;&lt; (x) &lt;&lt; <span class="meta-string">'\n'</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> db;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t, n;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">        <span class="keyword">int</span> q=n/<span class="number">2020</span>,s=n%<span class="number">2020</span>;</span><br><span class="line">        <span class="comment">// cout&lt;&lt;q&lt;&lt;" "&lt;&lt;s&lt;&lt;endl;</span></span><br><span class="line">        <span class="keyword">if</span>(s&lt;=q)&#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">"YES"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">"NO"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="C-Ball-in-Berland"><a href="#C-Ball-in-Berland" class="headerlink" title="C. Ball in Berland"></a>C. Ball in Berland</h2><h3 id="题意-2"><a href="#题意-2" class="headerlink" title="题意"></a>题意</h3><p>给出有两组人分别位a, b他们有k对组合, 我们要选出两队组合但是其中这两队组合的人员不能冲突，我们要求出符合条件的数量</p>
+<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>我们对每一个a, b组合人员进行遍历统计他们出现的次数存表, 然后我们在对k队组合进行遍历统计他们和k-a, b组这两个人出现次数再+1, 由于我们也对前面的进行了统计所以要将ans/2</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 0x3f3f3f3f;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Fep(i,a,b) for(int i=(int)(a);i&lt;=(int)(b);i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Rep(i,a,b) for(int i=(int)(a);i&gt;=(int)(b);i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> see(x) cout &lt;&lt; (x) &lt;&lt; <span class="meta-string">'\n'</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> db;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> M=<span class="number">200005</span>;</span><br><span class="line">ll gn[M], bn[M],g[M],bo[M];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll t, a, b, k;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b&gt;&gt;k;</span><br><span class="line">        <span class="built_in">memset</span>(gn,<span class="number">0</span>,<span class="keyword">sizeof</span>(gn));</span><br><span class="line">        <span class="built_in">memset</span>(bn,<span class="number">0</span>,<span class="keyword">sizeof</span>(bn));</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;i++)&#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;bo[i];</span><br><span class="line">            bn[bo[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;i++)&#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;g[i];</span><br><span class="line">            gn[g[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line">        ll ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;i++)&#123;</span><br><span class="line">            ll q=k-bn[bo[i]]-gn[g[i]]+<span class="number">1</span>;</span><br><span class="line">            <span class="comment">// cout&lt;&lt;q&lt;&lt;endl;</span></span><br><span class="line">            ans+=q;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;ans/<span class="number">2</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="D-Clean-the-Phone"><a href="#D-Clean-the-Phone" class="headerlink" title="D. Clean the Phone"></a>D. Clean the Phone</h2><h3 id="题意-3"><a href="#题意-3" class="headerlink" title="题意"></a>题意</h3><p>我们有n个应用和我们要释放最少m的内存，每一个应用有他的所占空间大小和他的重要性(1, 2), 我们要求得释放不少于m内存同时要求吧这个重要性减少的最小</p>
+<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p>我们可以将1, 2 重要性的应用所占空间分别存储让后从大到小排序举一下当1重要性app被删除多少个同时，2重要性app需要删除多少个，同理对2这么操作就能得到最后答案</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 0x3f3f3f3f;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Fep(i,a,b) for(int i=(int)(a);i&lt;=(int)(b);i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Rep(i,a,b) for(int i=(int)(a);i&gt;=(int)(b);i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> see(x) cout &lt;&lt; (x) &lt;&lt; <span class="meta-string">'\n'</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> db;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">2e5</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> t, n, m, V[MAXN],tmp;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">        <span class="built_in">vector</span>&lt;ll&gt; a,b;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)<span class="built_in">cin</span>&gt;&gt;V[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;tmp;</span><br><span class="line">            <span class="keyword">if</span>(tmp&amp;<span class="number">1</span>)a.push_back(V[i]);</span><br><span class="line">            <span class="keyword">else</span> b.push_back(V[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// cout&lt;&lt;a.size()&lt;&lt;" "&lt;&lt;b.size()&lt;&lt;endl;</span></span><br><span class="line">        sort(a.begin(),a.end(),greater&lt;<span class="keyword">int</span>&gt;());</span><br><span class="line">        sort(b.begin(),b.end(),greater&lt;<span class="keyword">int</span>&gt;());</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;a.size();i++)a[i]+=a[i<span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;b.size();i++)b[i]+=b[i<span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">int</span> ans=INT_MAX;</span><br><span class="line">        <span class="keyword">auto</span> iter =lower_bound(a.begin(), a.end(), m);</span><br><span class="line">        <span class="keyword">if</span>(iter!=a.end())ans=min(ans,(<span class="keyword">int</span>)(iter-a.begin()+<span class="number">1</span>));</span><br><span class="line">        iter = lower_bound(b.begin(), b.end(), m);</span><br><span class="line">        <span class="keyword">if</span>(iter!=b.end())ans=min(ans,(<span class="keyword">int</span>)(iter-b.begin()+<span class="number">1</span>)*<span class="number">2</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.size();i++)&#123;</span><br><span class="line">            iter = lower_bound(b.begin(),b.end(),m-a[i]);</span><br><span class="line">            <span class="keyword">if</span>(iter!=b.end())ans=min(ans,i+<span class="number">1</span>+(<span class="keyword">int</span>)(iter-b.begin()+<span class="number">1</span>)*<span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;b.size();i++)&#123;</span><br><span class="line">            iter = lower_bound(a.begin(),a.end(),m-b[i]);</span><br><span class="line">            <span class="keyword">if</span>(iter!=a.end())ans=min(ans,( i+<span class="number">1</span> )*<span class="number">2</span>+(<span class="keyword">int</span>)(iter-a.begin()+<span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;(ans==INT_MAX?<span class="number">-1</span>:ans)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="E-Advertising-Agency"><a href="#E-Advertising-Agency" class="headerlink" title="E. Advertising Agency"></a>E. Advertising Agency</h2><h3 id="题意-4"><a href="#题意-4" class="headerlink" title="题意"></a>题意</h3><p>给你一组数据然后让你取k个出来使得和最大， 问有几种取法</p>
+<h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>我们先对这组数据进行大到小排序 然后看第k个元素在数组中出现了几次记q，这个元素在第一个到第k个元素中出现了几次记m 然后我们需要求组合数从q个里面取m个元素有几种取法，犹豫数据范围很小所以我们可以打个表<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 0x3f3f3f3f;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Fep(i,a,b) for(int i=(int)(a);i&lt;=(int)(b);i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Rep(i,a,b) for(int i=(int)(a);i&gt;=(int)(b);i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> see(x) cout &lt;&lt; (x) &lt;&lt; <span class="meta-string">'\n'</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> db;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">1005</span>][<span class="number">1005</span>];</span><br><span class="line"><span class="function">ll <span class="title">solve</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    ll ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        ans*=i;</span><br><span class="line">        ans%=mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">1000</span>;i++)&#123;</span><br><span class="line">        dp[i][<span class="number">0</span>]=dp[i][i]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;i;j++)&#123;</span><br><span class="line">            dp[i][j]=(dp[i<span class="number">-1</span>][j<span class="number">-1</span>]+dp[i<span class="number">-1</span>][j])%mod;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll t,n,k,arr[<span class="number">10005</span>];</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">    init();</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;k;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;arr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        sort(arr,arr+n);</span><br><span class="line">        reverse(arr,arr+n);</span><br><span class="line">        <span class="keyword">int</span> m=<span class="number">0</span>,s=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[i]==arr[k<span class="number">-1</span>])&#123;</span><br><span class="line">                m++;</span><br><span class="line">                <span class="keyword">if</span>(i&lt;=k<span class="number">-1</span>)s++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;dp[m][s]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="F-Unusual-Matrix"><a href="#F-Unusual-Matrix" class="headerlink" title="F. Unusual Matrix"></a>F. Unusual Matrix</h2><h3 id="题意-5"><a href="#题意-5" class="headerlink" title="题意"></a>题意</h3><p>给出两个n行n列的矩阵a，b。 a只能将他的某一列或者某一行异或1看能否变成b不能输出NO</p>
+<h3 id="思路先将两个数组对应位置异或看他们没两行异或的结果是否为1或者为0"><a href="#思路先将两个数组对应位置异或看他们没两行异或的结果是否为1或者为0" class="headerlink" title="思路先将两个数组对应位置异或看他们没两行异或的结果是否为1或者为0"></a>思路先将两个数组对应位置异或看他们没两行异或的结果是否为1或者为0</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 0x3f3f3f3f;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Fep(i,a,b) for(int i=(int)(a);i&lt;=(int)(b);i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Rep(i,a,b) for(int i=(int)(a);i&gt;=(int)(b);i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> see(x) cout &lt;&lt; (x) &lt;&lt; <span class="meta-string">'\n'</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> db;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">2e5</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> t, n, m, V[MAXN],tmp;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">        <span class="built_in">vector</span>&lt;ll&gt; a,b;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)<span class="built_in">cin</span>&gt;&gt;V[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;tmp;</span><br><span class="line">            <span class="keyword">if</span>(tmp&amp;<span class="number">1</span>)a.push_back(V[i]);</span><br><span class="line">            <span class="keyword">else</span> b.push_back(V[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// cout&lt;&lt;a.size()&lt;&lt;" "&lt;&lt;b.size()&lt;&lt;endl;</span></span><br><span class="line">        sort(a.begin(),a.end(),greater&lt;<span class="keyword">int</span>&gt;());</span><br><span class="line">        sort(b.begin(),b.end(),greater&lt;<span class="keyword">int</span>&gt;());</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;a.size();i++)a[i]+=a[i<span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;b.size();i++)b[i]+=b[i<span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">int</span> ans=INT_MAX;</span><br><span class="line">        <span class="keyword">auto</span> iter =lower_bound(a.begin(), a.end(), m);</span><br><span class="line">        <span class="keyword">if</span>(iter!=a.end())ans=min(ans,(<span class="keyword">int</span>)(iter-a.begin()+<span class="number">1</span>));</span><br><span class="line">        iter = lower_bound(b.begin(), b.end(), m);</span><br><span class="line">        <span class="keyword">if</span>(iter!=b.end())ans=min(ans,(<span class="keyword">int</span>)(iter-b.begin()+<span class="number">1</span>)*<span class="number">2</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.size();i++)&#123;</span><br><span class="line">            iter = lower_bound(b.begin(),b.end(),m-a[i]);</span><br><span class="line">            <span class="keyword">if</span>(iter!=b.end())ans=min(ans,i+<span class="number">1</span>+(<span class="keyword">int</span>)(iter-b.begin()+<span class="number">1</span>)*<span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;b.size();i++)&#123;</span><br><span class="line">            iter = lower_bound(a.begin(),a.end(),m-b[i]);</span><br><span class="line">            <span class="keyword">if</span>(iter!=a.end())ans=min(ans,( i+<span class="number">1</span> )*<span class="number">2</span>+(<span class="keyword">int</span>)(iter-a.begin()+<span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;(ans==INT_MAX?<span class="number">-1</span>:ans)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/23/algorithm/dynamicProgramming/frogThroughRiver/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2402,1099 +2559,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/English/EnglishWord/2018%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8DA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ysx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ysxBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/05/15/English/EnglishWord/2018%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8DA/" itemprop="url">2018真题单词A</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-15T12:46:06+08:00">
-                2020-05-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8DA/" itemprop="url" rel="index">
-                    <span itemprop="name">英语真题单词A</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <div class="table-container">
-<table>
-<thead>
-<tr>
-<th>单词</th>
-<th>意思</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>阅读1</td>
-<td></td>
-</tr>
-<tr>
-<td>access</td>
-<td>接近；途径</td>
-</tr>
-<tr>
-<td>along with</td>
-<td>和…一起</td>
-</tr>
-<tr>
-<td>artificial rainmaking</td>
-<td>人工降雨</td>
-</tr>
-<tr>
-<td>as well as</td>
-<td>以及</td>
-</tr>
-<tr>
-<td>availability</td>
-<td>有效性</td>
-</tr>
-<tr>
-<td>be described as…</td>
-<td>被描述为</td>
-</tr>
-<tr>
-<td>be expected to do</td>
-<td>预期会做某事</td>
-</tr>
-<tr>
-<td>be in demand</td>
-<td>被需要，受欢迎</td>
-</tr>
-<tr>
-<td>begin doing</td>
-<td>开始做某事</td>
-</tr>
-<tr>
-<td>billion</td>
-<td>十亿</td>
-</tr>
-<tr>
-<td>Brasilia</td>
-<td>巴西利亚</td>
-</tr>
-<tr>
-<td>call for</td>
-<td>呼吁，要求</td>
-</tr>
-<tr>
-<td>conference</td>
-<td>会议</td>
-</tr>
-<tr>
-<td>consumption</td>
-<td>消耗</td>
-</tr>
-<tr>
-<td>crisis</td>
-<td>危机</td>
-</tr>
-<tr>
-<td>disorderly</td>
-<td>杂乱的</td>
-</tr>
-<tr>
-<td>district</td>
-<td>区</td>
-</tr>
-<tr>
-<td>event</td>
-<td>事件</td>
-</tr>
-<tr>
-<td>federal</td>
-<td>联邦的</td>
-</tr>
-<tr>
-<td>field</td>
-<td>田地，领域</td>
-</tr>
-<tr>
-<td>floodplain</td>
-<td>涝原</td>
-</tr>
-<tr>
-<td>forum</td>
-<td>论坛</td>
-</tr>
-<tr>
-<td>gather</td>
-<td>聚集</td>
-</tr>
-<tr>
-<td>government</td>
-<td>政府</td>
-</tr>
-<tr>
-<td>governor</td>
-<td>州长</td>
-</tr>
-<tr>
-<td>housetop</td>
-<td>屋顶</td>
-</tr>
-<tr>
-<td>industry</td>
-<td>产业</td>
-</tr>
-<tr>
-<td>infrastructure</td>
-<td>基础设施</td>
-</tr>
-<tr>
-<td>insufficient</td>
-<td>不充足的</td>
-</tr>
-<tr>
-<td>invest in…</td>
-<td>投资…</td>
-</tr>
-<tr>
-<td>limit</td>
-<td>限制</td>
-</tr>
-<tr>
-<td>moisture</td>
-<td>水分</td>
-</tr>
-<tr>
-<td>nearby</td>
-<td>附近的；在附近</td>
-</tr>
-<tr>
-<td>nutrient</td>
-<td>营养</td>
-</tr>
-<tr>
-<td>official</td>
-<td>官员；官方的</td>
-</tr>
-<tr>
-<td>panel discussion</td>
-<td>小组讨论</td>
-</tr>
-<tr>
-<td>population</td>
-<td>人口</td>
-</tr>
-<tr>
-<td>preserve</td>
-<td>保护，保存；蜜饯，保护区</td>
-</tr>
-<tr>
-<td>process</td>
-<td>过程；加工</td>
-</tr>
-<tr>
-<td>propose doing</td>
-<td>建议做某事</td>
-</tr>
-<tr>
-<td>rainfall</td>
-<td>降雨量</td>
-</tr>
-<tr>
-<td>reestablish</td>
-<td>重建</td>
-</tr>
-<tr>
-<td>release</td>
-<td>释放，发行</td>
-</tr>
-<tr>
-<td>roof</td>
-<td>屋顶</td>
-</tr>
-<tr>
-<td>shortage</td>
-<td>不足，短缺</td>
-</tr>
-<tr>
-<td>soil</td>
-<td>土壤</td>
-</tr>
-<tr>
-<td>solution</td>
-<td>解决方法</td>
-</tr>
-<tr>
-<td>supply</td>
-<td>供应</td>
-</tr>
-<tr>
-<td>surface</td>
-<td>表面</td>
-</tr>
-<tr>
-<td>sustain</td>
-<td>维持</td>
-</tr>
-<tr>
-<td>temperature</td>
-<td>温度</td>
-</tr>
-<tr>
-<td>U.N.=the United Nations</td>
-<td>联合国</td>
-</tr>
-<tr>
-<td>warn</td>
-<td>警告</td>
-</tr>
-<tr>
-<td>wetland</td>
-<td>湿地</td>
-</tr>
-<tr>
-<td>worldwide</td>
-<td>全球的</td>
-</tr>
-<tr>
-<td></td>
-<td>阅读三</td>
-</tr>
-<tr>
-<td>a series of</td>
-<td>一系列的</td>
-</tr>
-<tr>
-<td>adventure</td>
-<td>冒险</td>
-</tr>
-<tr>
-<td>astronaut</td>
-<td>宇航员</td>
-</tr>
-<tr>
-<td>at that point</td>
-<td>在那时</td>
-</tr>
-<tr>
-<td>be greeted with</td>
-<td>由…接待；引起…</td>
-</tr>
-<tr>
-<td>California</td>
-<td>加利福尼亚</td>
-</tr>
-<tr>
-<td>carousel</td>
-<td>旋转木马</td>
-</tr>
-<tr>
-<td>castle</td>
-<td>城堡</td>
-</tr>
-<tr>
-<td>circle</td>
-<td>圆圈；环绕</td>
-</tr>
-<tr>
-<td>come to life</td>
-<td>活灵活现，苏醒过来</td>
-</tr>
-<tr>
-<td>construction</td>
-<td>建设</td>
-</tr>
-<tr>
-<td>copy</td>
-<td>复制；副本，一份</td>
-</tr>
-<tr>
-<td>daydream</td>
-<td>白日梦</td>
-</tr>
-<tr>
-<td>eventually</td>
-<td>最终</td>
-</tr>
-<tr>
-<td>exist</td>
-<td>存在</td>
-</tr>
-<tr>
-<td>experience</td>
-<td>经历，经验；体验</td>
-</tr>
-<tr>
-<td>feel like doing</td>
-<td>感觉像做某事；想要做某事</td>
-</tr>
-<tr>
-<td>focal</td>
-<td>焦点的</td>
-</tr>
-<tr>
-<td>fortress</td>
-<td>堡垒</td>
-</tr>
-<tr>
-<td>frenzied</td>
-<td>疯狂的</td>
-</tr>
-<tr>
-<td>frontier</td>
-<td>边界，前线</td>
-</tr>
-<tr>
-<td>funding</td>
-<td>资金</td>
-</tr>
-<tr>
-<td>hope for sth.</td>
-<td>希望得到…</td>
-</tr>
-<tr>
-<td>imagine</td>
-<td>想象</td>
-</tr>
-<tr>
-<td>initial</td>
-<td>最初的；首字母</td>
-</tr>
-<tr>
-<td>instead of</td>
-<td>而不是</td>
-</tr>
-<tr>
-<td>intricate</td>
-<td>复杂的</td>
-</tr>
-<tr>
-<td>lair</td>
-<td>巢穴</td>
-</tr>
-<tr>
-<td>magical</td>
-<td>有魔力的</td>
-</tr>
-<tr>
-<td>make one’s way</td>
-<td>成功前进</td>
-</tr>
-<tr>
-<td>map out</td>
-<td>规划</td>
-</tr>
-<tr>
-<td>massive</td>
-<td>大量的，巨大的</td>
-</tr>
-<tr>
-<td>meanwhile</td>
-<td>同时</td>
-</tr>
-<tr>
-<td>notice</td>
-<td>通知，注意</td>
-</tr>
-<tr>
-<td>out of date</td>
-<td>过时</td>
-</tr>
-<tr>
-<td>overhead</td>
-<td>普通开支；在头顶</td>
-</tr>
-<tr>
-<td>pirate</td>
-<td>海盗</td>
-</tr>
-<tr>
-<td>put heads together</td>
-<td>聚在一起商量</td>
-</tr>
-<tr>
-<td>remarkable</td>
-<td>非凡的</td>
-</tr>
-<tr>
-<td>similarity</td>
-<td>相似</td>
-</tr>
-<tr>
-<td>spin</td>
-<td>纺织，旋转</td>
-</tr>
-<tr>
-<td>spire</td>
-<td>塔尖</td>
-</tr>
-<tr>
-<td>spot</td>
-<td>斑点，景点；发现</td>
-</tr>
-<tr>
-<td>sprawl</td>
-<td>蔓延，躺卧</td>
-</tr>
-<tr>
-<td>steamboat</td>
-<td>汽船</td>
-</tr>
-<tr>
-<td>subtle</td>
-<td>微妙的</td>
-</tr>
-<tr>
-<td>take on</td>
-<td>承担，呈现</td>
-</tr>
-<tr>
-<td>theme park</td>
-<td>主题公园</td>
-</tr>
-<tr>
-<td>tough</td>
-<td>艰难的，坚强的</td>
-</tr>
-<tr>
-<td>tunnel</td>
-<td>隧道</td>
-</tr>
-<tr>
-<td>turn into</td>
-<td>转变成</td>
-</tr>
-<tr>
-<td>vision</td>
-<td>视力，想象</td>
-</tr>
-<tr>
-<td>witness</td>
-<td>见证；证人</td>
-</tr>
-<tr>
-<td></td>
-<td>阅读二</td>
-</tr>
-<tr>
-<td>admire</td>
-<td>敬佩</td>
-</tr>
-<tr>
-<td>admit</td>
-<td>承认</td>
-</tr>
-<tr>
-<td>appreciate</td>
-<td>感激，欣赏，领会，增值</td>
-</tr>
-<tr>
-<td>aspiring</td>
-<td>有抱负的</td>
-</tr>
-<tr>
-<td>awkward</td>
-<td>笨拙的，令人尴尬的</td>
-</tr>
-<tr>
-<td>be suited to sth.</td>
-<td>适合…</td>
-</tr>
-<tr>
-<td>be surrounded by…</td>
-<td>被…围绕</td>
-</tr>
-<tr>
-<td>beloved</td>
-<td>亲爱的</td>
-</tr>
-<tr>
-<td>bond</td>
-<td>联系，债券</td>
-</tr>
-<tr>
-<td>Buckingham Palace</td>
-<td>白金汉宫</td>
-</tr>
-<tr>
-<td>comfortable</td>
-<td>舒服的</td>
-</tr>
-<tr>
-<td>commoner</td>
-<td>平民</td>
-</tr>
-<tr>
-<td>conversation</td>
-<td>谈话</td>
-</tr>
-<tr>
-<td>critical</td>
-<td>批判的，重要的</td>
-</tr>
-<tr>
-<td>crown</td>
-<td>皇冠</td>
-</tr>
-<tr>
-<td>demanding</td>
-<td>要求高的</td>
-</tr>
-<tr>
-<td>draining</td>
-<td>令人疲惫的</td>
-</tr>
-<tr>
-<td>elusive</td>
-<td>难以捉摸的</td>
-</tr>
-<tr>
-<td>energize</td>
-<td>使有活力</td>
-</tr>
-<tr>
-<td>engagement</td>
-<td>约会，雇佣，订婚</td>
-</tr>
-<tr>
-<td>exhausting</td>
-<td>令人疲惫的</td>
-</tr>
-<tr>
-<td>extroverted</td>
-<td>外向的</td>
-</tr>
-<tr>
-<td>fascinating</td>
-<td>迷人的，极好的</td>
-</tr>
-<tr>
-<td>fellow</td>
-<td>同伴，同事</td>
-</tr>
-<tr>
-<td>fortunately</td>
-<td>幸运地</td>
-</tr>
-<tr>
-<td>frustrating</td>
-<td>令人沮丧的</td>
-</tr>
-<tr>
-<td>guarded</td>
-<td>提防的</td>
-</tr>
-<tr>
-<td>handbag</td>
-<td>手提包</td>
-</tr>
-<tr>
-<td>have a passion for</td>
-<td>对…喜爱</td>
-</tr>
-<tr>
-<td>Her Majesty</td>
-<td>女王</td>
-</tr>
-<tr>
-<td>hit</td>
-<td>打击，使突然想起；热门</td>
-</tr>
-<tr>
-<td>immediately</td>
-<td>立刻</td>
-</tr>
-<tr>
-<td>in the countryside</td>
-<td>在乡下</td>
-</tr>
-<tr>
-<td>in the limelight</td>
-<td>引人注目</td>
-</tr>
-<tr>
-<td>indicate</td>
-<td>表明</td>
-</tr>
-<tr>
-<td>intervention</td>
-<td>介入，干预</td>
-</tr>
-<tr>
-<td>interview</td>
-<td>采访，面试</td>
-</tr>
-<tr>
-<td>introvert</td>
-<td>性格内向的人</td>
-</tr>
-<tr>
-<td>monarch</td>
-<td>君主</td>
-</tr>
-<tr>
-<td>neutral</td>
-<td>中立的</td>
-</tr>
-<tr>
-<td>not necessarily</td>
-<td>不一定</td>
-</tr>
-<tr>
-<td>personality</td>
-<td>个性</td>
-</tr>
-<tr>
-<td>pessimistic</td>
-<td>悲观的</td>
-</tr>
-<tr>
-<td>position</td>
-<td>位置，地位，状态</td>
-</tr>
-<tr>
-<td>queen</td>
-<td>女王</td>
-</tr>
-<tr>
-<td>rely on</td>
-<td>依赖</td>
-</tr>
-<tr>
-<td>remain</td>
-<td>保持</td>
-</tr>
-<tr>
-<td>rescue</td>
-<td>援救</td>
-</tr>
-<tr>
-<td>reserved</td>
-<td>预定的，矜持的</td>
-</tr>
-<tr>
-<td>respective</td>
-<td>各自的</td>
-</tr>
-<tr>
-<td>reveal</td>
-<td>揭露</td>
-</tr>
-<tr>
-<td>scene</td>
-<td>场景</td>
-</tr>
-<tr>
-<td>show respect for…</td>
-<td>对…尊敬</td>
-</tr>
-<tr>
-<td>signal</td>
-<td>信号；发信号</td>
-</tr>
-<tr>
-<td>sovereign</td>
-<td>君主，至高无上的</td>
-</tr>
-<tr>
-<td>staff</td>
-<td>员工</td>
-</tr>
-<tr>
-<td>subjective</td>
-<td>主观的</td>
-</tr>
-<tr>
-<td>subtly</td>
-<td>巧妙地</td>
-</tr>
-<tr>
-<td>tend to do</td>
-<td>往往…</td>
-</tr>
-<tr>
-<td>trick</td>
-<td>把戏，诀窍</td>
-</tr>
-<tr>
-<td>urgent</td>
-<td>紧急的</td>
-</tr>
-<tr>
-<td></td>
-<td>阅读四</td>
-</tr>
-<tr>
-<td>make it</td>
-<td>成功做到</td>
-</tr>
-<tr>
-<td>manage to do</td>
-<td>设法成功做某事</td>
-</tr>
-<tr>
-<td>navigate</td>
-<td>航行；设法穿过</td>
-</tr>
-<tr>
-<td>airport</td>
-<td>机场</td>
-</tr>
-<tr>
-<td>breeze</td>
-<td>微风；轻松通过</td>
-</tr>
-<tr>
-<td>security</td>
-<td>安保</td>
-</tr>
-<tr>
-<td>successfully</td>
-<td>成功地</td>
-</tr>
-<tr>
-<td>board</td>
-<td>登上；布告板，董事会，伙食</td>
-</tr>
-<tr>
-<td>comfortable</td>
-<td>舒服的</td>
-</tr>
-<tr>
-<td>cabin</td>
-<td>机舱，小木屋</td>
-</tr>
-<tr>
-<td>a little bit</td>
-<td>一点</td>
-</tr>
-<tr>
-<td>elbow</td>
-<td>手肘</td>
-</tr>
-<tr>
-<td>hassle</td>
-<td>争吵，麻烦</td>
-</tr>
-<tr>
-<td>neck pillow</td>
-<td>颈枕</td>
-</tr>
-<tr>
-<td>get ready to do</td>
-<td>准备做某事</td>
-</tr>
-<tr>
-<td>quality time</td>
-<td>黄金时间</td>
-</tr>
-<tr>
-<td>spend time doing</td>
-<td>花时间做某事</td>
-</tr>
-<tr>
-<td>be about to do</td>
-<td>将要做某事</td>
-</tr>
-<tr>
-<td>make a mistake</td>
-<td>犯错</td>
-</tr>
-<tr>
-<td>put…at risk</td>
-<td>将…置于危险中</td>
-</tr>
-<tr>
-<td>because of</td>
-<td>由于</td>
-</tr>
-<tr>
-<td>shuteye</td>
-<td>睡觉</td>
-</tr>
-<tr>
-<td>fall asleep</td>
-<td>入睡</td>
-</tr>
-<tr>
-<td>landing</td>
-<td>着陆</td>
-</tr>
-<tr>
-<td>take off</td>
-<td>起飞，腾飞，脱掉</td>
-</tr>
-<tr>
-<td>cause damage to…</td>
-<td>对…造成损害</td>
-</tr>
-<tr>
-<td>have to do with</td>
-<td>与…有关</td>
-</tr>
-<tr>
-<td>rapid</td>
-<td>快速的；急流</td>
-</tr>
-<tr>
-<td>air pressure</td>
-<td>气压</td>
-</tr>
-<tr>
-<td>awake</td>
-<td>醒着的；唤醒</td>
-</tr>
-<tr>
-<td>response</td>
-<td>回复</td>
-</tr>
-<tr>
-<td>alleviate</td>
-<td>减轻</td>
-</tr>
-<tr>
-<td>eardrum</td>
-<td>耳膜</td>
-</tr>
-<tr>
-<td>pop</td>
-<td>睁大，突然出现；流行的</td>
-</tr>
-<tr>
-<td>maintain</td>
-<td>维持，认为</td>
-</tr>
-<tr>
-<td>equilibrium</td>
-<td>平衡</td>
-</tr>
-<tr>
-<td>actively</td>
-<td>积极地</td>
-</tr>
-<tr>
-<td>muscle</td>
-<td>肌肉</td>
-</tr>
-<tr>
-<td>release</td>
-<td>释放，发行</td>
-</tr>
-<tr>
-<td>tension</td>
-<td>紧张，拉力</td>
-</tr>
-<tr>
-<td>susceptible</td>
-<td>易受影响的</td>
-</tr>
-<tr>
-<td>dizziness</td>
-<td>晕眩</td>
-</tr>
-<tr>
-<td>infection</td>
-<td>感染</td>
-</tr>
-<tr>
-<td>hearing loss</td>
-<td>听力损失</td>
-</tr>
-<tr>
-<td>nose bleed</td>
-<td>流鼻血</td>
-</tr>
-<tr>
-<td>altitude</td>
-<td>高度</td>
-</tr>
-<tr>
-<td>affect</td>
-<td>影响</td>
-</tr>
-<tr>
-<td>pharmacist</td>
-<td>药剂师</td>
-</tr>
-<tr>
-<td>via</td>
-<td>通过</td>
-</tr>
-<tr>
-<td>vacuum</td>
-<td>真空</td>
-</tr>
-<tr>
-<td>tube</td>
-<td>管道</td>
-</tr>
-<tr>
-<td>dull</td>
-<td>迟钝的</td>
-</tr>
-<tr>
-<td>terminal</td>
-<td>终点站，航站楼；终点的</td>
-</tr>
-<tr>
-<td>after all</td>
-<td>毕竟</td>
-</tr>
-<tr>
-<td>major</td>
-<td>专业；主修；主要的</td>
-</tr>
-<tr>
-<td>there are advantages to doing</td>
-<td>做某事有优点</td>
-</tr>
-<tr>
-<td>material</td>
-<td>材料</td>
-</tr>
-<tr>
-<td>listen to music</td>
-<td>听音乐</td>
-</tr>
-<tr>
-<td>reduce</td>
-<td>减少</td>
-</tr>
-<tr>
-<td>symptom</td>
-<td>症状</td>
-</tr>
-<tr>
-<td>except</td>
-<td>除了</td>
-</tr>
-<tr>
-<td>amuse</td>
-<td>使发笑</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3545,7 +2609,7 @@
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">93</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -3556,7 +2620,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -3567,7 +2631,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
