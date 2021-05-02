@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="spring learningspring coreIoc(Inversion of control): 控制反转，是一个理论，概念，思想。描述的：把对象的创建，赋值，管理工作都交给代码之外的容器的实现，也是对象的创建是由其他的外部资源完成  控制：创建对象，对象的属性赋值，对象之间的关系管理 反转：把原来的开发人员挂白努力，创建对象的权限转移给代码之外的容器实现。由容器代替开发人员的管理对象。创">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java&#x2F;frame&#x2F;spring&#x2F;springLearning">
+<meta property="og:url" content="http://yoursite.com/2021/04/30/java/frame/spring/springLearning/index.html">
+<meta property="og:site_name" content="ysxBlog">
+<meta property="og:description" content="spring learningspring coreIoc(Inversion of control): 控制反转，是一个理论，概念，思想。描述的：把对象的创建，赋值，管理工作都交给代码之外的容器的实现，也是对象的创建是由其他的外部资源完成  控制：创建对象，对象的属性赋值，对象之间的关系管理 反转：把原来的开发人员挂白努力，创建对象的权限转移给代码之外的容器实现。由容器代替开发人员的管理对象。创">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-04-30T13:53:30.269Z">
+<meta property="article:modified_time" content="2021-05-02T14:47:05.392Z">
+<meta property="article:author" content="ysx">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2021/04/30/java/frame/spring/springLearning/"/>
+
+
+
+
+
+  <title>java/frame/spring/springLearning | ysxBlog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ysxBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/04/30/java/frame/spring/springLearning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">java/frame/spring/springLearning</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-04-30T21:53:30+08:00">
+                2021-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="spring-learning"><a href="#spring-learning" class="headerlink" title="spring learning"></a>spring learning</h2><h2 id="spring-core"><a href="#spring-core" class="headerlink" title="spring core"></a>spring core</h2><p>Ioc(Inversion of control): 控制反转，是一个理论，概念，思想。<br>描述的：把对象的创建，赋值，管理工作都交给代码之外的容器的实现，也是对象的创建是由其他的外部资源完成</p>
+<ol>
+<li>控制：创建对象，对象的属性赋值，对象之间的关系管理</li>
+<li>反转：把原来的开发人员挂白努力，创建对象的权限转移给代码之外的容器实现。由容器代替开发人员的管理对象。创建对象，给属性赋值</li>
+<li>正转：由开发人员在代码中，使用new构造方法创建对象，开发人员主动管理对象</li>
+</ol>
+<p>容器：是一个服务器软件，一个框架(spring)</p>
+<p>为什么要是用ioc：目的就是减少代码的改动，也能实现不同的功能，实现解耦合</p>
+<h2 id="java中创建对象有那些方式"><a href="#java中创建对象有那些方式" class="headerlink" title="java中创建对象有那些方式"></a>java中创建对象有那些方式</h2><pre><code>1. 构造方法
+2. 反射
+3. 序列化
+4. 克隆
+5. ioc：容器创建对象
+6. 动态代理
+</code></pre><h3 id="ioc-的体现"><a href="#ioc-的体现" class="headerlink" title="ioc 的体现"></a>ioc 的体现</h3><pre><code>servlet 
+        1. 创建类继承HttpSevlet
+        2. 在web.xml 注册servlet，使用
+        &lt;/serlet-name&gt;myservlet&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;com.sample.controleer.Myservlet&lt;/servlet&gt;
+        3. 没有创建servlet对象
+        4. servlet 是tomcat服务器创建的。tomcat也称为容器 Tomcat作为容器：里面存放的由servlet对象，Listener，Filter对象
+</code></pre><h3 id="ioc的技术实现"><a href="#ioc的技术实现" class="headerlink" title="ioc的技术实现"></a>ioc的技术实现</h3><p>DI是ioc的技术实现<br>DI(dependency injection) : 依赖注入，只需要在程序中提供要使用的对象的名称就好了，对象如何在容器中创建，查找都由容器内部实现<br>spring使用di实现ioc的功能 spring底层创建对象 使用的是反射</p>
+<h3 id="di注入"><a href="#di注入" class="headerlink" title="di注入"></a>di注入</h3><p>1.di的实现由两种<br>    1.在spring的配置文件中，使用标签和属性完成，叫做给予xml的di是实现<br>    2.使用spring中的注解，完成属性赋值，叫做基于注解的id实现</p>
+<p>di的语法分类<br>    1.set注入(设置注入) spring 调用类真的set方法, 在set方法可以实现属性的赋值<br>    2.spring 调用类的构造方法，创建对象，在构造方法中完成赋值</p>
+<h3 id="spring注解"><a href="#spring注解" class="headerlink" title="spring注解"></a>spring注解</h3><p>@Service @Service @Controller 功能基本一致，但是还有额外功能</p>
+<h4 id="扫描器"><a href="#扫描器" class="headerlink" title="扫描器"></a>扫描器</h4><p>使用扫描器时候要写对包名,要不然找不到包<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;context:component-scan base-<span class="keyword">package</span>=<span class="string">""</span>/&gt; <span class="comment">//找到包和子包中所有的注解，找到注解中的所有类，按照注解功能创建对象或给属性赋值</span></span><br></pre></td></tr></table></figure><br>不同的指定包的方式<br>1.多次组件扫描<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;context:component-scan base-<span class="keyword">package</span>=<span class="string">"com.sample.yourpackage1"</span>/&gt;</span><br><span class="line">&lt;context:component-scan base-<span class="keyword">package</span>=<span class="string">"com.sample.yourpackage2"</span>/&gt;</span><br></pre></td></tr></table></figure><br>2.使用分隔符号<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;context:component-scan base-<span class="keyword">package</span>=<span class="string">"com.sample.yourpackage1;com.sample.yourpackage2"</span>/&gt;</span><br></pre></td></tr></table></figure><br>3.指定父包<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;context:component-scan base-<span class="keyword">package</span>=<span class="string">"com.sample"</span>/&gt;<span class="comment">//不建议使用太潜层目录如使用com</span></span><br></pre></td></tr></table></figure></p>
+<p>默认调用无参数构造方法，如果不适用名称@Component 默认名称为首字母小写的类名</p>
+<h4 id="Component"><a href="#Component" class="headerlink" title="@Component"></a>@Component</h4><p>创建对象的等同与<bean> 属性<br>value 等同于bean的id值 value值是唯一的<br>位置在类的上方<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span>(value=<span class="string">"student"</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="Repository"><a href="#Repository" class="headerlink" title="@Repository"></a>@Repository</h4><p>使用在持久层上面的：放在dao的实现类伤 表示船舰dao对象，dao对是能访问数据库的, 用法和@Component类似</p>
+<h4 id="Service"><a href="#Service" class="headerlink" title="@Service"></a>@Service</h4><p>用在业务层的：放在service的实现类伤，创建service对象，service对象是做业务处理，可以又事务等功能,用法和@Component类似</p>
+<h4 id="Controller"><a href="#Controller" class="headerlink" title="@Controller"></a>@Controller</h4><p>用在控制器伤：创建控制器对象，控制器对象，能够接受用户提交的参数，显示请求的处理结果。用法和@Component类似</p>
+<h4 id="Value"><a href="#Value" class="headerlink" title="@Value"></a>@Value</h4><p>属性：value是String 类型的 表示简单类型的属性值<br>位置：放在属性或者set方法上<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Value</span>(<span class="string">"123"</span>)</span><br><span class="line"><span class="keyword">private</span> String name;</span><br></pre></td></tr></table></figure></p>
+<h4 id="AutoWired"><a href="#AutoWired" class="headerlink" title="@AutoWired"></a>@AutoWired</h4><p>对应用类型的注入 默认使用bean中byType规则使用<br>属性：required， 是一个boolean类型的， 默认为true，<br>    required=true表示应用类型赋值失败程序报错，并终止执行<br>    required=false表示应用类型赋值失败程序正常执行，应用类型为null<br>位置：放在属性或者set方法上<br>使用ByName方式<br>1.在属性伤加入@Qualifier(value=”bean的id”)表示使用指定的bean id 完成赋值</p>
+<h4 id="Resource"><a href="#Resource" class="headerlink" title="Resource"></a>Resource</h4><p>来自jdk中的注解，spring框架提供了对这个注解的支持，可以使用他给引用类型赋值<br>    使用的也是自动注入原理，可以使用byName 和byType 默认byName,如果byName失败在使用ByType<br>    只使用ByName方法是家一个属性name @Resource(name=”myid”)<br>位置：放在属性或者set方法上  </p>
+<h3 id="aop"><a href="#aop" class="headerlink" title="aop"></a>aop</h3><ol>
+<li><p>动态代理<br> 实现方法：jdk动态代理，使用jdk中的Porxy，Method，InvocationHander创建代理对象<br> jdk动态代理要求目标必须是实现接口<br> Cglib动态代理：第三方的工具库，创建代理对象，原理是继承，通过继承目标类，创建子类，子类就是代理对象。要求目标类不能是final的，方法也不能是final的</p>
+</li>
+<li><p>动态代理的作用</p>
+<ol>
+<li>在目标类代码不改变的情况下，增加功能  2. 减少代码的重负  3. 专注鱼业务逻辑代码  </li>
+<li>解耦和，让你的代码功能和日志，事务非业务功能分离  </li>
+</ol>
+</li>
+<li><p>Aop：面向切面编程，基于动态代理的，可以使用jdk，cglib两种代理方式。Aop就是动态代理的规范化，把动态代理的实现步骤，方法都定义好了，让开发人员意欧能够一种统一的方式，使用动态代理</p>
+</li>
+<li><p>AOP(Aspect Orient Programming) 面向切面编程<br> Aspect: 切面，给你的目标类增加的功,像日志，事务都是切面。<br> 切面特点：一般都是非业务方法，独立使用</p>
+</li>
+<li><p>一个切面的三个关键的要素</p>
+<ol>
+<li>切面的功能代码，切面干什么。</li>
+<li>切面的执行位置，使用pointcut表示切面执行的位置</li>
+<li>切面的执行时间， 使用advice表示时间，在目标方法之前，还是在目标方法之后</li>
+</ol>
+</li>
+</ol>
+<h4 id="什么时候考虑用aop"><a href="#什么时候考虑用aop" class="headerlink" title="什么时候考虑用aop"></a>什么时候考虑用aop</h4><ol>
+<li>当你要给系统中的一个类修改功能，到那时原有的类功能不完善</li>
+<li>当你要给项目中多个类增加一个相同的功能时候使用aop</li>
+<li>给业务方法增加事务，日志输出</li>
+</ol>
+<h4 id="aop的实现"><a href="#aop的实现" class="headerlink" title="aop的实现"></a>aop的实现</h4><p>aop是一个规范，是动态的一个规范化，一个标准<br>aop的技术是西安框架：</p>
+<ol>
+<li>spring：spring在内部是实现了aop规范，能做aop的工作。<br> spring 主要是在事务处理时使用aop<br> 项目中很少使用spring的aop实现，因为太笨重了  </li>
+<li>aspectJ: 一个开源专门做aop的框架，spring框架中继承了aspectj框架，通过spring就能使用aspectj的功能，aspectJ框架实现aop的两种两种方式<ol>
+<li>使用xml的配置文件</li>
+<li>使用注解，我们吸纳公募中要坐aop功能，一般都是使用注解，aspectJ有五个注解</li>
+</ol>
+</li>
+</ol>
+<h3 id="学习aspectj框架的使用"><a href="#学习aspectj框架的使用" class="headerlink" title="学习aspectj框架的使用"></a>学习aspectj框架的使用</h3><h3 id="aspectJ-介绍"><a href="#aspectJ-介绍" class="headerlink" title="aspectJ 介绍"></a>aspectJ 介绍</h3><p>切面的执行时间，这个执行的时间在规范中叫做advice（通知，增强）在aspectj框架中使用注解表示的。也可以使用xml配置文件中的标签</p>
+<ol>
+<li>@Before</li>
+<li>@AfterReturning</li>
+<li>@Around</li>
+<li>AfterThrowing</li>
+<li>After</li>
+</ol>
+<p>AspectJ 定义了撞门的表达式用鱼指定切入点。表达式的原型是:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">execution(modifier-pattern? ret-type-pattern</span><br><span class="line">          declaring-type-pattern?name-pattern(parm-pattern)</span><br><span class="line">          throws-pattern?)</span><br></pre></td></tr></table></figure>
+<p>解释：<br>modifiers-pattern 访问权限类型<br>ret-type-pattern 返回值类型<br>declaring-type-pattern 包名类名<br>throws-pattern 抛出异常类型<br>? 表示可选部分</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>零到多个符号</td>
+</tr>
+<tr>
+<td>..</td>
+<td>用在方法参数中，表示任意多个参数么，用在包名中表示当前包及其子包路径</td>
+</tr>
+<tr>
+<td>+</td>
+<td>用在类名后，表示当前类及其子类, 用在接口后表示当前接口和他的实现类</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>execution(访问修饰符 返回值 包名.类名.方法名(方法参数) 异常)</p>
+<h4 id="aspectJ使用"><a href="#aspectJ使用" class="headerlink" title="aspectJ使用"></a>aspectJ使用</h4><ol>
+<li>创建目标类：接口和它的实现类，要做的是给类中的方法增加功能</li>
+<li>创建切面类：普通类<ol>
+<li>在类的上面加入 @Aspect</li>
+<li>在类中定义方法，方法就是切面要执行的功能代码，在方法的上面加入aspectj的通知注解，例如@Before         有需要指定的切入点表达式execution()</li>
+</ol>
+</li>
+<li>创建spring的配置文件：声明对象，把对象交给容器统一管理<br> 声明对象你可以使用注解或者xml配置文件bean<ol>
+<li>声明对象</li>
+<li>声明切面类对象</li>
+<li>声明aspectj框架中的自动代理生成器表亲啊。<br> 自动代理生成器: 用来完成代理对象的自动创建功能<br>配置文件写法</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;aop:aspctj-autoproxy/&gt; <span class="comment">//aspectj-autoproxy 会把spring容器所有目标对象，一次性生成代理对象</span></span><br></pre></td></tr></table></figure>
+<p><strong>@Before</strong><br>前置通知注解<br>    属性：value， 是切入点表达式，表示切面的功能执行的位置<br>    位置： 在方法上<br>    无参数的</p>
+<p><strong>@JoinPoint</strong><br>业务方法，要加入切面功能的业务方法<br>作用是：可以在通知方法汇总获取费纳广发执行时候的信息，方法的实际参数<br>如果切面功能中需要得到方法的信息 就加入JoinPoint<br>JoinPoint 要加就放在第一个参数,  也可不加<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Before</span>(value=<span class="string">"execution(void *..service.impl.SomeServiceImpl.*(..))"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">myBefore</span><span class="params">(JoinPoint jp)</span></span>&#123;</span><br><span class="line">   System.out.println(jp.getSignature());<span class="comment">//获取方法的定义</span></span><br><span class="line">   System.out.println(jp.getSignature().getName());<span class="comment">//获取方法的名字</span></span><br><span class="line">   Object args[] = jp.getArgs();<span class="comment">//获取方法的参数列表</span></span><br><span class="line">   <span class="keyword">for</span> (Object arg : args) &#123;</span><br><span class="line">      System.out.println(arg);</span><br><span class="line">   &#125;</span><br><span class="line">   System.out.println(<span class="string">"before advice time:"</span>+<span class="keyword">new</span> Date());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>@AfterReturning</strong><br>后置通知方法的定义，方法是是实现切片功能的。<br>切面方法的定义要求：  </p>
+<ol>
+<li>公共的方法</li>
+<li>方法没有返回值</li>
+<li>方法名称自定义</li>
+<li>方法有参数的推荐是object，参数名自定义</li>
+</ol>
+<p>属性：</p>
+<ol>
+<li>value 切入点表达式</li>
+<li>returning 自定义的变量,表示目标方法的返回值<br>自定义变量名必须和通知方法的行参名一样</li>
+</ol>
+<p>特点</p>
+<ol>
+<li>在目标方法后执行</li>
+<li>能够获得目标方法的返回值，可以更具这个返回值做不同的处理功能</li>
+<li>如果是引用类型的话在内改变值, 会改变方法返回值</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@AfterReturning</span>(value = <span class="string">"execution(* *..SomeServiceImpl.doOther(..))"</span>,returning = <span class="string">"res"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">myAfterReturning</span><span class="params">(Object res)</span></span>&#123;</span><br><span class="line">   <span class="comment">//Object res = doOther(..); myAfterReturning(res);</span></span><br><span class="line">   System.out.println(res);</span><br><span class="line">   <span class="keyword">if</span>(<span class="string">"lisi20"</span>.equals(res))&#123;</span><br><span class="line">      <span class="comment">//do Something</span></span><br><span class="line">   &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="comment">//do Something</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/04/28/java/frame/mybatis/mybatisNotes/" rel="next" title="mybatis Nots">
+                <i class="fa fa-chevron-left"></i> mybatis Nots
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">ysx</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7Carchive">
+              
+                  <span class="site-state-item-count">97</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#spring-learning"><span class="nav-number">1.</span> <span class="nav-text">spring learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spring-core"><span class="nav-number">2.</span> <span class="nav-text">spring core</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java中创建对象有那些方式"><span class="nav-number">3.</span> <span class="nav-text">java中创建对象有那些方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ioc-的体现"><span class="nav-number">3.1.</span> <span class="nav-text">ioc 的体现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ioc的技术实现"><span class="nav-number">3.2.</span> <span class="nav-text">ioc的技术实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#di注入"><span class="nav-number">3.3.</span> <span class="nav-text">di注入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spring注解"><span class="nav-number">3.4.</span> <span class="nav-text">spring注解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#扫描器"><span class="nav-number">3.4.1.</span> <span class="nav-text">扫描器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Component"><span class="nav-number">3.4.2.</span> <span class="nav-text">@Component</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Repository"><span class="nav-number">3.4.3.</span> <span class="nav-text">@Repository</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Service"><span class="nav-number">3.4.4.</span> <span class="nav-text">@Service</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Controller"><span class="nav-number">3.4.5.</span> <span class="nav-text">@Controller</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Value"><span class="nav-number">3.4.6.</span> <span class="nav-text">@Value</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AutoWired"><span class="nav-number">3.4.7.</span> <span class="nav-text">@AutoWired</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Resource"><span class="nav-number">3.4.8.</span> <span class="nav-text">Resource</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#aop"><span class="nav-number">3.5.</span> <span class="nav-text">aop</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么时候考虑用aop"><span class="nav-number">3.5.1.</span> <span class="nav-text">什么时候考虑用aop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#aop的实现"><span class="nav-number">3.5.2.</span> <span class="nav-text">aop的实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#学习aspectj框架的使用"><span class="nav-number">3.6.</span> <span class="nav-text">学习aspectj框架的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#aspectJ-介绍"><span class="nav-number">3.7.</span> <span class="nav-text">aspectJ 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#aspectJ使用"><span class="nav-number">3.7.1.</span> <span class="nav-text">aspectJ使用</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ysx</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

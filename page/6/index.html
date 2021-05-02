@@ -259,6 +259,294 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/12/Leetcode/9-palindrome-number/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/12/Leetcode/9-palindrome-number/" itemprop="url">9-palindrome-number</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-12T18:04:23+08:00">
+                2020-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://leetcode-cn.com/problems/palindrome-number/" target="_blank" rel="noopener">题目链接</a> </p>
+<h2 id="回文数字"><a href="#回文数字" class="headerlink" title="回文数字"></a>回文数字</h2><p>这题比较简单，直接转成字符串然后判断对应回文位置的正确即可</p>
+<h3 id="go-解法"><a href="#go-解法" class="headerlink" title="go 解法"></a>go 解法</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isPalindrome</span><span class="params">(x <span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> x &lt; <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> s <span class="keyword">string</span> = strconv.Itoa(x)</span><br><span class="line">	slen := <span class="built_in">len</span>(s)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; slen/<span class="number">2</span>; i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> s[i] != s[slen-i<span class="number">-1</span>] &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/12/Leetcode/121-best-time-to-buy-and-sell-stock/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/12/Leetcode/121-best-time-to-buy-and-sell-stock/" itemprop="url">121-best-time-to-buy-and-sell-stock</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-12T12:58:10+08:00">
+                2020-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="买卖股票最佳时间"><a href="#买卖股票最佳时间" class="headerlink" title="买卖股票最佳时间"></a>买卖股票最佳时间</h2><p><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/" target="_blank" rel="noopener">题目链接</a> </p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>这题思路是遍历数组同时记录最小的数，然后遇到比他大的数和他相减与最大利润相比取最大值，遇到比自己小的数就吧最小值替换成那该数</p>
+<h3 id="go语言实现"><a href="#go语言实现" class="headerlink" title="go语言实现"></a>go语言实现</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxProfit</span><span class="params">(prices []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(prices)==<span class="number">0</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">	maxNum, initNum := <span class="number">0</span>, prices[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt; <span class="built_in">len</span>(prices); i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> initNum &gt;= prices[i] &#123;</span><br><span class="line">			initNum = prices[i]</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> maxNum == <span class="number">0</span> &#123;</span><br><span class="line">				maxNum = prices[i] - initNum</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> maxNum &lt; prices[i]-initNum &#123;</span><br><span class="line">				maxNum = prices[i] - initNum</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> maxNum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/10/English/EnglishWord/dailyWord/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -3280,792 +3568,6 @@ a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+...+ab^{n-2}+b^{n-1})</script><p><br></p>
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/English/EnglishWord/%E8%8B%B1%E8%AF%AD2016%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ysx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ysxBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/11/English/EnglishWord/%E8%8B%B1%E8%AF%AD2016%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/" itemprop="url">英语2016真题单词</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-11T12:52:21+08:00">
-                2020-02-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index">
-                    <span itemprop="name">英语真题单词</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <div class="table-container">
-<table>
-<thead>
-<tr>
-<th>单词</th>
-<th>意思</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>lay v.</td>
-<td>搁放；放置</td>
-</tr>
-<tr>
-<td>acquaintance n.</td>
-<td>相识的人</td>
-</tr>
-<tr>
-<td>capture v.</td>
-<td>捕捉，拍摄</td>
-</tr>
-<tr>
-<td>quicksilver n.</td>
-<td>变化莫测的事物</td>
-</tr>
-<tr>
-<td>personality n.</td>
-<td>个性；品格</td>
-</tr>
-<tr>
-<td>radiate v.</td>
-<td>传播；流露</td>
-</tr>
-<tr>
-<td>arrogance n.</td>
-<td>自大；傲慢态度</td>
-</tr>
-<tr>
-<td>boyishness n.</td>
-<td>孩子气；幼稚</td>
-</tr>
-<tr>
-<td>awkwardness n.</td>
-<td>尴尬；笨拙</td>
-</tr>
-<tr>
-<td>sketch n.</td>
-<td>素描；略图</td>
-</tr>
-<tr>
-<td>puzzled adj.</td>
-<td>困惑的；茫然的</td>
-</tr>
-<tr>
-<td>mumble v.</td>
-<td>含糊地说</td>
-</tr>
-<tr>
-<td>stare v.</td>
-<td>凝视，盯着看</td>
-</tr>
-<tr>
-<td>stimulus n.</td>
-<td>刺激；刺激物；促进因素</td>
-</tr>
-<tr>
-<td>spin v.</td>
-<td>旋转</td>
-</tr>
-<tr>
-<td>mental adj.</td>
-<td>精神的</td>
-</tr>
-<tr>
-<td>accurately adv.</td>
-<td>精确地，准确地</td>
-</tr>
-<tr>
-<td>expectation n.</td>
-<td>期待；预期</td>
-</tr>
-<tr>
-<td>peek v.</td>
-<td>窥视，偷看</td>
-</tr>
-<tr>
-<td>valve n.</td>
-<td>阀门</td>
-</tr>
-<tr>
-<td>generous adj.</td>
-<td>慷慨的，大方的</td>
-</tr>
-<tr>
-<td>string n.</td>
-<td>线，弦</td>
-</tr>
-<tr>
-<td>pluck v.</td>
-<td>拉；拽</td>
-</tr>
-<tr>
-<td>revolutionize v.</td>
-<td>发动革命；使彻底变革</td>
-</tr>
-<tr>
-<td>assembly n.</td>
-<td>装配</td>
-</tr>
-<tr>
-<td>material n.</td>
-<td>材料，原料</td>
-</tr>
-<tr>
-<td>instrument n.</td>
-<td>仪器；乐器</td>
-</tr>
-<tr>
-<td>precisely adv.</td>
-<td>精确地；恰恰</td>
-</tr>
-<tr>
-<td>rescue v&amp;n.</td>
-<td>营救；援救</td>
-</tr>
-<tr>
-<td>exhausted adj.</td>
-<td>疲惫的；耗尽的</td>
-</tr>
-<tr>
-<td>yelp v.</td>
-<td>叫喊；狗吠</td>
-</tr>
-<tr>
-<td>shiver v.</td>
-<td>颤抖</td>
-</tr>
-<tr>
-<td>scent n.</td>
-<td>气味；痕迹</td>
-</tr>
-<tr>
-<td>urgent adj.</td>
-<td>紧急的；急迫的</td>
-</tr>
-<tr>
-<td>victim n.</td>
-<td>受害人；牺牲者</td>
-</tr>
-<tr>
-<td>convey v.</td>
-<td>传达</td>
-</tr>
-<tr>
-<td>subtlety n.</td>
-<td>微妙；敏锐</td>
-</tr>
-<tr>
-<td>knead v.</td>
-<td>揉合，揉捏</td>
-</tr>
-<tr>
-<td>ethics n.</td>
-<td>伦理学；道德标准</td>
-</tr>
-<tr>
-<td>handle n.</td>
-<td>把手</td>
-</tr>
-<tr>
-<td>spread v&amp;n.</td>
-<td>传播；伸展</td>
-</tr>
-<tr>
-<td>panicked   adj.</td>
-<td>受到惊吓的</td>
-</tr>
-<tr>
-<td>agitation n.</td>
-<td>激动；搅动</td>
-</tr>
-<tr>
-<td>violent adj.</td>
-<td>暴力的；猛烈的</td>
-</tr>
-<tr>
-<td>attempt n.</td>
-<td>尝试</td>
-</tr>
-<tr>
-<td>desperately adv.</td>
-<td>拼命地；绝望地</td>
-</tr>
-<tr>
-<td>flexible adj.</td>
-<td>灵活的</td>
-</tr>
-<tr>
-<td>prescription  n.</td>
-<td>处方</td>
-</tr>
-<tr>
-<td>heal v.</td>
-<td>治疗</td>
-</tr>
-<tr>
-<td>stir v.</td>
-<td>搅动；激起</td>
-</tr>
-<tr>
-<td>enhance   v.</td>
-<td>提高；增加</td>
-</tr>
-<tr>
-<td>compassion  n.</td>
-<td>同情；怜悯</td>
-</tr>
-<tr>
-<td>remarkable adj.</td>
-<td>卓越的；非凡的</td>
-</tr>
-<tr>
-<td>master v.</td>
-<td>掌握；精通</td>
-</tr>
-<tr>
-<td>destruction n.</td>
-<td>破坏，毁灭</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/English/EnglishWord/%E8%8B%B1%E8%AF%AD2015%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ysx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ysxBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/11/English/EnglishWord/%E8%8B%B1%E8%AF%AD2015%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/" itemprop="url">英语2015真题单词</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-11T12:52:16+08:00">
-                2020-02-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index">
-                    <span itemprop="name">英语真题单词</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <div class="table-container">
-<table>
-<thead>
-<tr>
-<th>单词</th>
-<th>意思</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>envelope  n.</td>
-<td>信封，封皮</td>
-</tr>
-<tr>
-<td>ritual  n.</td>
-<td>仪式；惯例</td>
-</tr>
-<tr>
-<td>recite  v.</td>
-<td>背诵；叙述</td>
-</tr>
-<tr>
-<td>relative n.</td>
-<td>亲戚</td>
-</tr>
-<tr>
-<td>veil n.</td>
-<td>面纱；面罩</td>
-</tr>
-<tr>
-<td>ceremony n.</td>
-<td>典礼，仪式</td>
-</tr>
-<tr>
-<td>bouquets n.</td>
-<td>宴会;酒会</td>
-</tr>
-<tr>
-<td>scare v.</td>
-<td>惊吓；把…吓跑</td>
-</tr>
-<tr>
-<td>consult v.</td>
-<td>查阅；商量</td>
-</tr>
-<tr>
-<td>florist n.</td>
-<td>花商，种花人</td>
-</tr>
-<tr>
-<td>custom n.</td>
-<td>习惯；风俗</td>
-</tr>
-<tr>
-<td>tolerant adj.</td>
-<td>宽容的；容忍的</td>
-</tr>
-<tr>
-<td>furious adj.</td>
-<td>激烈的；狂怒的</td>
-</tr>
-<tr>
-<td>motivate v.</td>
-<td>刺激；使有动机</td>
-</tr>
-<tr>
-<td>naughty adj.</td>
-<td>顽皮的，淘气的</td>
-</tr>
-<tr>
-<td>deprive v.</td>
-<td>使丧失，剥夺</td>
-</tr>
-<tr>
-<td>sheepishly adv.</td>
-<td>羞怯地</td>
-</tr>
-<tr>
-<td>fundamental adj.</td>
-<td>基本的，根本的</td>
-</tr>
-<tr>
-<td>recognize v.</td>
-<td>认出，识别</td>
-</tr>
-<tr>
-<td>worthwhile adj.</td>
-<td>值得做的，值得花时间的</td>
-</tr>
-<tr>
-<td>scold v.</td>
-<td>骂；责骂</td>
-</tr>
-<tr>
-<td>severely adv.</td>
-<td>严重地；严格地</td>
-</tr>
-<tr>
-<td>arise v.</td>
-<td>引起；产生</td>
-</tr>
-<tr>
-<td>upbringing n.</td>
-<td>教养；养育</td>
-</tr>
-<tr>
-<td>extravert n.</td>
-<td>外向；性格外向者</td>
-</tr>
-<tr>
-<td>tribe n.</td>
-<td>部落；族</td>
-</tr>
-<tr>
-<td>sculptor n.</td>
-<td>雕刻家</td>
-</tr>
-<tr>
-<td>carve v.</td>
-<td>雕刻</td>
-</tr>
-<tr>
-<td>blast v.</td>
-<td>爆炸</td>
-</tr>
-<tr>
-<td>monumental adj.</td>
-<td>不朽的；纪念碑的</td>
-</tr>
-<tr>
-<td>trivia n.</td>
-<td>琐事</td>
-</tr>
-<tr>
-<td>gigantic adj.</td>
-<td>巨大的，庞大的</td>
-</tr>
-<tr>
-<td>dwarf v.</td>
-<td>使矮小</td>
-</tr>
-<tr>
-<td>head v.</td>
-<td>作为…的首领；站在…的前头</td>
-</tr>
-<tr>
-<td>backdrop n.</td>
-<td>背景；背景幕</td>
-</tr>
-<tr>
-<td>occupy v.</td>
-<td>占领；居住</td>
-</tr>
-<tr>
-<td>characterize v.</td>
-<td>描绘…的特性；具有…的特征</td>
-</tr>
-<tr>
-<td>accompany v.</td>
-<td>陪伴，伴随</td>
-</tr>
-<tr>
-<td>considerate adj.</td>
-<td>体贴的；考虑周到的</td>
-</tr>
-<tr>
-<td>steal v.</td>
-<td>剽窃；偷偷地做；偷窃</td>
-</tr>
-<tr>
-<td>masculine adj.</td>
-<td>男性的；男子气概的</td>
-</tr>
-<tr>
-<td>identity n.</td>
-<td>身份；同一性</td>
-</tr>
-<tr>
-<td>tally v.</td>
-<td>计算；记录</td>
-</tr>
-<tr>
-<td>block n.</td>
-<td>块；街区</td>
-</tr>
-<tr>
-<td>irrelevant adj.</td>
-<td>不相干的；不切题的</td>
-</tr>
-<tr>
-<td>contradictory adj.</td>
-<td>矛盾的；反对的</td>
-</tr>
-<tr>
-<td>apprehensive adj.</td>
-<td>忧虑的；不安的</td>
-</tr>
-<tr>
-<td>capability n.</td>
-<td>才能，能力</td>
-</tr>
-<tr>
-<td>linger v.</td>
-<td>徘徊；磨蹭</td>
-</tr>
-<tr>
-<td>potential adj.</td>
-<td>潜在的；可能的</td>
-</tr>
-<tr>
-<td>dwell v.</td>
-<td>细想某事</td>
-</tr>
-<tr>
-<td>whereas  conj.</td>
-<td>然而；鉴于</td>
-</tr>
-<tr>
-<td>internalize  v.</td>
-<td>内在化</td>
-</tr>
-<tr>
-<td>recall v.</td>
-<td>召回；回想起</td>
-</tr>
-<tr>
-<td>thoroughly adv.</td>
-<td>彻底地，完全地</td>
-</tr>
-<tr>
-<td>ponder v.</td>
-<td>仔细考虑</td>
-</tr>
-<tr>
-<td>amplify v.</td>
-<td>增强；详述</td>
-</tr>
-<tr>
-<td>spot v.</td>
-<td>认出；弄脏</td>
-</tr>
-<tr>
-<td>tenfold adv.</td>
-<td>十倍地；成十倍</td>
-</tr>
-<tr>
-<td>surgeon n.</td>
-<td>外科医生</td>
-</tr>
-<tr>
-<td>obstacle n.</td>
-<td>障碍，干扰，妨碍</td>
-</tr>
-<tr>
-<td>caution  n.</td>
-<td>警告，警示</td>
-</tr>
-<tr>
-<td>interpret v.</td>
-<td>解释；说明</td>
-</tr>
-<tr>
-<td>considerably adv.</td>
-<td>相当地；非常地</td>
-</tr>
-<tr>
-<td>awesome adj.</td>
-<td>极好的</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -4116,7 +3618,7 @@ a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+...+ab^{n-2}+b^{n-1})</script><p><br></p>
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">95</span>
+                  <span class="site-state-item-count">97</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -4127,7 +3629,7 @@ a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+...+ab^{n-2}+b^{n-1})</script><p><br></p>
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -4138,7 +3640,7 @@ a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+...+ab^{n-2}+b^{n-1})</script><p><br></p>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
