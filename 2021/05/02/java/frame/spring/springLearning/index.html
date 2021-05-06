@@ -87,7 +87,7 @@
 <meta property="og:description" content="spring learningspring coreIoc(Inversion of control): 控制反转，是一个理论，概念，思想。描述的：把对象的创建，赋值，管理工作都交给代码之外的容器的实现，也是对象的创建是由其他的外部资源完成  控制：创建对象，对象的属性赋值，对象之间的关系管理 反转：把原来的开发人员挂白努力，创建对象的权限转移给代码之外的容器实现。由容器代替开发人员的管理对象。创">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-02T14:48:00.000Z">
-<meta property="article:modified_time" content="2021-05-03T15:15:24.366Z">
+<meta property="article:modified_time" content="2021-05-05T12:16:47.911Z">
 <meta property="article:author" content="ysx">
 <meta property="article:tag" content="spring">
 <meta name="twitter:card" content="summary">
@@ -527,7 +527,7 @@
 2. 没有返回值
 3. 方法名称自定义
 4. 方法有一个Exception ，如果还有就是joinPoint
-</code></pre><p>属性：</p>
+</code></pre><p>属性: </p>
 <pre><code>1. value 切入点表达式
 </code></pre><p>特点</p>
 <pre><code>1. 总是会执行 就算抛出异常还是执行
@@ -539,6 +539,69 @@
 <p>属性：<br>    value： 切入点表达式</p>
 <p>特点：<br>当使用@PointCut定义在一个方法上面，此时这个方法的名称就是切入点表达式的别名。<br>其他通知中，value属性就是可以使用这个方法名称，代替切入点表达式</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Pointcut</span>(value = <span class="string">"execution(* *..SomeServiceImpl.doSecond(..))"</span>)</span><br><span class="line"> <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">mypt</span><span class="params">()</span></span>&#123;</span><br><span class="line">   <span class="comment">//no code</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@After</span>(value = <span class="string">"mypt()"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><h4 id="什么是事务"><a href="#什么是事务" class="headerlink" title="什么是事务"></a>什么是事务</h4><p>讲mysql的时候提出了事务，事务是指一组sql语句的集合，集合中有多条sql语句，可能有insert，update，selelct，delete。 我们希望浙西多个sql语句都能成功，或者都失败，这些sql语句的执行是一致的，作为一个整体执行</p>
+<h4 id="在什么时候想到使用事务"><a href="#在什么时候想到使用事务" class="headerlink" title="在什么时候想到使用事务"></a>在什么时候想到使用事务</h4><p>在我们操作涉及得到多个表，或者是多个sql语句的insert，update，delete. 需要保证这些语句都是成功才能完成我们的功能或者都失败，保证操作是符合要求的。  </p>
+<p>在java代码中写程序，控制事务，此时事务应该放在哪里呢？<br>service类的业务方法是那个，因为业务方法会调用多个dao方法，执行多个sql语句</p>
+<h4 id="使用什么工具访问数据库"><a href="#使用什么工具访问数据库" class="headerlink" title="使用什么工具访问数据库"></a>使用什么工具访问数据库</h4><p>jdbc 访问数据库，处理事务 Connection conn; conn.commit(); con.rollback();<br>mybatis 访问数据库，处理事务 SqlSession.commit(); SqlSession.rollback();<br>hibernate 访问数据库，处理事务 Session.commit(); Sesison.rollback();</p>
+<h4 id="上面中事务的处理方法有什么不足"><a href="#上面中事务的处理方法有什么不足" class="headerlink" title="上面中事务的处理方法有什么不足"></a>上面中事务的处理方法有什么不足</h4><ol>
+<li>不同的数据库访问技术，处理事务的对象，方法不同。需要了解不同的数据库访问技术使用事务的原理</li>
+<li>掌握多种数据库中事务的处理罗技。什么时候提交事务，什么时候回滚事务</li>
+<li>处理事务的多种方法</li>
+</ol>
+<h4 id="怎么解决不足呢"><a href="#怎么解决不足呢" class="headerlink" title="怎么解决不足呢"></a>怎么解决不足呢</h4><p>spring 提供一种处理事务的统一模型， 能使用统一步骤，方式完成多种不同数据库访问技术的事务处理</p>
+<p>使用 spirng事务处理机制 可以完成mybatis/hibernate访问数据库的事务处理</p>
+<h4 id="处理事务，需要怎么做，做什么"><a href="#处理事务，需要怎么做，做什么" class="headerlink" title="处理事务，需要怎么做，做什么"></a>处理事务，需要怎么做，做什么</h4><p>Spring 处理事务的模型，使用步骤都是固定的，把事务使用的信息提供给spring就可以了</p>
+<ol>
+<li>事务的内部提交，回滚事务，使用的事务管理七对象，代替你完成commit, rollback。事务管理器是一个接口和他的众多实现类：<br> 接口： PlatformTransactionManager, 定义了事务的重要的commmit，rollback<br> 实现类：spring把每一种数据库反问技术对应的事务处理类都创建好了  <pre><code> mybatis 访问数据库--spring创建好的是DataSourceTransactionManager
+ hibernate 访问数据库 -- spring 创建好的是HibernateTransactionManager
+</code></pre></li>
+<li>怎么使用<br> 你需要告诉spring 你用的那种数据库访问技术，声明数据库访问技术对于事务管理器的实现类，在spirng的配置文件中使用<bean> 声明就好了例如使用mybatis访问数据库在xml配置中 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"xxx"</span> <span class="attr">class</span>=<span class="string">"..DataSourceTransactionManager"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="说明方法需要的事务"><a href="#说明方法需要的事务" class="headerlink" title="说明方法需要的事务"></a>说明方法需要的事务</h5><p>事务的额隔离级别 四个值<br>    default： 采用db默认的事务处理级别，mysql默认伟REPEATABLE_READ oracle默认READ——COMMITTED</p>
+<pre><code>1. READ_UNCOMMITTED: 读取未提交，未解决任何并发问题。
+2. READ_COMMITEED： 读取以提交, 存在不可重复读和幻读。
+3. REPEATABLE_READ： 可重复读，解决脏读，不可创富读存在幻读。
+4. SERIALIZABLE：串行化。不存在并发问题。
+</code></pre><p>事务的超时时间: 如果一个事务运行超过一段时间就回滚</p>
+<p>事务的传播行为： 控制业务方法是不是有事务，是什么样的事务的，7个传播行为，表示你的业务方法调用时候，事务在方法之间是如何使用的。</p>
+<p>前三个要知道</p>
+<pre><code>1. PROPAGATION_REQUIRED
+2. PROPAGATION_REQUIRES_NEW
+3. PROPAGATION_SUPPORTS
+4. PROPAGATION_MANDATORY
+5. PROPAGATION_NESTED
+6. PROPAGATION_NEVER
+7. PROPAGATION_NOT_SUPPORTED 
+</code></pre><h5 id="提交事务，回滚事务的时机"><a href="#提交事务，回滚事务的时机" class="headerlink" title="提交事务，回滚事务的时机"></a>提交事务，回滚事务的时机</h5><pre><code>1. 当你的业务方法执行成功没有抛出异常，结束时会提交事务
+2. 当你的业务方法运行时候异常 spring就会回滚
+3. 当你的业务方法爆出非运行时异常 主要是受查异常时，提交事务
+抽查异常就是你写的代码中必须处理的和异常。例如：IOException， SQLException
+</code></pre><h5 id="spring-框架中提供的事务处理方案"><a href="#spring-框架中提供的事务处理方案" class="headerlink" title="spring 框架中提供的事务处理方案"></a>spring 框架中提供的事务处理方案</h5><ol>
+<li>适合中小项目实用的，注解方案。<br> spring 框架自己用aop给业务方法增加事务的功能，使用@Transactional注解增加事务。<br> @Transactional注解是spring框架自己的注解，放在public方法上，实现事务的管理机制<br> 可以给注解的属性赋值，表示具体的隔离级别，传播行为，异常信息等等。  </li>
+</ol>
+<p>使用@transactional的步骤</p>
+<pre><code>1. 事务管理器
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"xxx"</span> <span class="attr">class</span>=<span class="string">"DataSourceTransactionManager"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+2. 开启事务注解驱动，告诉spring框架，我们使用注解的方式管理事务
+
+spring 开启aop机制， 创建@Transactional 所在的类代理对象，给方法加入事务的功能
+    在你的业务方法执行之前，先开启事务，在业务方法之后提交或回滚事务，使用aop的环绕通知
+</code></pre><ol>
+<li><p>在大型项目中, 有很多的类，方法，需要大量的配置事务，使用aspectj框架功能，在spring配置文件中声明类，方法需要的事务，这种业务方法和事务配置完全分离<br> 实现步骤：都是在xml配置文件中完成的</p>
+<ol>
+<li><p>要使用aspectJ库那个家 mavan中加入依赖</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-aspects<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.5.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>声明事务管理器对象</p>
+ <bean id="xx" class="DataSourceTransactionManager">
+</li>
+<li><p>声明方法需要的事务类型（配置方法的事务属性（隔离级别，传播行为，超时）</p>
+</li>
+<li>配置aop： 指定那些类要创建代理</li>
+</ol>
+</li>
+</ol>
 
       
     </div>
@@ -578,6 +641,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/05/06/java/frame/springmvc/springMvcLearning/" rel="prev" title="springMvc">
+                springMvc <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -654,7 +721,7 @@
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">97</span>
+                  <span class="site-state-item-count">98</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -665,7 +732,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -676,7 +743,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -709,7 +776,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#spring-learning"><span class="nav-number">1.</span> <span class="nav-text">spring learning</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#spring-core"><span class="nav-number">1.1.</span> <span class="nav-text">spring core</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java中创建对象有那些方式"><span class="nav-number">1.2.</span> <span class="nav-text">java中创建对象有那些方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ioc-的体现"><span class="nav-number">1.3.</span> <span class="nav-text">ioc 的体现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ioc的技术实现"><span class="nav-number">1.3.1.</span> <span class="nav-text">ioc的技术实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#di注入"><span class="nav-number">1.3.2.</span> <span class="nav-text">di注入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spring注解"><span class="nav-number">1.4.</span> <span class="nav-text">spring注解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#扫描器"><span class="nav-number">1.4.1.</span> <span class="nav-text">扫描器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Component"><span class="nav-number">1.4.2.</span> <span class="nav-text">@Component</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Repository"><span class="nav-number">1.4.3.</span> <span class="nav-text">@Repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Service"><span class="nav-number">1.4.4.</span> <span class="nav-text">@Service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Controller"><span class="nav-number">1.4.5.</span> <span class="nav-text">@Controller</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Value"><span class="nav-number">1.4.6.</span> <span class="nav-text">@Value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AutoWired"><span class="nav-number">1.4.7.</span> <span class="nav-text">@AutoWired</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Resource"><span class="nav-number">1.4.8.</span> <span class="nav-text">Resource</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aop"><span class="nav-number">1.5.</span> <span class="nav-text">aop</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么时候考虑用aop"><span class="nav-number">1.5.1.</span> <span class="nav-text">什么时候考虑用aop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#aop的实现"><span class="nav-number">1.5.2.</span> <span class="nav-text">aop的实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习aspectj框架的使用"><span class="nav-number">1.6.</span> <span class="nav-text">学习aspectj框架的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#aspectJ-介绍"><span class="nav-number">1.6.1.</span> <span class="nav-text">aspectJ 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#aspectJ使用"><span class="nav-number">1.6.2.</span> <span class="nav-text">aspectJ使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Before"><span class="nav-number">1.6.2.1.</span> <span class="nav-text">@Before</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JoinPoint"><span class="nav-number">1.6.2.2.</span> <span class="nav-text">@JoinPoint</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AfterReturning"><span class="nav-number">1.6.2.3.</span> <span class="nav-text">@AfterReturning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Around"><span class="nav-number">1.6.2.4.</span> <span class="nav-text">@Around</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AfterThrowing"><span class="nav-number">1.6.2.5.</span> <span class="nav-text">@AfterThrowing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#After"><span class="nav-number">1.6.2.6.</span> <span class="nav-text">@After</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PoinCut"><span class="nav-number">1.6.2.7.</span> <span class="nav-text">@PoinCut</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#spring-learning"><span class="nav-number">1.</span> <span class="nav-text">spring learning</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#spring-core"><span class="nav-number">1.1.</span> <span class="nav-text">spring core</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java中创建对象有那些方式"><span class="nav-number">1.2.</span> <span class="nav-text">java中创建对象有那些方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ioc-的体现"><span class="nav-number">1.3.</span> <span class="nav-text">ioc 的体现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ioc的技术实现"><span class="nav-number">1.3.1.</span> <span class="nav-text">ioc的技术实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#di注入"><span class="nav-number">1.3.2.</span> <span class="nav-text">di注入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spring注解"><span class="nav-number">1.4.</span> <span class="nav-text">spring注解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#扫描器"><span class="nav-number">1.4.1.</span> <span class="nav-text">扫描器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Component"><span class="nav-number">1.4.2.</span> <span class="nav-text">@Component</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Repository"><span class="nav-number">1.4.3.</span> <span class="nav-text">@Repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Service"><span class="nav-number">1.4.4.</span> <span class="nav-text">@Service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Controller"><span class="nav-number">1.4.5.</span> <span class="nav-text">@Controller</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Value"><span class="nav-number">1.4.6.</span> <span class="nav-text">@Value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AutoWired"><span class="nav-number">1.4.7.</span> <span class="nav-text">@AutoWired</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Resource"><span class="nav-number">1.4.8.</span> <span class="nav-text">Resource</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aop"><span class="nav-number">1.5.</span> <span class="nav-text">aop</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么时候考虑用aop"><span class="nav-number">1.5.1.</span> <span class="nav-text">什么时候考虑用aop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#aop的实现"><span class="nav-number">1.5.2.</span> <span class="nav-text">aop的实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习aspectj框架的使用"><span class="nav-number">1.6.</span> <span class="nav-text">学习aspectj框架的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#aspectJ-介绍"><span class="nav-number">1.6.1.</span> <span class="nav-text">aspectJ 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#aspectJ使用"><span class="nav-number">1.6.2.</span> <span class="nav-text">aspectJ使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Before"><span class="nav-number">1.6.2.1.</span> <span class="nav-text">@Before</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JoinPoint"><span class="nav-number">1.6.2.2.</span> <span class="nav-text">@JoinPoint</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AfterReturning"><span class="nav-number">1.6.2.3.</span> <span class="nav-text">@AfterReturning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Around"><span class="nav-number">1.6.2.4.</span> <span class="nav-text">@Around</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AfterThrowing"><span class="nav-number">1.6.2.5.</span> <span class="nav-text">@AfterThrowing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#After"><span class="nav-number">1.6.2.6.</span> <span class="nav-text">@After</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PoinCut"><span class="nav-number">1.6.2.7.</span> <span class="nav-text">@PoinCut</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务"><span class="nav-number">1.6.3.</span> <span class="nav-text">事务</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是事务"><span class="nav-number">1.6.3.1.</span> <span class="nav-text">什么是事务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在什么时候想到使用事务"><span class="nav-number">1.6.3.2.</span> <span class="nav-text">在什么时候想到使用事务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用什么工具访问数据库"><span class="nav-number">1.6.3.3.</span> <span class="nav-text">使用什么工具访问数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上面中事务的处理方法有什么不足"><span class="nav-number">1.6.3.4.</span> <span class="nav-text">上面中事务的处理方法有什么不足</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#怎么解决不足呢"><span class="nav-number">1.6.3.5.</span> <span class="nav-text">怎么解决不足呢</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#处理事务，需要怎么做，做什么"><span class="nav-number">1.6.3.6.</span> <span class="nav-text">处理事务，需要怎么做，做什么</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#说明方法需要的事务"><span class="nav-number">1.6.3.6.1.</span> <span class="nav-text">说明方法需要的事务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#提交事务，回滚事务的时机"><span class="nav-number">1.6.3.6.2.</span> <span class="nav-text">提交事务，回滚事务的时机</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#spring-框架中提供的事务处理方案"><span class="nav-number">1.6.3.6.3.</span> <span class="nav-text">spring 框架中提供的事务处理方案</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
