@@ -259,6 +259,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/13/Leetcode/289-game-of-life/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/13/Leetcode/289-game-of-life/" itemprop="url">289-game-of-life</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-13T09:33:46+08:00">
+                2020-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="生命游戏"><a href="#生命游戏" class="headerlink" title="生命游戏"></a>生命游戏</h2><p><a href="https://leetcode-cn.com/problems/game-of-life/submissions/" target="_blank" rel="noopener">题目链接</a> </p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>这题 所有的细胞复活和死亡式在同一时间的, 所以我们采用另一个数组来代替他下一轮的状态, 对原数组进行遍历判断周围活细胞的数量即可。 注意要判断边界，要不然会数组越界</p>
+<h3 id="go-语言实现"><a href="#go-语言实现" class="headerlink" title="go 语言实现"></a>go 语言实现</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">gameOfLife</span><span class="params">(board [][]<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	dx := []<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">-1</span>&#125;</span><br><span class="line">	dy := []<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>&#125;</span><br><span class="line">	m := <span class="built_in">len</span>(board)</span><br><span class="line">	n := <span class="built_in">len</span>(board[<span class="number">0</span>])</span><br><span class="line">	<span class="keyword">var</span> tmp = <span class="built_in">make</span>([][]<span class="keyword">int</span>, m, m)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; m; i++ &#123;</span><br><span class="line">		tmp[i] = <span class="built_in">make</span>([]<span class="keyword">int</span>, n, n)</span><br><span class="line">		<span class="keyword">for</span> j := <span class="number">0</span>; j &lt; n; j++ &#123;</span><br><span class="line">			sum := <span class="number">0</span></span><br><span class="line">			<span class="keyword">for</span> k := <span class="number">0</span>; k &lt; <span class="number">8</span>; k++ &#123;</span><br><span class="line">				tx := i + dx[k]</span><br><span class="line">				ty := j + dy[k]</span><br><span class="line">				<span class="keyword">if</span> tx &lt; <span class="number">0</span> || tx &gt;= m || ty &lt; <span class="number">0</span> || ty &gt;= n &#123;</span><br><span class="line">					<span class="keyword">continue</span></span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> board[tx][ty] == <span class="number">1</span> &#123;</span><br><span class="line">					sum++</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> board[i][j] == <span class="number">0</span> &amp;&amp; sum == <span class="number">3</span> &#123;</span><br><span class="line">				tmp[i][j] = <span class="number">1</span></span><br><span class="line">				<span class="keyword">continue</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> board[i][j] == <span class="number">1</span> &#123;</span><br><span class="line">				<span class="keyword">if</span> sum &lt; <span class="number">2</span> || sum &gt; <span class="number">3</span> &#123;</span><br><span class="line">					tmp[i][j] = <span class="number">0</span></span><br><span class="line">					<span class="keyword">continue</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			tmp[i][j] = board[i][j]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="built_in">copy</span>(board, tmp)</span><br><span class="line">	<span class="comment">//fmt.Println(tmp)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/12/Leetcode/122-best-time-to-buy-and-sell-stock-ii/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2725,159 +2869,6 @@ a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+...+ab^{n-2}+b^{n-1})</script><p><br></p>
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/14/English/Syntax/%E9%95%BF%E9%9A%BE%E5%8F%A5%E8%A7%A3%E6%9E%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ysx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ysxBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/14/English/Syntax/%E9%95%BF%E9%9A%BE%E5%8F%A5%E8%A7%A3%E6%9E%90/" itemprop="url">长难句解析</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-14T14:11:46+08:00">
-                2020-02-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD%E8%A7%A3%E9%A2%98%E6%8A%80%E5%B7%A7/" itemprop="url" rel="index">
-                    <span itemprop="name">英语解题技巧</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="长难句（纸老虎）"><a href="#长难句（纸老虎）" class="headerlink" title="长难句（纸老虎）"></a>长难句（纸老虎）</h2><p>英语句子特点:只有一个主干谓语,可以出现其他动词但要用连词连接或变成非谓语  </p>
-<ul>
-<li>特殊标点(逗号，冒号，分号，破折号)<br>I’m now convinced that the seceet of why French kidfs rarely whine or collapse into tantrums(—-or  at least do so less than American kids—-) is that they’ve developed the internal resources to cope with frustration. </li>
-</ul>
-<ul>
-<li><p>找谓语(时态、语态、情态)<br><strong>区别：非谓语（to do/do/dong）单独出现的时候不是谓语!</strong><br>难点1: 动词一般过去时，和非谓语的偶去分词长得一样(v+ed 前+be 如果语序通顺就是非谓语)<br>Teenagers climbed dozens of flights of stairs to deliver water amd food to elderly people trapped in powerless high-rise buildings  </p>
-<p>难点2:有写从属连词引导的少量状语从句，与主句的主语一直，可能从句会省略主语和助动词（频率相对比较少）<br>WE convet their food ，their wine  and their confounding ability to stay slim while consuming both…but…  </p>
-<p>Apple’s digital wallet, if widely adopted, could usher in a new era of ease and convenience.</p>
-</li>
-<li><p>根据公式找连词(注意这里连词一定要是连接句子的)<br><strong>并列连词:and/or/but/so/not…but<br>从属连词：wh-/that/if/even if/even though/although/as/since 等等</strong><br>The American patent system was designed to encourage creation and use of new technology.<br><strong>难点:连词省略:宾从（第一个不缺意思成分的that）定从(指代先行词做宾语)</strong><br>You might celebrate the freedom technology could bring to 2.5 billion in the world.<br>The man (who/that) you met yestetday is my English teacher </p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2928,7 +2919,7 @@ a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+...+ab^{n-2}+b^{n-1})</script><p><br></p>
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">99</span>
+                  <span class="site-state-item-count">100</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2950,7 +2941,7 @@ a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+...+ab^{n-2}+b^{n-1})</script><p><br></p>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
