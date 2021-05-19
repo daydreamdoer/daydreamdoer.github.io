@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="springboot," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="springbootspringboot项目代码必须放到Application类所在的同级目录或下级目录 spring 默认配置properties 和 yml&#x2F;yaml 只能存在一个，两个都存在以properties为准 properties写法12345#设置内置端口号server.port&#x3D;8080设置上下文根server.servlet.context-path&#x3D;&#x2F;springboot y">
+<meta property="og:type" content="article">
+<meta property="og:title" content="springboot">
+<meta property="og:url" content="http://yoursite.com/2021/05/11/java/frame/springBoot/springboot/index.html">
+<meta property="og:site_name" content="ysxBlog">
+<meta property="og:description" content="springbootspringboot项目代码必须放到Application类所在的同级目录或下级目录 spring 默认配置properties 和 yml&#x2F;yaml 只能存在一个，两个都存在以properties为准 properties写法12345#设置内置端口号server.port&#x3D;8080设置上下文根server.servlet.context-path&#x3D;&#x2F;springboot y">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-05-11T13:49:00.000Z">
+<meta property="article:modified_time" content="2021-05-19T15:21:04.414Z">
+<meta property="article:author" content="ysx">
+<meta property="article:tag" content="springboot">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2021/05/11/java/frame/springBoot/springboot/"/>
+
+
+
+
+
+  <title>springboot | ysxBlog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ysxBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/11/java/frame/springBoot/springboot/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">springboot</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-05-11T21:49:00+08:00">
+                2021-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/springboot/" itemprop="url" rel="index">
+                    <span itemprop="name">springboot</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="springboot"><a href="#springboot" class="headerlink" title="springboot"></a>springboot</h2><p>springboot项目代码必须放到Application类所在的同级目录或下级目录</p>
+<h3 id="spring-默认配置"><a href="#spring-默认配置" class="headerlink" title="spring 默认配置"></a>spring 默认配置</h3><p>properties 和 yml/yaml 只能存在一个，两个都存在以properties为准</p>
+<h4 id="properties写法"><a href="#properties写法" class="headerlink" title="properties写法"></a>properties写法</h4><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#设置内置端口号</span></span><br><span class="line"><span class="meta">server.port</span>=<span class="string">8080</span></span><br><span class="line"></span><br><span class="line"><span class="attr">设置上下文根</span></span><br><span class="line"><span class="meta">server.servlet.context-path</span>=<span class="string">/springboot</span></span><br></pre></td></tr></table></figure>
+<h4 id="yml-yaml写法"><a href="#yml-yaml写法" class="headerlink" title="yml, yaml写法"></a>yml, yaml写法</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8081</span></span><br><span class="line">  <span class="attr">servlet:</span></span><br><span class="line">    <span class="string">context-path/spring</span></span><br></pre></td></tr></table></figure>
+<h4 id="多环境下的springboot配置"><a href="#多环境下的springboot配置" class="headerlink" title="多环境下的springboot配置"></a>多环境下的springboot配置</h4><p>命名为application-xxx.properties; 使用spring.profiles.active=xxx</p>
+<h4 id="自定义参数配置"><a href="#自定义参数配置" class="headerlink" title="自定义参数配置"></a>自定义参数配置</h4><h5 id="获取单个参数-Value-“”"><a href="#获取单个参数-Value-“”" class="headerlink" title="获取单个参数@Value(“”)"></a>获取单个参数@Value(“”)</h5><p>配置中定义参数例如school.name=zisu</p>
+<p>在java中使用java注解@Value获取文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Value</span>(<span class="string">"$&#123;school.name&#125;"</span>)</span><br><span class="line"><span class="keyword">public</span> String schoolName;</span><br></pre></td></tr></table></figure>
+<h5 id="获取一组参数"><a href="#获取一组参数" class="headerlink" title="获取一组参数"></a>获取一组参数</h5><p>在application.properties中写</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">school.name</span>=<span class="string">zisu</span></span><br><span class="line"><span class="meta">school.address</span>=<span class="string">liuhelu299</span></span><br></pre></td></tr></table></figure>
+<p>在java文件中设置注解@Component交给spring容器管理<br>再加入@ConfigurationProperties(prefix = “school”)</p>
+<ol>
+<li>prefix是配置文件中参数前缀</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@ConfigurationProperties</span>(prefix = <span class="string">"school"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">School</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> String address;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getAddress</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> address;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAddress</span><span class="params">(String address)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.address = address;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="spring集成jsp"><a href="#spring集成jsp" class="headerlink" title="spring集成jsp"></a>spring集成jsp</h4><p>引入springboot内嵌Tomcatjsp解析依赖，不添加解析不了jsp<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.embed<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat-embed-jasper<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>springboot默认推荐使用前端引擎是thymeleaf<br>现在我们要是用springboot集成jsp，手动指定jsp最后编译的路径<br>而且springboot集成编译jsp的路径是springboot规定好的位置<br>META-INF/resources</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/webapp<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">targetPath</span>&gt;</span>META-INF/resources<span class="tag">&lt;/<span class="name">targetPath</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">include</span>&gt;</span>*.*<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="springboot集成mybatis"><a href="#springboot集成mybatis" class="headerlink" title="springboot集成mybatis"></a>springboot集成mybatis</h3><h4 id="需要jar包"><a href="#需要jar包" class="headerlink" title="需要jar包"></a>需要jar包</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;plugin&gt;</span><br><span class="line">    &lt;groupId&gt;org.mybatis.generator&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;mybatis-generator-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.3.6&lt;/version&gt;</span><br><span class="line">    &lt;configuration&gt;</span><br><span class="line">        &lt;configurationFile&gt;GeneratorMapper.xml&lt;/configurationFile&gt;</span><br><span class="line">        &lt;verbose&gt;true&lt;/verbose&gt;</span><br><span class="line">        &lt;overwrite&gt;true&lt;/overwrite&gt;</span><br><span class="line">    &lt;/configuration&gt;</span><br><span class="line">&lt;/plugin&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="GeneratorMapper-xml文件"><a href="#GeneratorMapper-xml文件" class="headerlink" title="GeneratorMapper.xml文件"></a>GeneratorMapper.xml文件</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">generatorConfiguration</span></span></span><br><span class="line"><span class="meta">        <span class="meta-keyword">PUBLIC</span> <span class="meta-string">"-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"</span></span></span><br><span class="line"><span class="meta">        <span class="meta-string">"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">generatorConfiguration</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 指定连接数据库的JDBC驱动包所在位置，指定到你本机的完整路径，需确保本地路径下存在该jar --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">classPathEntry</span> <span class="attr">location</span>=<span class="string">"/home/ysx/.m2/repository/mysql/mysql-connector-java/8.0.23/mysql-connector-java-8.0.23.jar"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 配置table表信息内容体，targetRuntime指定采用MyBatis3的版本 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context</span> <span class="attr">id</span>=<span class="string">"tables"</span> <span class="attr">targetRuntime</span>=<span class="string">"MyBatis3"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--序列化--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span> <span class="attr">type</span>=<span class="string">"org.mybatis.generator.plugins.SerializablePlugin"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--以下需要插件  --&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">            插入成功后返回ID</span></span><br><span class="line"><span class="comment">           &lt;plugin type="cn.doity.common.generator.plugin.InsertAndReturnKeyPlugin"/&gt;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">           分页查询功能</span></span><br><span class="line"><span class="comment">           &lt;plugin type="cn.doity.common.generator.plugin.SelectByPagePlugin"/&gt;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">           生成带有for update后缀的select语句插件</span></span><br><span class="line"><span class="comment">           &lt;plugin type="cn.doity.common.generator.plugin.SelectForUpdatePlugin"/&gt; --&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 抑制生成注释，由于生成的注释都是英文的，可以不让它生成 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">commentGenerator</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"suppressAllComments"</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">commentGenerator</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 配置数据库连接信息 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">jdbcConnection</span> <span class="attr">driverClass</span>=<span class="string">"com.mysql.jdbc.Driver"</span></span></span><br><span class="line"><span class="tag">                        <span class="attr">connectionURL</span>=<span class="string">"jdbc:mysql://localhost:3306/test"</span></span></span><br><span class="line"><span class="tag">                        <span class="attr">userId</span>=<span class="string">"root"</span></span></span><br><span class="line"><span class="tag">                        <span class="attr">password</span>=<span class="string">"tbswlcgjdwgrcy"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">jdbcConnection</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 生成model类，targetPackage指定model类的包名， targetProject指定生成的model放在eclipse的哪个工程下面--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">javaModelGenerator</span> <span class="attr">targetPackage</span>=<span class="string">"com.example.springbootfirst.model"</span> <span class="attr">targetProject</span>=<span class="string">"src/main/java"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"false"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"trimStrings"</span> <span class="attr">value</span>=<span class="string">"false"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">javaModelGenerator</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 生成MyBatis的Mapper.xml文件，targetPackage指定mapper.xml文件的包名， targetProject指定生成的mapper.xml放在eclipse的哪个工程下面 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">sqlMapGenerator</span> <span class="attr">targetPackage</span>=<span class="string">"com.example.springbootfirst.mapper"</span> <span class="attr">targetProject</span>=<span class="string">"src/main/java"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"false"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">sqlMapGenerator</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 生成MyBatis的Mapper接口类文件,targetPackage指定Mapper接口类的包名， targetProject指定生成的Mapper接口放在eclipse的哪个工程下面 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">javaClientGenerator</span> <span class="attr">type</span>=<span class="string">"XMLMAPPER"</span> <span class="attr">targetPackage</span>=<span class="string">"com.example.springbootfirst.mapper"</span> <span class="attr">targetProject</span>=<span class="string">"src/main/java"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"false"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">javaClientGenerator</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 数据库表名及对应的Java模型类名 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">tableName</span>=<span class="string">"student"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">domainObjectName</span>=<span class="string">"Student"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">enableCountByExample</span>=<span class="string">"false"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">enableUpdateByExample</span>=<span class="string">"false"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">enableDeleteByExample</span>=<span class="string">"false"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">enableSelectByExample</span>=<span class="string">"false"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">selectByExampleQueryId</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">context</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">generatorConfiguration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="Mapper"><a href="#Mapper" class="headerlink" title="@Mapper"></a>@Mapper</h4><p>需要在每一个在mapper接口上加上, 作用扫描dao接口</p>
+<h4 id="MapperScan-package-”xxx”"><a href="#MapperScan-package-”xxx”" class="headerlink" title="@MapperScan(package=”xxx”)"></a>@MapperScan(package=”xxx”)</h4><p>在spring启动的类中加入, 扫描所有的包</p>
+<h4 id="存放到Mapper映射文件存放位置的写法"><a href="#存放到Mapper映射文件存放位置的写法" class="headerlink" title="存放到Mapper映射文件存放位置的写法"></a>存放到Mapper映射文件存放位置的写法</h4><ol>
+<li><p>mapper接口类和mapper xml 配置文件分开放, 需要在springboot核心配置中指定mapper映射文件存放的位置</p>
+</li>
+<li><p>mapper接口类和mapper xml 配置放在一起， 需要在pom.xml 设置编译xml文件类型文件</p>
+</li>
+</ol>
+<h4 id="Transactional"><a href="#Transactional" class="headerlink" title="@Transactional"></a>@Transactional</h4><p>加入事务给springboot</p>
+<h4 id="RestController"><a href="#RestController" class="headerlink" title="@RestController"></a>@RestController</h4><p>相当如在控制层上加入@Controller + 方法上加入@ResponseBody<br>意味着所有的方法返回的都是json</p>
+<h4 id="mapping-注解"><a href="#mapping-注解" class="headerlink" title="mapping 注解"></a>mapping 注解</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>注解</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@GetMapping</td>
+<td>效果等于@RequestMapping 不过只接受get请求 通常使用查询</td>
+</tr>
+<tr>
+<td>@PostMapping</td>
+<td>效果果等于@RequestMapping 不过只接受post请求 通常使用于新增</td>
+</tr>
+<tr>
+<td>@DeleteMapping</td>
+<td>效果差不多等于@RequestMapping 不过只接受delete请求 通常使用于删除</td>
+</tr>
+<tr>
+<td>@PutMapping</td>
+<td>效果差不多等于@RequestMapping 不过只接受put请求 通常使用于修改</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="restful写法"><a href="#restful写法" class="headerlink" title="restful写法"></a>restful写法</h3><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>RESTFUL是一种网络应用程序的设计风格和开发方式，基于HTTP，可以使用XML格式定义或JSON格式定义。RESTFUL适用于移动互联网厂商作为业务接口的场景，实现第三方OTT调用移动网络资源的功能，动作类型为新增、变更、删除所调用资源。</p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>写法:@RequestMapping(value = “/student/detail/{id}/{age}”) 在参数前面加入注解@PathVariable</p>
+<p>通常restful风格中方法的请求方式会按照增删改查的请求方式来区分</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping</span>(value = <span class="string">"/student/detail/&#123;id&#125;/&#123;age&#125;"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">student1</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Integer id,</span></span><br><span class="line"><span class="function">                       @<span class="title">PathVariable</span><span class="params">(<span class="string">"age"</span>)</span> Integer age)</span>&#123;</span><br><span class="line">    Map&lt;String,Object&gt; resMap = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    resMap.put(<span class="string">"id"</span>,id);</span><br><span class="line">    resMap.put(<span class="string">"age"</span>,age);</span><br><span class="line">    <span class="keyword">return</span> resMap;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">@DeleteMapping</span>(value = <span class="string">"/student/detail/&#123;id&#125;/&#123;status&#125;"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">student2</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Integer id,</span></span><br><span class="line"><span class="function">                       @<span class="title">PathVariable</span><span class="params">(<span class="string">"status"</span>)</span> Integer status)</span>&#123;</span><br><span class="line">    Map&lt;String,Object&gt; resMap = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    resMap.put(<span class="string">"id"</span>,id);</span><br><span class="line">    resMap.put(<span class="string">"age"</span>,status);</span><br><span class="line">    <span class="keyword">return</span> resMap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="springboot集成redis"><a href="#springboot集成redis" class="headerlink" title="springboot集成redis"></a>springboot集成redis</h3><p>加入依赖<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-redis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>基础用法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> RedisTemplate&lt;Object,Object&gt; redisTemplate;</span><br><span class="line">redisTemplate.opsForValue().get(key);</span><br><span class="line">redisTemplate.opsForValue().put(key,value);</span><br></pre></td></tr></table></figure>
+<h3 id="spring集成Dubbo"><a href="#spring集成Dubbo" class="headerlink" title="spring集成Dubbo"></a>spring集成Dubbo</h3><ol>
+<li>接口工程：存放尸体bean和业务接口</li>
+<li>服务提供者： 业务接口的是吸纳类并将服务暴露切注册到注册中心，调用数据持久层<ul>
+<li>添加依赖（dubbo，注册中心，接口工程）</li>
+<li>配置服务提供者核心配置文件</li>
+</ul>
+</li>
+<li>服务消费者： 处理浏览器客户端发送的请求，从注册中心调用服务提供者所提供的服务<ul>
+<li>添加依赖（dubbo，注册中心，接口工程）</li>
+<li>配置服务消费者核心配置文件</li>
+</ul>
+</li>
+</ol>
+<h3 id="springboot-java项目"><a href="#springboot-java项目" class="headerlink" title="springboot  java项目"></a>springboot  java项目</h3><p>springboot程序启动后返回值是ConfigurableApplicationContext 他也是一个spring容器<br>相当于spring容器中启动容器ClasspathXmlApplicationContext<br>ConfigurableApplicationContext applicationContext = SpringApplication.run(Application.class,args);<br>可以通过application.getbean 获取实现类</p>
+<p>spring Application 启动类 实现CommandLineRunner类实现run方法</p>
+<h3 id="springboot集成Interceptor-拦截器"><a href="#springboot集成Interceptor-拦截器" class="headerlink" title="springboot集成Interceptor 拦截器"></a>springboot集成Interceptor 拦截器</h3><p>创建一个HandlerInterceptor的实现类重写preHandler, postHandler, afterCompletion方法, 并且创建一个WebMvcConfiger实现类 重写addInterceptors方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.springbootfirst.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.example.springbootfirst.inteceptor.UserInterceptor;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.InterceptorRegistry;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurer;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span>      <span class="comment">//声明为配置文件类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InterceptorConfig</span> <span class="keyword">implements</span> <span class="title">WebMvcConfigurer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> </span>&#123;</span><br><span class="line">        String[] addPathPatterns = &#123;</span><br><span class="line">                <span class="string">"/user/**"</span></span><br><span class="line">        &#125;;</span><br><span class="line">        String[] excludePathPatterns = &#123;</span><br><span class="line">                <span class="string">"/user/out"</span>,</span><br><span class="line">                <span class="string">"/user/login"</span>,</span><br><span class="line">                <span class="string">"/user/error"</span></span><br><span class="line">        &#125;;</span><br><span class="line">        registry.addInterceptor(<span class="keyword">new</span> UserInterceptor()).addPathPatterns(addPathPatterns).excludePathPatterns(excludePathPatterns);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="springboot集成Servlet"><a href="#springboot集成Servlet" class="headerlink" title="springboot集成Servlet"></a>springboot集成Servlet</h3><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><ol>
+<li>创建个HttpServlet实现类  </li>
+<li>在类上加入注释@WebServlet(urlPatterns=”/xxx”)    </li>
+<li>urlPatterns 是网站uri地址  </li>
+<li>然后在springboot项目启动类中加入注解, @ServletComponentScan(basePackages = “your package name”)</li>
+</ol>
+<h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><ol>
+<li>创建个HttpServlet实现类  </li>
+<li>创建个Config类,在类上加入注解@Configuration</li>
+<li>创建个返回值为 ServletRegistrationBean 方法</li>
+<li>在方法前加入@Bean注释， @Bean是一个方法级别的注释，主要用在配置类中 ，相当于一个bean标签<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServletConfig</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ServletRegistrationBean <span class="title">myServletRegistrationBean</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ServletRegistrationBean servletRegistrationBean = <span class="keyword">new</span> ServletRegistrationBean(<span class="keyword">new</span> Myservlet(),<span class="string">"/myservlet2"</span>);</span><br><span class="line">        <span class="keyword">return</span> servletRegistrationBean;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="springboot集成Filter"><a href="#springboot集成Filter" class="headerlink" title="springboot集成Filter"></a>springboot集成Filter</h3><h4 id="方法一-1"><a href="#方法一-1" class="headerlink" title="方法一"></a>方法一</h4><ol>
+<li>创建Filter实现类</li>
+<li>在类上加入标签@Filter(urlPatterns=”/xxx”)</li>
+<li>重写doFilter方法</li>
+<li>在springboot项目启动类中加入注解 @ServletComponentScan(basePackages =”your package name”)</li>
+</ol>
+<h4 id="方法二-1"><a href="#方法二-1" class="headerlink" title="方法二"></a>方法二</h4><ol>
+<li>创建个Filter实现类</li>
+<li>创建个Config类, 在类上加入注解@Configuration</li>
+<li>创建个返回值为FilterRegisrationBean 方法</li>
+<li>在方法前加入@Bean注解</li>
+</ol>
+<h3 id="springboot设置字符编码"><a href="#springboot设置字符编码" class="headerlink" title="springboot设置字符编码"></a>springboot设置字符编码</h3><p>在springboot核心配置文件中设置<br><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">server.servlet.encoding.charset</span>=<span class="string">utf-8</span></span><br><span class="line"><span class="meta">server.servlet.encoding.enabled</span>=<span class="string">true</span></span><br><span class="line"><span class="meta">server.servlet.encoding.force</span>=<span class="string">true</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/springboot/" rel="tag"># springboot</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/05/09/Leetcode/dailyProblem/5-9/" rel="next" title="minimum-number-of-days-to-make-m-bouquets">
+                <i class="fa fa-chevron-left"></i> minimum-number-of-days-to-make-m-bouquets
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/05/18/java/frame/dubbo/dubbo/" rel="prev" title="dubbo Learning">
+                dubbo Learning <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">ysx</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7Carchive">
+              
+                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#springboot"><span class="nav-number">1.</span> <span class="nav-text">springboot</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#spring-默认配置"><span class="nav-number">1.1.</span> <span class="nav-text">spring 默认配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#properties写法"><span class="nav-number">1.1.1.</span> <span class="nav-text">properties写法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#yml-yaml写法"><span class="nav-number">1.1.2.</span> <span class="nav-text">yml, yaml写法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多环境下的springboot配置"><span class="nav-number">1.1.3.</span> <span class="nav-text">多环境下的springboot配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义参数配置"><span class="nav-number">1.1.4.</span> <span class="nav-text">自定义参数配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#获取单个参数-Value-“”"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">获取单个参数@Value(“”)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#获取一组参数"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">获取一组参数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#spring集成jsp"><span class="nav-number">1.1.5.</span> <span class="nav-text">spring集成jsp</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#springboot集成mybatis"><span class="nav-number">1.2.</span> <span class="nav-text">springboot集成mybatis</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#需要jar包"><span class="nav-number">1.2.1.</span> <span class="nav-text">需要jar包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GeneratorMapper-xml文件"><span class="nav-number">1.2.2.</span> <span class="nav-text">GeneratorMapper.xml文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mapper"><span class="nav-number">1.2.3.</span> <span class="nav-text">@Mapper</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MapperScan-package-”xxx”"><span class="nav-number">1.2.4.</span> <span class="nav-text">@MapperScan(package&#x3D;”xxx”)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存放到Mapper映射文件存放位置的写法"><span class="nav-number">1.2.5.</span> <span class="nav-text">存放到Mapper映射文件存放位置的写法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Transactional"><span class="nav-number">1.2.6.</span> <span class="nav-text">@Transactional</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RestController"><span class="nav-number">1.2.7.</span> <span class="nav-text">@RestController</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mapping-注解"><span class="nav-number">1.2.8.</span> <span class="nav-text">mapping 注解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#restful写法"><span class="nav-number">1.3.</span> <span class="nav-text">restful写法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍"><span class="nav-number">1.3.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-number">1.3.2.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#springboot集成redis"><span class="nav-number">1.4.</span> <span class="nav-text">springboot集成redis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spring集成Dubbo"><span class="nav-number">1.5.</span> <span class="nav-text">spring集成Dubbo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#springboot-java项目"><span class="nav-number">1.6.</span> <span class="nav-text">springboot  java项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#springboot集成Interceptor-拦截器"><span class="nav-number">1.7.</span> <span class="nav-text">springboot集成Interceptor 拦截器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#springboot集成Servlet"><span class="nav-number">1.8.</span> <span class="nav-text">springboot集成Servlet</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一"><span class="nav-number">1.8.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二"><span class="nav-number">1.8.2.</span> <span class="nav-text">方法二</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#springboot集成Filter"><span class="nav-number">1.9.</span> <span class="nav-text">springboot集成Filter</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一-1"><span class="nav-number">1.9.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二-1"><span class="nav-number">1.9.2.</span> <span class="nav-text">方法二</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#springboot设置字符编码"><span class="nav-number">1.10.</span> <span class="nav-text">springboot设置字符编码</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ysx</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
