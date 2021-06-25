@@ -259,6 +259,1396 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/12/Leetcode/121-best-time-to-buy-and-sell-stock/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/12/Leetcode/121-best-time-to-buy-and-sell-stock/" itemprop="url">121-best-time-to-buy-and-sell-stock</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-12T12:58:10+08:00">
+                2020-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="买卖股票最佳时间"><a href="#买卖股票最佳时间" class="headerlink" title="买卖股票最佳时间"></a>买卖股票最佳时间</h2><p><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/" target="_blank" rel="noopener">题目链接</a> </p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>这题思路是遍历数组同时记录最小的数，然后遇到比他大的数和他相减与最大利润相比取最大值，遇到比自己小的数就吧最小值替换成那该数</p>
+<h3 id="go语言实现"><a href="#go语言实现" class="headerlink" title="go语言实现"></a>go语言实现</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxProfit</span><span class="params">(prices []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(prices)==<span class="number">0</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">	maxNum, initNum := <span class="number">0</span>, prices[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt; <span class="built_in">len</span>(prices); i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> initNum &gt;= prices[i] &#123;</span><br><span class="line">			initNum = prices[i]</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> maxNum == <span class="number">0</span> &#123;</span><br><span class="line">				maxNum = prices[i] - initNum</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> maxNum &lt; prices[i]-initNum &#123;</span><br><span class="line">				maxNum = prices[i] - initNum</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> maxNum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/10/English/EnglishWord/dailyWord/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/10/English/EnglishWord/dailyWord/" itemprop="url">daily Word</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-10T10:20:13+08:00">
+                2020-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index">
+                    <span itemprop="name">英语单词</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <div class="table-container">
+<table>
+<thead>
+<tr>
+<th>word</th>
+<th>means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arctic</td>
+<td>北冰洋</td>
+</tr>
+<tr>
+<td>Atlantic Ocean</td>
+<td>大西洋</td>
+</tr>
+<tr>
+<td>Indian Ocean</td>
+<td>印度洋</td>
+</tr>
+<tr>
+<td>Pacific Ocean</td>
+<td>太平洋</td>
+</tr>
+<tr>
+<td>absent-minded</td>
+<td>健忘的</td>
+</tr>
+<tr>
+<td>aim at</td>
+<td>目的在于</td>
+</tr>
+<tr>
+<td>apologize for</td>
+<td>为什么道歉</td>
+</tr>
+<tr>
+<td>apparent</td>
+<td>显而易见的</td>
+</tr>
+<tr>
+<td>at the sight of</td>
+<td>一看见</td>
+</tr>
+<tr>
+<td>at the speed of</td>
+<td>以。。。的数度</td>
+</tr>
+<tr>
+<td>automatic</td>
+<td>自动的</td>
+</tr>
+<tr>
+<td>be  content with</td>
+<td>对…满意</td>
+</tr>
+<tr>
+<td>be beneficial to / be benefit from</td>
+<td>从什么收益</td>
+</tr>
+<tr>
+<td>be crazy about</td>
+<td>对什么痴迷</td>
+</tr>
+<tr>
+<td>be grateful to</td>
+<td>对…感激</td>
+</tr>
+<tr>
+<td>be impressed with</td>
+<td>对…影响深刻</td>
+</tr>
+<tr>
+<td>be particular about</td>
+<td>对…挑剔</td>
+</tr>
+<tr>
+<td>be remote from</td>
+<td>远离…</td>
+</tr>
+<tr>
+<td>be responsible for</td>
+<td>对…负责</td>
+</tr>
+<tr>
+<td>be separate with</td>
+<td>与…分割</td>
+</tr>
+<tr>
+<td>be sick/tired of</td>
+<td>厌倦</td>
+</tr>
+<tr>
+<td>be skillful at</td>
+<td>对…熟练</td>
+</tr>
+<tr>
+<td>be suitable for</td>
+<td>适合于</td>
+</tr>
+<tr>
+<td>be sure of</td>
+<td>确信</td>
+</tr>
+<tr>
+<td>be tired from</td>
+<td>因…疲劳</td>
+</tr>
+<tr>
+<td>betrayal</td>
+<td>背叛</td>
+</tr>
+<tr>
+<td>bid</td>
+<td>n.出价 v.出价</td>
+</tr>
+<tr>
+<td>boast about</td>
+<td>吹嘘</td>
+</tr>
+<tr>
+<td>break in</td>
+<td>闯入,插话</td>
+</tr>
+<tr>
+<td>bring in</td>
+<td>挣到</td>
+</tr>
+<tr>
+<td>come up with</td>
+<td>想出(计划,回答);作出反应;产生</td>
+</tr>
+<tr>
+<td>competitive/intense job market</td>
+<td>竞争强烈的工作市场</td>
+</tr>
+<tr>
+<td>condemnation</td>
+<td>谴责</td>
+</tr>
+<tr>
+<td>consistently</td>
+<td>一向</td>
+</tr>
+<tr>
+<td>contend</td>
+<td>竞争</td>
+</tr>
+<tr>
+<td>contending</td>
+<td>争论</td>
+</tr>
+<tr>
+<td>content</td>
+<td>内容</td>
+</tr>
+<tr>
+<td>convince sb of sth</td>
+<td>使某人相信某事</td>
+</tr>
+<tr>
+<td>cut down</td>
+<td>砍伐</td>
+</tr>
+<tr>
+<td>cut off</td>
+<td>切断</td>
+</tr>
+<tr>
+<td>deliberate</td>
+<td>故意的</td>
+</tr>
+<tr>
+<td>devour</td>
+<td>吞没,狼吞虎咽</td>
+</tr>
+<tr>
+<td>die away</td>
+<td>逐渐消失</td>
+</tr>
+<tr>
+<td>do away with</td>
+<td>废除;消灭;去掉;涤除</td>
+</tr>
+<tr>
+<td>effort</td>
+<td>努力</td>
+</tr>
+<tr>
+<td>eventually</td>
+<td>最终的</td>
+</tr>
+<tr>
+<td>flee away</td>
+<td>逃离</td>
+</tr>
+<tr>
+<td>flour</td>
+<td>面粉</td>
+</tr>
+<tr>
+<td>generously</td>
+<td>大方</td>
+</tr>
+<tr>
+<td>get away</td>
+<td>逃离</td>
+</tr>
+<tr>
+<td>give away</td>
+<td>赠送，泄露</td>
+</tr>
+<tr>
+<td>give back</td>
+<td>归还</td>
+</tr>
+<tr>
+<td>give rise to</td>
+<td>引起</td>
+</tr>
+<tr>
+<td>glance at</td>
+<td>匆匆一瞥</td>
+</tr>
+<tr>
+<td>in addition to</td>
+<td>另外</td>
+</tr>
+<tr>
+<td>inconsistent</td>
+<td>不一致</td>
+</tr>
+<tr>
+<td>intensity</td>
+<td>强度</td>
+</tr>
+<tr>
+<td>left over</td>
+<td>留下</td>
+</tr>
+<tr>
+<td>let down</td>
+<td>使失望</td>
+</tr>
+<tr>
+<td>live up to</td>
+<td>达到高度,不辜负,实行</td>
+</tr>
+<tr>
+<td>look/watch out</td>
+<td>小心</td>
+</tr>
+<tr>
+<td>make fortune /make money</td>
+<td>赚钱</td>
+</tr>
+<tr>
+<td>make fun of</td>
+<td>开玩笑</td>
+</tr>
+<tr>
+<td>no longer</td>
+<td>不再</td>
+</tr>
+<tr>
+<td>out of</td>
+<td>由与，用什么材料 , 缺乏… ，从…中(出来离开)</td>
+<td></td>
+<td>neuron</td>
+<td>神经</td>
+</tr>
+<tr>
+<td>pay a visit to</td>
+<td>访问</td>
+</tr>
+<tr>
+<td>pay off</td>
+<td>付清</td>
+</tr>
+<tr>
+<td>persist in</td>
+<td>坚持</td>
+</tr>
+<tr>
+<td>prevent + N</td>
+<td>预防某事</td>
+</tr>
+<tr>
+<td>prevent sb from doing sth</td>
+<td>阻止某人做某事</td>
+</tr>
+<tr>
+<td>provoke</td>
+<td>激发，引起</td>
+</tr>
+<tr>
+<td>purposefully</td>
+<td>有目的的</td>
+</tr>
+<tr>
+<td>put down</td>
+<td>写下</td>
+</tr>
+<tr>
+<td>put through</td>
+<td>接通电话，完成</td>
+</tr>
+<tr>
+<td>quiescent</td>
+<td>静止</td>
+</tr>
+<tr>
+<td>range from to to</td>
+<td>范围包括 …到…</td>
+</tr>
+<tr>
+<td>ration</td>
+<td>定量</td>
+</tr>
+<tr>
+<td>rationally</td>
+<td>理性的</td>
+</tr>
+<tr>
+<td>seriously</td>
+<td>认真的,严肃的</td>
+</tr>
+<tr>
+<td>set down</td>
+<td>指定，记下</td>
+</tr>
+<tr>
+<td>shorthand</td>
+<td>速写，简称</td>
+</tr>
+<tr>
+<td>skinny</td>
+<td>瘦的</td>
+</tr>
+<tr>
+<td>spare</td>
+<td>v. 节约， 救命， 出让， adj, 空闲，备用，简陋的</td>
+</tr>
+<tr>
+<td>sparingly</td>
+<td>节约，很少</td>
+</tr>
+<tr>
+<td>spoil</td>
+<td>破坏,宠爱</td>
+</tr>
+<tr>
+<td>stand for</td>
+<td>代表</td>
+</tr>
+<tr>
+<td>take …for</td>
+<td>认为</td>
+</tr>
+<tr>
+<td>take advantage of</td>
+<td>利用</td>
+</tr>
+<tr>
+<td>take in</td>
+<td>吸收,欺骗</td>
+</tr>
+<tr>
+<td>take on</td>
+<td>雇佣</td>
+</tr>
+<tr>
+<td>thirst</td>
+<td>渴望,渴的</td>
+</tr>
+<tr>
+<td>thrilled</td>
+<td>兴奋的，恐惧的</td>
+</tr>
+<tr>
+<td>throw away</td>
+<td>扔掉</td>
+</tr>
+<tr>
+<td>turn down</td>
+<td>拆毁,调小</td>
+</tr>
+<tr>
+<td>unfortunately</td>
+<td>不幸的</td>
+</tr>
+<tr>
+<td>up to now</td>
+<td>至今</td>
+</tr>
+<tr>
+<td>vote for</td>
+<td>投…票</td>
+</tr>
+<tr>
+<td>what goes around comes around</td>
+<td>种瓜得瓜</td>
+</tr>
+<tr>
+<td>get to the heart of</td>
+<td>是什么的核心</td>
+</tr>
+<tr>
+<td>bystander</td>
+<td>旁观者</td>
+</tr>
+<tr>
+<td>Rising above self</td>
+<td>舍己为人</td>
+</tr>
+<tr>
+<td>rather unique</td>
+<td>相当独一无二</td>
+</tr>
+<tr>
+<td>materially</td>
+<td>物质方向</td>
+</tr>
+<tr>
+<td>pitch dark</td>
+<td>很黑</td>
+</tr>
+<tr>
+<td>dimension</td>
+<td>维度</td>
+</tr>
+<tr>
+<td>apart from</td>
+<td>除了</td>
+</tr>
+<tr>
+<td>dish</td>
+<td>碟子，菜</td>
+</tr>
+<tr>
+<td>rocky</td>
+<td>岩石</td>
+</tr>
+<tr>
+<td>column</td>
+<td>论坛,来自</td>
+</tr>
+<tr>
+<td>stationed</td>
+<td>驻扎</td>
+</tr>
+<tr>
+<td>sorry for myself</td>
+<td>心疼自己</td>
+</tr>
+<tr>
+<td>made friend with</td>
+<td>与什么交朋友</td>
+</tr>
+<tr>
+<td>something big</td>
+<td>大事情(big 放在后面修饰)</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+<tr>
+<td>&lt;++&gt;</td>
+<td>&lt;++&gt;</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/06/English/Syntax/%E5%80%92%E8%A3%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/06/English/Syntax/%E5%80%92%E8%A3%85/" itemprop="url">倒装</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-06T17:01:52+08:00">
+                2020-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">英语语法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>否定词语放句首<ul>
+<li>hardy, seldom , in no time , no sooner…than…, not until , not only…but also.., hardly…when</li>
+<li>Hardly can I speak Japanese </li>
+</ul>
+</li>
+<li>so, nor/neither 位于句首，表明承前句子的肯定或否定时用到装<ul>
+<li>I can cook ==&gt; So can I</li>
+<li>I can not cook ==&gt; Nor can I</li>
+</ul>
+</li>
+<li>so…that 结构句子将so 应到的部分放在句首时用到装<ul>
+<li>I feel so rejoiced that I lose my sleep for the whole night</li>
+<li>so rejoiced do I feel that I lose my sleep for the whole night</li>
+<li>so exhausted am I that I have no energy throughout</li>
+</ul>
+</li>
+<li>only+状语 放在句首到装<ul>
+<li>only then, only by walking , only when you’re here</li>
+<li>only deeply I love you= only at home do I feel safe and relaxed</li>
+</ul>
+</li>
+<li><p>as 引导让步装语从句，从句表语可以放在句首构成到装</p>
+<ul>
+<li>状语/动词原型/表语+as+主语 as 用做尽管</li>
+</ul>
+</li>
+<li><p>省略if的虚拟语气用到装</p>
+<ul>
+<li>had you obeyed my instructive at the outset, you could have passed the examination</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Not until he could sing , (did he register for the talent show)</p>
+</li>
+<li><p>Only when he grow up ,(did he take part in the driving test)</p>
+</li>
+<li><p>(So passionate was she about dance ) ,that she couldn’t give it up.</p>
+</li>
+<li><p>I has never seem him cry, neither have I seem him smile.</p>
+</li>
+<li><p>( Had he obeyed the school rules ) , he wouldn’t have been punished</p>
+<ul>
+<li>If he had obeyed the school rules</li>
+</ul>
+</li>
+<li><p>Curious ( about the life of rich as she was ).</p>
+<ul>
+<li>As she was curious about the life of the rich</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/06/English/Syntax/%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2407,1245 +3797,6 @@ a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+...+ab^{n-2}+b^{n-1})</script><p><br></p>
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/English/EnglishWord/%E8%8B%B1%E8%AF%AD2015%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ysx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ysxBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/11/English/EnglishWord/%E8%8B%B1%E8%AF%AD2015%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/" itemprop="url">英语2015真题单词</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-11T12:52:16+08:00">
-                2020-02-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index">
-                    <span itemprop="name">英语真题单词</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <div class="table-container">
-<table>
-<thead>
-<tr>
-<th>单词</th>
-<th>意思</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>envelope  n.</td>
-<td>信封，封皮</td>
-</tr>
-<tr>
-<td>ritual  n.</td>
-<td>仪式；惯例</td>
-</tr>
-<tr>
-<td>recite  v.</td>
-<td>背诵；叙述</td>
-</tr>
-<tr>
-<td>relative n.</td>
-<td>亲戚</td>
-</tr>
-<tr>
-<td>veil n.</td>
-<td>面纱；面罩</td>
-</tr>
-<tr>
-<td>ceremony n.</td>
-<td>典礼，仪式</td>
-</tr>
-<tr>
-<td>bouquets n.</td>
-<td>宴会;酒会</td>
-</tr>
-<tr>
-<td>scare v.</td>
-<td>惊吓；把…吓跑</td>
-</tr>
-<tr>
-<td>consult v.</td>
-<td>查阅；商量</td>
-</tr>
-<tr>
-<td>florist n.</td>
-<td>花商，种花人</td>
-</tr>
-<tr>
-<td>custom n.</td>
-<td>习惯；风俗</td>
-</tr>
-<tr>
-<td>tolerant adj.</td>
-<td>宽容的；容忍的</td>
-</tr>
-<tr>
-<td>furious adj.</td>
-<td>激烈的；狂怒的</td>
-</tr>
-<tr>
-<td>motivate v.</td>
-<td>刺激；使有动机</td>
-</tr>
-<tr>
-<td>naughty adj.</td>
-<td>顽皮的，淘气的</td>
-</tr>
-<tr>
-<td>deprive v.</td>
-<td>使丧失，剥夺</td>
-</tr>
-<tr>
-<td>sheepishly adv.</td>
-<td>羞怯地</td>
-</tr>
-<tr>
-<td>fundamental adj.</td>
-<td>基本的，根本的</td>
-</tr>
-<tr>
-<td>recognize v.</td>
-<td>认出，识别</td>
-</tr>
-<tr>
-<td>worthwhile adj.</td>
-<td>值得做的，值得花时间的</td>
-</tr>
-<tr>
-<td>scold v.</td>
-<td>骂；责骂</td>
-</tr>
-<tr>
-<td>severely adv.</td>
-<td>严重地；严格地</td>
-</tr>
-<tr>
-<td>arise v.</td>
-<td>引起；产生</td>
-</tr>
-<tr>
-<td>upbringing n.</td>
-<td>教养；养育</td>
-</tr>
-<tr>
-<td>extravert n.</td>
-<td>外向；性格外向者</td>
-</tr>
-<tr>
-<td>tribe n.</td>
-<td>部落；族</td>
-</tr>
-<tr>
-<td>sculptor n.</td>
-<td>雕刻家</td>
-</tr>
-<tr>
-<td>carve v.</td>
-<td>雕刻</td>
-</tr>
-<tr>
-<td>blast v.</td>
-<td>爆炸</td>
-</tr>
-<tr>
-<td>monumental adj.</td>
-<td>不朽的；纪念碑的</td>
-</tr>
-<tr>
-<td>trivia n.</td>
-<td>琐事</td>
-</tr>
-<tr>
-<td>gigantic adj.</td>
-<td>巨大的，庞大的</td>
-</tr>
-<tr>
-<td>dwarf v.</td>
-<td>使矮小</td>
-</tr>
-<tr>
-<td>head v.</td>
-<td>作为…的首领；站在…的前头</td>
-</tr>
-<tr>
-<td>backdrop n.</td>
-<td>背景；背景幕</td>
-</tr>
-<tr>
-<td>occupy v.</td>
-<td>占领；居住</td>
-</tr>
-<tr>
-<td>characterize v.</td>
-<td>描绘…的特性；具有…的特征</td>
-</tr>
-<tr>
-<td>accompany v.</td>
-<td>陪伴，伴随</td>
-</tr>
-<tr>
-<td>considerate adj.</td>
-<td>体贴的；考虑周到的</td>
-</tr>
-<tr>
-<td>steal v.</td>
-<td>剽窃；偷偷地做；偷窃</td>
-</tr>
-<tr>
-<td>masculine adj.</td>
-<td>男性的；男子气概的</td>
-</tr>
-<tr>
-<td>identity n.</td>
-<td>身份；同一性</td>
-</tr>
-<tr>
-<td>tally v.</td>
-<td>计算；记录</td>
-</tr>
-<tr>
-<td>block n.</td>
-<td>块；街区</td>
-</tr>
-<tr>
-<td>irrelevant adj.</td>
-<td>不相干的；不切题的</td>
-</tr>
-<tr>
-<td>contradictory adj.</td>
-<td>矛盾的；反对的</td>
-</tr>
-<tr>
-<td>apprehensive adj.</td>
-<td>忧虑的；不安的</td>
-</tr>
-<tr>
-<td>capability n.</td>
-<td>才能，能力</td>
-</tr>
-<tr>
-<td>linger v.</td>
-<td>徘徊；磨蹭</td>
-</tr>
-<tr>
-<td>potential adj.</td>
-<td>潜在的；可能的</td>
-</tr>
-<tr>
-<td>dwell v.</td>
-<td>细想某事</td>
-</tr>
-<tr>
-<td>whereas  conj.</td>
-<td>然而；鉴于</td>
-</tr>
-<tr>
-<td>internalize  v.</td>
-<td>内在化</td>
-</tr>
-<tr>
-<td>recall v.</td>
-<td>召回；回想起</td>
-</tr>
-<tr>
-<td>thoroughly adv.</td>
-<td>彻底地，完全地</td>
-</tr>
-<tr>
-<td>ponder v.</td>
-<td>仔细考虑</td>
-</tr>
-<tr>
-<td>amplify v.</td>
-<td>增强；详述</td>
-</tr>
-<tr>
-<td>spot v.</td>
-<td>认出；弄脏</td>
-</tr>
-<tr>
-<td>tenfold adv.</td>
-<td>十倍地；成十倍</td>
-</tr>
-<tr>
-<td>surgeon n.</td>
-<td>外科医生</td>
-</tr>
-<tr>
-<td>obstacle n.</td>
-<td>障碍，干扰，妨碍</td>
-</tr>
-<tr>
-<td>caution  n.</td>
-<td>警告，警示</td>
-</tr>
-<tr>
-<td>interpret v.</td>
-<td>解释；说明</td>
-</tr>
-<tr>
-<td>considerably adv.</td>
-<td>相当地；非常地</td>
-</tr>
-<tr>
-<td>awesome adj.</td>
-<td>极好的</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/English/EnglishWord/%E8%8B%B1%E8%AF%AD2014%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ysx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ysxBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/11/English/EnglishWord/%E8%8B%B1%E8%AF%AD2014%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/" itemprop="url">英语2014真题单词</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-11T12:52:08+08:00">
-                2020-02-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index">
-                    <span itemprop="name">英语真题单词</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <div class="table-container">
-<table>
-<thead>
-<tr>
-<th>单词</th>
-<th>意思</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>coat  v.</td>
-<td>覆盖…的表面</td>
-</tr>
-<tr>
-<td>database n.</td>
-<td>数据库，资料库</td>
-</tr>
-<tr>
-<td>rate v.</td>
-<td>认为；估价</td>
-</tr>
-<tr>
-<td>ingredient n.</td>
-<td>原料；要素</td>
-</tr>
-<tr>
-<td>brand n.</td>
-<td>商标，牌子</td>
-</tr>
-<tr>
-<td>pose v.</td>
-<td>造成，形成</td>
-</tr>
-<tr>
-<td>absorb v.</td>
-<td>吸收；吸引</td>
-</tr>
-<tr>
-<td>degrade v.</td>
-<td>降级，降低</td>
-</tr>
-<tr>
-<td>unapproved adj.</td>
-<td>未经批准的；未经同意的</td>
-</tr>
-<tr>
-<td>manufacture v.</td>
-<td>制造；加工</td>
-</tr>
-<tr>
-<td>recommend v.</td>
-<td>推荐，介绍</td>
-</tr>
-<tr>
-<td>precaution n.</td>
-<td>预防，警惕</td>
-</tr>
-<tr>
-<td>lack v.</td>
-<td>缺乏；不足</td>
-</tr>
-<tr>
-<td>figure  n.</td>
-<td>体形；画像</td>
-</tr>
-<tr>
-<td>esteem n&amp;v.</td>
-<td>尊重；尊敬</td>
-</tr>
-<tr>
-<td>appearance n.</td>
-<td>外貌，外观</td>
-</tr>
-<tr>
-<td>extremely adv.</td>
-<td>非常，极其</td>
-</tr>
-<tr>
-<td>comment v.</td>
-<td>发表评论；发表意见</td>
-</tr>
-<tr>
-<td>tease v.</td>
-<td>取笑；戏弄</td>
-</tr>
-<tr>
-<td>celebrity n.</td>
-<td>名人；名声</td>
-</tr>
-<tr>
-<td>annual adj.</td>
-<td>年度的；每年的</td>
-</tr>
-<tr>
-<td>average adj.</td>
-<td>平均的；普通的；通常的</td>
-</tr>
-<tr>
-<td>advanced adj.</td>
-<td>先进的；高级的</td>
-</tr>
-<tr>
-<td>appeal v.</td>
-<td>呼吁，恳求</td>
-</tr>
-<tr>
-<td>emerge v.</td>
-<td>浮现；摆脱</td>
-</tr>
-<tr>
-<td>demonstrate v.</td>
-<td>证明；展示</td>
-</tr>
-<tr>
-<td>occupy v.</td>
-<td>占据;使忙碌</td>
-</tr>
-<tr>
-<td>encounter v.</td>
-<td>遭遇，邂逅</td>
-</tr>
-<tr>
-<td>longing n.</td>
-<td>渴望;憧憬</td>
-</tr>
-<tr>
-<td>distinction n.</td>
-<td>区别；差别</td>
-</tr>
-<tr>
-<td>hunt v.</td>
-<td>打猎；搜索</td>
-</tr>
-<tr>
-<td>pile n.</td>
-<td>堆；大量</td>
-</tr>
-<tr>
-<td>fame n.</td>
-<td>名声，名望</td>
-</tr>
-<tr>
-<td>announce v.</td>
-<td>宣布；述说</td>
-</tr>
-<tr>
-<td>affection n.</td>
-<td>喜爱，感情</td>
-</tr>
-<tr>
-<td>contain v.</td>
-<td>包含；控制</td>
-</tr>
-<tr>
-<td>correspondence n.</td>
-<td>通信；一致</td>
-</tr>
-<tr>
-<td>typically adv.</td>
-<td>代表性地；作为特色地</td>
-</tr>
-<tr>
-<td>acknowledge v.</td>
-<td>承认；确认</td>
-</tr>
-<tr>
-<td>downfall n.</td>
-<td>垮台；衰败</td>
-</tr>
-<tr>
-<td>pour v.</td>
-<td>灌，注；倒</td>
-</tr>
-<tr>
-<td>director n.</td>
-<td>导演</td>
-</tr>
-<tr>
-<td>fire v.</td>
-<td>解雇；开除</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/English/EnglishWord/%E8%8B%B1%E8%AF%AD2013%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ysx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ysxBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/11/English/EnglishWord/%E8%8B%B1%E8%AF%AD2013%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/" itemprop="url">英语2013真题单词</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-11T12:52:03+08:00">
-                2020-02-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD%E7%9C%9F%E9%A2%98%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index">
-                    <span itemprop="name">英语真题单词</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <div class="table-container">
-<table>
-<thead>
-<tr>
-<th>单词</th>
-<th>意思</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>productive  adj.</td>
-<td>生产的；多产的</td>
-</tr>
-<tr>
-<td>otherwise  adv.</td>
-<td>除此之外，在其他方面</td>
-</tr>
-<tr>
-<td>commit  v.</td>
-<td>承诺；委托</td>
-</tr>
-<tr>
-<td>poverty  n.</td>
-<td>贫困；困难</td>
-</tr>
-<tr>
-<td>enroll  v.</td>
-<td>注册；参加</td>
-</tr>
-<tr>
-<td>observe  v.</td>
-<td>观察；遵守</td>
-</tr>
-<tr>
-<td>external  adj.</td>
-<td>外部的；表面的</td>
-</tr>
-<tr>
-<td>lagging    adj.</td>
-<td>落后的</td>
-</tr>
-<tr>
-<td>unprecedented  adj.</td>
-<td>空前的；无前例的</td>
-</tr>
-<tr>
-<td>attainable   adj.</td>
-<td>可得到的；可达到的</td>
-</tr>
-<tr>
-<td>targeted  adj.</td>
-<td>定向的</td>
-</tr>
-<tr>
-<td>aid  n.</td>
-<td>援助；帮助</td>
-</tr>
-<tr>
-<td>extended  adj.</td>
-<td>延伸的；扩大的</td>
-</tr>
-<tr>
-<td>construction  n.</td>
-<td>建设；建筑物</td>
-</tr>
-<tr>
-<td>affluence  n.</td>
-<td>富裕；流入</td>
-</tr>
-<tr>
-<td>divorce   n&amp;v.</td>
-<td>离婚；分离</td>
-</tr>
-<tr>
-<td>temporarily  adv.</td>
-<td>临时地，临时</td>
-</tr>
-<tr>
-<td>expectation  n.</td>
-<td>期待；预期</td>
-</tr>
-<tr>
-<td>irregular  adj.</td>
-<td>不规则的；无规律的</td>
-</tr>
-<tr>
-<td>obese  adj.</td>
-<td>肥胖的，过胖的</td>
-</tr>
-<tr>
-<td>stress  n.</td>
-<td>压力；强调</td>
-</tr>
-<tr>
-<td>affect  v.</td>
-<td>影响；感染</td>
-</tr>
-<tr>
-<td>involved  v.</td>
-<td>涉及；使参与</td>
-</tr>
-<tr>
-<td>illustrate  v.</td>
-<td>阐明，举例说明</td>
-</tr>
-<tr>
-<td>combat  v.</td>
-<td>反对；与…战斗</td>
-</tr>
-<tr>
-<td>propose  v.</td>
-<td>提议；计划</td>
-</tr>
-<tr>
-<td>nap  v.</td>
-<td>小睡</td>
-</tr>
-<tr>
-<td>relieve  v.</td>
-<td>解除，减轻</td>
-</tr>
-<tr>
-<td>deprivation  n.</td>
-<td>剥夺；损失</td>
-</tr>
-<tr>
-<td>fatigue  n.</td>
-<td>疲劳，疲乏</td>
-</tr>
-<tr>
-<td>sensitive  adj.</td>
-<td>敏感的</td>
-</tr>
-<tr>
-<td>astonishing  adj.</td>
-<td>惊人的；令人惊讶的</td>
-</tr>
-<tr>
-<td>integrated  adj.</td>
-<td>综合的；完整的</td>
-</tr>
-<tr>
-<td>addicted  adj.</td>
-<td>入了迷的，上了瘾的</td>
-</tr>
-<tr>
-<td>device  n.</td>
-<td>装置；设备</td>
-</tr>
-<tr>
-<td>initiative  n.</td>
-<td>主动权；首创精神</td>
-</tr>
-<tr>
-<td>circumstance  n.</td>
-<td>环境，情况；事件</td>
-</tr>
-<tr>
-<td>solitude  n.</td>
-<td>孤独；隐居</td>
-</tr>
-<tr>
-<td>sacred  adj.</td>
-<td>神圣的；庄严的</td>
-</tr>
-<tr>
-<td>ridiculous  adj.</td>
-<td>可笑的；荒谬的</td>
-</tr>
-<tr>
-<td>mysterious  adj.</td>
-<td>神秘的；不可思议的</td>
-</tr>
-<tr>
-<td>destructive  adj.</td>
-<td>破坏的；毁灭性的</td>
-</tr>
-<tr>
-<td>ironic  adj.</td>
-<td>讽刺的；反话的</td>
-</tr>
-<tr>
-<td>forecast  v.</td>
-<td>预报，预测</td>
-</tr>
-<tr>
-<td>dramatic  adj.</td>
-<td>急剧的；引人注目的</td>
-</tr>
-<tr>
-<td>confront  v.</td>
-<td>面对；遭遇</td>
-</tr>
-<tr>
-<td>atmosphere  n.</td>
-<td>气氛；大气</td>
-</tr>
-<tr>
-<td>remaining  adj.</td>
-<td>剩下的，剩余的</td>
-</tr>
-<tr>
-<td>renewable  adj.</td>
-<td>可再生的；可更新的</td>
-</tr>
-<tr>
-<td>fuel  n.</td>
-<td>燃料</td>
-</tr>
-<tr>
-<td>tap  v.</td>
-<td>采用，利用</td>
-</tr>
-<tr>
-<td>resource  n.</td>
-<td>资源</td>
-</tr>
-<tr>
-<td>attack  v.</td>
-<td>攻击</td>
-</tr>
-<tr>
-<td>agriculture  n.</td>
-<td>农业</td>
-</tr>
-<tr>
-<td>instant  adj.</td>
-<td>立即的；紧急的</td>
-</tr>
-<tr>
-<td>appeal  n.</td>
-<td>吸引力，感染力</td>
-</tr>
-<tr>
-<td>apparently  adv.</td>
-<td>显然地；似乎，表面上</td>
-</tr>
-<tr>
-<td>analysis  n.</td>
-<td>分析；分解</td>
-</tr>
-<tr>
-<td>live  adj.</td>
-<td>活的；生动的；精力充沛的</td>
-</tr>
-<tr>
-<td>permanent  adj.</td>
-<td>永久的，永恒的</td>
-</tr>
-<tr>
-<td>lean  v.</td>
-<td>倾斜；倾向</td>
-</tr>
-<tr>
-<td>certified  adj.</td>
-<td>被证明的；有保证的</td>
-</tr>
-<tr>
-<td>various  adj.</td>
-<td>各种各样的；多方面的</td>
-</tr>
-<tr>
-<td>deafening  adj.</td>
-<td>震耳欲聋的；极喧闹的</td>
-</tr>
-<tr>
-<td>severe  adj.</td>
-<td>严峻的；严厉的</td>
-</tr>
-<tr>
-<td>bothersome  adj.</td>
-<td>麻烦的；令人讨厌的</td>
-</tr>
-<tr>
-<td>reserve  v.</td>
-<td>储备；保留；预约</td>
-</tr>
-<tr>
-<td>modify  v.</td>
-<td>修改，修饰</td>
-</tr>
-<tr>
-<td>obliged  v.</td>
-<td>要求；约束</td>
-</tr>
-<tr>
-<td>suspicion  n.</td>
-<td>怀疑；嫌疑</td>
-</tr>
-<tr>
-<td>unconsciously  adv.</td>
-<td>不知不觉；无意识地</td>
-</tr>
-<tr>
-<td>leisure  adj.</td>
-<td>空闲的；有闲的</td>
-</tr>
-<tr>
-<td>philosophy  n.</td>
-<td>哲学；哲理；人生观</td>
-</tr>
-<tr>
-<td>dominate v.</td>
-<td>控制；占优势</td>
-</tr>
-<tr>
-<td>involve v.</td>
-<td>包含；牵涉</td>
-</tr>
-<tr>
-<td>recreational  adj.</td>
-<td>娱乐的，消遣的</td>
-</tr>
-<tr>
-<td>postpone  v.</td>
-<td>延缓，延迟</td>
-</tr>
-<tr>
-<td>trend  n.</td>
-<td>趋势，倾向</td>
-</tr>
-<tr>
-<td>infant  n.</td>
-<td>婴儿；幼儿</td>
-</tr>
-<tr>
-<td>toddler  n.</td>
-<td>学步的小孩；幼童装</td>
-</tr>
-<tr>
-<td>accessory n.</td>
-<td>配件；附件</td>
-</tr>
-<tr>
-<td>prosperous adj.</td>
-<td>繁荣的；兴旺的</td>
-</tr>
-<tr>
-<td>inquiry  n.</td>
-<td>探究；调查</td>
-</tr>
-<tr>
-<td>bite  v&amp;n.</td>
-<td>咬；刺痛</td>
-</tr>
-<tr>
-<td>vicious  adj.</td>
-<td>剧烈的</td>
-</tr>
-<tr>
-<td>transplant  n.</td>
-<td>移植；移植器官</td>
-</tr>
-<tr>
-<td>species  n.</td>
-<td>物种；种类</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3696,7 +3847,7 @@ a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+...+ab^{n-2}+b^{n-1})</script><p><br></p>
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">103</span>
+                  <span class="site-state-item-count">106</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -3718,7 +3869,7 @@ a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+...+ab^{n-2}+b^{n-1})</script><p><br></p>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
