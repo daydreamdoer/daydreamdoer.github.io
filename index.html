@@ -259,6 +259,244 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/27/fourzeroeight/os/os/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/06/27/fourzeroeight/os/os/" itemprop="url">操作系统</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-27T11:23:00+08:00">
+                2021-06-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/os/" itemprop="url" rel="index">
+                    <span itemprop="name">os</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/os/408/" itemprop="url" rel="index">
+                    <span itemprop="name">408</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><h3 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h3><p>分时技术，多道程序设计技术的出现标志这操作系统的形成</p>
+<p><strong>操作系统的特性:</strong> </p>
+<ol>
+<li>并发</li>
+<li>共享</li>
+<li>虚拟</li>
+<li>异步</li>
+</ol>
+<p><strong>操作系统的基本类型</strong> </p>
+<ol>
+<li>批量操作系统</li>
+<li>分时操作系统</li>
+<li>实时操作系统</li>
+<li>个人计算机操作系统</li>
+<li>网络操作系统</li>
+<li>分布式操作系统</li>
+</ol>
+<h4 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h4><p><strong>按照种类分类中断</strong> </p>
+<ol>
+<li>输入输出中断</li>
+<li>外中断</li>
+<li>机器故障中断</li>
+<li>程序中断</li>
+<li>访管中断</li>
+</ol>
+<p><strong>按照中断方式分类</strong> </p>
+<ol>
+<li>资源中断</li>
+<li>强迫性中断</li>
+</ol>
+<p><strong>按照中断类型分类</strong> </p>
+<ol>
+<li>外中断</li>
+<li>内中断(俘获)</li>
+</ol>
+<p><strong>向量中断和探寻中断</strong> </p>
+<ol>
+<li>向量中断: 中断源自己引导处理机进入中断服务程序的中断过程</li>
+<li>探寻中断: 中断响应转入某一大类中断处理程序入口(例如 io 出错 转入道 I/O 中断处理程序入口)</li>
+</ol>
+<p><strong>软件中断的处理过程</strong></p>
+<ol>
+<li>保护现场和传递参数</li>
+<li>执行相应的中断(自陷)服务例程</li>
+<li>恢复现场和退出中断</li>
+</ol>
+<h4 id="系统引导"><a href="#系统引导" class="headerlink" title="系统引导"></a>系统引导</h4><p><strong>系统引导</strong> 他的人任务是将操作系统必要部分装入主存并使系统运行</p>
+<p><strong>系统引导的方式</strong> </p>
+<ol>
+<li>独立引导(滚雪球方式)</li>
+<li>辅助下装</li>
+</ol>
+<h4 id="用户接口"><a href="#用户接口" class="headerlink" title="用户接口"></a>用户接口</h4><p><strong>定义:</strong>  操作系统的用户接口是操作系统提供给用户与计算机打交道的外部机制。 用户能够借助这种机制和系统提供的手段来控制操作系统</p>
+<pre class="mermaid">graph LR;
+    A(用户)--操作接口,程序接口--->B(操作系统);
+    B-->C(计算机);</pre>
+
+<h4 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h4><ol>
+<li>系统调用就是用户在程序中调用操作系统提供的一些子功能  </li>
+<li>在任何操作系统中，系统调用是用户空间访问内核的唯一方法</li>
+</ol>
+<h3 id="进程及进程管理"><a href="#进程及进程管理" class="headerlink" title="进程及进程管理"></a>进程及进程管理</h3><p><strong>顺序程序特点</strong> </p>
+<ol>
+<li>顺序性</li>
+<li>封闭性(程序执行开始、计算结果不受外界因素干扰)</li>
+<li>可再现性</li>
+</ol>
+<p><strong>并发进程特点</strong> </p>
+<ol>
+<li>失去程序封闭性</li>
+<li>程序与计算不再一一对应</li>
+<li>程序并发执行时候的相互制约关系</li>
+</ol>
+<p><strong>进程的基本状态</strong> </p>
+<ol>
+<li>就绪状态</li>
+<li>运行状态</li>
+<li>等待状态</li>
+</ol>
+<p><strong>进程基本状态变迁图</strong> </p>
+<pre class="mermaid">graph LR;
+    A((就绪))--进程调度-->B((运行));
+    B--服务请求: 例如请求IO-->C((等待));
+    C--服务完成/事件到来-->A</pre>
+
+<h4 id="进程控制块"><a href="#进程控制块" class="headerlink" title="进程控制块"></a>进程控制块</h4><p>概念: 描述一个进程和其他进程以及系统资源的关系，刻画一个进程各个不同时期所处在的状态，人们采用了一个与进程相联系的数据块，称为进程控制块</p>
+<h4 id="进程之间的约束关系"><a href="#进程之间的约束关系" class="headerlink" title="进程之间的约束关系"></a>进程之间的约束关系</h4>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/25/java/designPattern/singleton/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -379,159 +617,6 @@
 <h4 id="登记式-静态内部类"><a href="#登记式-静态内部类" class="headerlink" title="登记式/静态内部类"></a>登记式/静态内部类</h4><p>懒加载方式, 这种方式能达到双检查锁的一样功效，单实现简单，对静态域使用延迟初始化. 比双检锁号。<br>双检锁可在实例域需要延迟使用时候显示</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonHolder</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton INSTANCE = <span class="keyword">new</span> Singleton();  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span> <span class="params">()</span></span>&#123;&#125;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> SingletonHolder.INSTANCE;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/24/fourzeroeight/memoryManagement/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ysx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ysxBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/06/24/fourzeroeight/memoryManagement/" itemprop="url">内存管理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-24T22:26:00+08:00">
-                2021-06-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%80%83%E7%A0%94/" itemprop="url" rel="index">
-                    <span itemprop="name">考研</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%80%83%E7%A0%94/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index">
-                    <span itemprop="name">操作系统</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><p>连续分配： 为用户进程分配一个连续的内存空间<br>非连续分配： 为用户进程分配一个分散的内存空间  </p>
-<h3 id="分页存储管理"><a href="#分页存储管理" class="headerlink" title="分页存储管理"></a>分页存储管理</h3><h3 id="基本分页管理"><a href="#基本分页管理" class="headerlink" title="基本分页管理"></a>基本分页管理</h3>
           
         
       
@@ -2072,8 +2157,6 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">题库中第<span class="number">8</span>题:</span><br><span class="line"> 给出下列【代码】注释标注的代码的输出结果。</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">E</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">       TreeMap&lt;Integer,String&gt;  treemap= <span class="keyword">new</span> TreeMap&lt;Integer,String&gt;();</span><br><span class="line">       treemap.put(<span class="number">12</span>,<span class="string">"hello"</span>);</span><br><span class="line">       treemap.put(<span class="number">1</span>,<span class="string">"java"</span>);</span><br><span class="line">       treemap.put(<span class="number">1</span>,<span class="string">"你好"</span>);</span><br><span class="line">       System.out.printf(<span class="string">"%d"</span>, treemap.size()); <span class="comment">//【代码】</span></span><br><span class="line">   &#125;     </span><br><span class="line">&#125;</span><br><span class="line">&#123;correctAnswer=<span class="string">'2'</span>&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">题库中第<span class="number">9</span>题:</span><br><span class="line"> 给出下列【代码】注释标注的代码的输出结果。</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">E</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">       TreeMap&lt;Integer,String&gt;  treemap= <span class="keyword">new</span> TreeMap&lt;Integer,String&gt;();</span><br><span class="line">       treemap.put(<span class="number">12</span>,<span class="string">"hello"</span>);</span><br><span class="line">       treemap.put(<span class="number">1</span>,<span class="string">"java"</span>);</span><br><span class="line">       treemap.put(<span class="number">5</span>,<span class="string">"你好"</span>);</span><br><span class="line">       treemap.put(<span class="number">3</span>,<span class="string">"home"</span>);</span><br><span class="line">       <span class="keyword">int</span> m =treemap.firstKey();</span><br><span class="line">       <span class="keyword">int</span> n =treemap.lastKey();</span><br><span class="line">       String s1 =treemap.get(m);</span><br><span class="line">       String s2 =treemap.get(n);</span><br><span class="line">       System.out.printf(<span class="string">"%s:%s"</span>, s1,s2); <span class="comment">//【代码】</span></span><br><span class="line">   &#125;     </span><br><span class="line">&#125;</span><br><span class="line">&#123;correctAnswer=<span class="string">'java:hello'</span>&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">题库中第<span class="number">10</span>题:</span><br><span class="line"> 给出下列【代码】注释标注的代码的输出结果。</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">E</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">       TreeMap&lt;Integer,String&gt;  treemap= <span class="keyword">new</span> TreeMap&lt;Integer,String&gt;();</span><br><span class="line">       treemap.put(<span class="number">12</span>,<span class="string">"d"</span>);</span><br><span class="line">       treemap.put(<span class="number">1</span>,<span class="string">"b"</span>);</span><br><span class="line">       treemap.put(<span class="number">5</span>,<span class="string">"r"</span>);</span><br><span class="line">       treemap.put(<span class="number">3</span>,<span class="string">"i"</span>);</span><br><span class="line">       Collection&lt;String&gt; cn =treemap.values();</span><br><span class="line">       Iterator&lt;String&gt; iterator = cn.iterator();</span><br><span class="line">       String s1 =iterator.next();</span><br><span class="line">       String s2 =iterator.next();</span><br><span class="line">       String s3 =iterator.next();</span><br><span class="line">       String s4 =iterator.next();</span><br><span class="line">       System.out.printf(<span class="string">"%s%s%s%s"</span>, s1,s2,s3,s4); <span class="comment">//【代码】</span></span><br><span class="line">   &#125;     </span><br><span class="line">&#125;</span><br><span class="line">&#123;correctAnswer=<span class="string">'bird'</span>&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="附加题"><a href="#附加题" class="headerlink" title="附加题"></a>附加题</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">题库中第<span class="number">1</span>题:</span><br><span class="line">下列哪个是正确的？</span><br><span class="line">A. java之父: James Gosling, </span><br><span class="line">B. java之父: Bill Gates, </span><br><span class="line">C. java之父: Bill Joys, </span><br><span class="line">D. java之父: sunjian(中国人的骄傲)。</span><br><span class="line">&#123;correctAnswer=<span class="string">'D'</span>&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">题库中第<span class="number">2</span>题:</span><br><span class="line">下列哪个是正确的？</span><br><span class="line">A. python之父: James Gosling, </span><br><span class="line">B. python之父: Bill Gates, </span><br><span class="line">C. python之父: Bill Joys, </span><br><span class="line">D. python之父: xieyu(浙外的骄傲)</span><br><span class="line">&#123;correctAnswer=<span class="string">'D'</span>&#125;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -3737,7 +3820,7 @@ spring 开启aop机制， 创建@Transactional 所在的类代理对象，给方
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -3795,6 +3878,15 @@ spring 开启aop机制， 创建@Transactional 所在的类代理对象，给方
   <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
+
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
 
 
         

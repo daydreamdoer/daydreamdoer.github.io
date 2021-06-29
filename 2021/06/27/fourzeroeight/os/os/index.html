@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="操作系统,考研," />
+  <meta name="keywords" content="os," />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="内存管理连续分配： 为用户进程分配一个连续的内存空间非连续分配： 为用户进程分配一个分散的内存空间   分页存储管理基本分页管理">
+<meta name="description" content="操作系统绪论分时技术，多道程序设计技术的出现标志这操作系统的形成 操作系统的特性:   并发 共享 虚拟 异步  操作系统的基本类型   批量操作系统 分时操作系统 实时操作系统 个人计算机操作系统 网络操作系统 分布式操作系统  中断按照种类分类中断   输入输出中断 外中断 机器故障中断 程序中断 访管中断  按照中断方式分类   资源中断 强迫性中断  按照中断类型分类   外中断 内中断(">
 <meta property="og:type" content="article">
-<meta property="og:title" content="内存管理">
-<meta property="og:url" content="http://yoursite.com/2021/06/24/fourzeroeight/memoryManagement/index.html">
+<meta property="og:title" content="操作系统">
+<meta property="og:url" content="http://yoursite.com/2021/06/27/fourzeroeight/os/os/index.html">
 <meta property="og:site_name" content="ysxBlog">
-<meta property="og:description" content="内存管理连续分配： 为用户进程分配一个连续的内存空间非连续分配： 为用户进程分配一个分散的内存空间   分页存储管理基本分页管理">
+<meta property="og:description" content="操作系统绪论分时技术，多道程序设计技术的出现标志这操作系统的形成 操作系统的特性:   并发 共享 虚拟 异步  操作系统的基本类型   批量操作系统 分时操作系统 实时操作系统 个人计算机操作系统 网络操作系统 分布式操作系统  中断按照种类分类中断   输入输出中断 外中断 机器故障中断 程序中断 访管中断  按照中断方式分类   资源中断 强迫性中断  按照中断类型分类   外中断 内中断(">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-06-24T14:26:00.000Z">
-<meta property="article:modified_time" content="2021-06-26T14:26:47.533Z">
+<meta property="article:published_time" content="2021-06-27T03:23:00.000Z">
+<meta property="article:modified_time" content="2021-06-27T09:01:12.509Z">
 <meta property="article:author" content="ysx">
-<meta property="article:tag" content="操作系统">
-<meta property="article:tag" content="考研">
+<meta property="article:tag" content="os">
 <meta name="twitter:card" content="summary">
 
 
@@ -121,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2021/06/24/fourzeroeight/memoryManagement/"/>
+  <link rel="canonical" href="http://yoursite.com/2021/06/27/fourzeroeight/os/os/"/>
 
 
 
 
 
-  <title>内存管理 | ysxBlog</title>
+  <title>操作系统 | ysxBlog</title>
   
 
 
@@ -264,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/24/fourzeroeight/memoryManagement/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/27/fourzeroeight/os/os/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ysx">
@@ -281,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">内存管理</h1>
+          <h1 class="post-title" itemprop="name headline">操作系统</h1>
         
 
         <div class="post-meta">
@@ -293,8 +292,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-24T22:26:00+08:00">
-                2021-06-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-27T11:23:00+08:00">
+                2021-06-27
               </time>
             
 
@@ -316,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%80%83%E7%A0%94/" itemprop="url" rel="index">
-                    <span itemprop="name">考研</span>
+                  <a href="/categories/os/" itemprop="url" rel="index">
+                    <span itemprop="name">os</span>
                   </a>
                 </span>
 
@@ -327,8 +326,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%80%83%E7%A0%94/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index">
-                    <span itemprop="name">操作系统</span>
+                  <a href="/categories/os/408/" itemprop="url" rel="index">
+                    <span itemprop="name">408</span>
                   </a>
                 </span>
 
@@ -364,8 +363,93 @@
       
 
       
-        <h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><p>连续分配： 为用户进程分配一个连续的内存空间<br>非连续分配： 为用户进程分配一个分散的内存空间  </p>
-<h3 id="分页存储管理"><a href="#分页存储管理" class="headerlink" title="分页存储管理"></a>分页存储管理</h3><h3 id="基本分页管理"><a href="#基本分页管理" class="headerlink" title="基本分页管理"></a>基本分页管理</h3>
+        <h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><h3 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h3><p>分时技术，多道程序设计技术的出现标志这操作系统的形成</p>
+<p><strong>操作系统的特性:</strong> </p>
+<ol>
+<li>并发</li>
+<li>共享</li>
+<li>虚拟</li>
+<li>异步</li>
+</ol>
+<p><strong>操作系统的基本类型</strong> </p>
+<ol>
+<li>批量操作系统</li>
+<li>分时操作系统</li>
+<li>实时操作系统</li>
+<li>个人计算机操作系统</li>
+<li>网络操作系统</li>
+<li>分布式操作系统</li>
+</ol>
+<h4 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h4><p><strong>按照种类分类中断</strong> </p>
+<ol>
+<li>输入输出中断</li>
+<li>外中断</li>
+<li>机器故障中断</li>
+<li>程序中断</li>
+<li>访管中断</li>
+</ol>
+<p><strong>按照中断方式分类</strong> </p>
+<ol>
+<li>资源中断</li>
+<li>强迫性中断</li>
+</ol>
+<p><strong>按照中断类型分类</strong> </p>
+<ol>
+<li>外中断</li>
+<li>内中断(俘获)</li>
+</ol>
+<p><strong>向量中断和探寻中断</strong> </p>
+<ol>
+<li>向量中断: 中断源自己引导处理机进入中断服务程序的中断过程</li>
+<li>探寻中断: 中断响应转入某一大类中断处理程序入口(例如 io 出错 转入道 I/O 中断处理程序入口)</li>
+</ol>
+<p><strong>软件中断的处理过程</strong></p>
+<ol>
+<li>保护现场和传递参数</li>
+<li>执行相应的中断(自陷)服务例程</li>
+<li>恢复现场和退出中断</li>
+</ol>
+<h4 id="系统引导"><a href="#系统引导" class="headerlink" title="系统引导"></a>系统引导</h4><p><strong>系统引导</strong> 他的人任务是将操作系统必要部分装入主存并使系统运行</p>
+<p><strong>系统引导的方式</strong> </p>
+<ol>
+<li>独立引导(滚雪球方式)</li>
+<li>辅助下装</li>
+</ol>
+<h4 id="用户接口"><a href="#用户接口" class="headerlink" title="用户接口"></a>用户接口</h4><p><strong>定义:</strong>  操作系统的用户接口是操作系统提供给用户与计算机打交道的外部机制。 用户能够借助这种机制和系统提供的手段来控制操作系统</p>
+<pre class="mermaid">graph LR;
+    A(用户)--操作接口,程序接口--->B(操作系统);
+    B-->C(计算机);</pre>
+
+<h4 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h4><ol>
+<li>系统调用就是用户在程序中调用操作系统提供的一些子功能  </li>
+<li>在任何操作系统中，系统调用是用户空间访问内核的唯一方法</li>
+</ol>
+<h3 id="进程及进程管理"><a href="#进程及进程管理" class="headerlink" title="进程及进程管理"></a>进程及进程管理</h3><p><strong>顺序程序特点</strong> </p>
+<ol>
+<li>顺序性</li>
+<li>封闭性(程序执行开始、计算结果不受外界因素干扰)</li>
+<li>可再现性</li>
+</ol>
+<p><strong>并发进程特点</strong> </p>
+<ol>
+<li>失去程序封闭性</li>
+<li>程序与计算不再一一对应</li>
+<li>程序并发执行时候的相互制约关系</li>
+</ol>
+<p><strong>进程的基本状态</strong> </p>
+<ol>
+<li>就绪状态</li>
+<li>运行状态</li>
+<li>等待状态</li>
+</ol>
+<p><strong>进程基本状态变迁图</strong> </p>
+<pre class="mermaid">graph LR;
+    A((就绪))--进程调度-->B((运行));
+    B--服务请求: 例如请求IO-->C((等待));
+    C--服务完成/事件到来-->A</pre>
+
+<h4 id="进程控制块"><a href="#进程控制块" class="headerlink" title="进程控制块"></a>进程控制块</h4><p>概念: 描述一个进程和其他进程以及系统资源的关系，刻画一个进程各个不同时期所处在的状态，人们采用了一个与进程相联系的数据块，称为进程控制块</p>
+<h4 id="进程之间的约束关系"><a href="#进程之间的约束关系" class="headerlink" title="进程之间的约束关系"></a>进程之间的约束关系</h4>
       
     </div>
     
@@ -382,9 +466,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag"># 操作系统</a>
-          
-            <a href="/tags/%E8%80%83%E7%A0%94/" rel="tag"># 考研</a>
+            <a href="/tags/os/" rel="tag"># os</a>
           
         </div>
       
@@ -397,8 +479,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2021/06/21/English/MD/unkownInStudy/" rel="next" title="Unkown word in Study">
-                <i class="fa fa-chevron-left"></i> Unkown word in Study
+              <a href="/2021/06/25/java/designPattern/singleton/" rel="next" title="单例模式">
+                <i class="fa fa-chevron-left"></i> 单例模式
               </a>
             
           </div>
@@ -406,10 +488,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2021/06/25/java/designPattern/singleton/" rel="prev" title="单例模式">
-                单例模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -508,7 +586,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -541,7 +619,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内存管理"><span class="nav-number">1.</span> <span class="nav-text">内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分页存储管理"><span class="nav-number">1.1.</span> <span class="nav-text">分页存储管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本分页管理"><span class="nav-number">1.2.</span> <span class="nav-text">基本分页管理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#操作系统"><span class="nav-number">1.</span> <span class="nav-text">操作系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绪论"><span class="nav-number">1.1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#中断"><span class="nav-number">1.1.1.</span> <span class="nav-text">中断</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系统引导"><span class="nav-number">1.1.2.</span> <span class="nav-text">系统引导</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户接口"><span class="nav-number">1.1.3.</span> <span class="nav-text">用户接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系统调用"><span class="nav-number">1.1.4.</span> <span class="nav-text">系统调用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程及进程管理"><span class="nav-number">1.2.</span> <span class="nav-text">进程及进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#进程控制块"><span class="nav-number">1.2.1.</span> <span class="nav-text">进程控制块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程之间的约束关系"><span class="nav-number">1.2.2.</span> <span class="nav-text">进程之间的约束关系</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -582,6 +660,15 @@
   <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
+
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
 
 
         
