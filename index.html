@@ -259,6 +259,325 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/07/02/database/database/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ysx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ysxBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/07/02/database/database/" itemprop="url">mysql知识点总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-07-02T17:35:00+08:00">
+                2021-07-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/database/" itemprop="url" rel="index">
+                    <span itemprop="name">database</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="MySQL-基础"><a href="#MySQL-基础" class="headerlink" title="MySQL 基础"></a>MySQL 基础</h2><h3 id="关系型数据库介绍"><a href="#关系型数据库介绍" class="headerlink" title="关系型数据库介绍"></a>关系型数据库介绍</h3><p>顾名思义，关系型数据库就是一种建立在关系模型的基础上的数据库。关系模型表明了数据库中所存储的数据之间的联系（一对一、一对多、多对多）。</p>
+<p>关系型数据库中，我们的数据都被存放在了各种表中（比如用户表），表中的每一行就存放着一条数据（比如一个用户的信息）。</p>
+<p><img src="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/java-guide-blog/5e3c1a71724a38245aa43b02_99bf70d46cc247be878de9d3a88f0c44.png" alt=""></p>
+<p>大部分关系型数据库都使用 SQL 来操作数据库中的数据。并且，大部分关系型数据库都支持事务的四大特性(ACID)。</p>
+<p><strong>有哪些常见的关系型数据库呢？</strong></p>
+<p>MySQL、PostgreSQL、Oracle、SQL Server、SQLite（微信本地的聊天记录的存储就是用的 SQLite） ……。</p>
+<h3 id="MySQL-介绍"><a href="#MySQL-介绍" class="headerlink" title="MySQL 介绍"></a>MySQL 介绍</h3><p><img src="https://img-blog.csdnimg.cn/20210327143351823.png" alt=""></p>
+<p><strong>MySQL 是一种关系型数据库，主要用于持久化存储我们的系统中的一些数据比如用户信息。</strong></p>
+<p>由于 MySQL 是开源免费并且比较成熟的数据库，因此，MySQL 被大量使用在各种系统中。任何人都可以在 GPL(General Public License) 的许可下下载并根据个性化的需要对其进行修改。MySQL 的默认端口号是<strong>3306</strong>。</p>
+<h2 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h2><h3 id="存储引擎相关的命令"><a href="#存储引擎相关的命令" class="headerlink" title="存储引擎相关的命令"></a>存储引擎相关的命令</h3><p><strong>查看 MySQL 提供的所有存储引擎</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show engines;</span><br></pre></td></tr></table></figure>
+<p><img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-6/mysql-engines.png" alt="查看MySQL提供的所有存储引擎"></p>
+<p>从上图我们可以查看出 MySQL 当前默认的存储引擎是 InnoDB，并且在 5.7 版本所有的存储引擎中只有 InnoDB 是事务性存储引擎，也就是说只有 InnoDB 支持事务。</p>
+<p><strong>查看 MySQL 当前默认的存储引擎</strong></p>
+<p>我们也可以通过下面的命令查看默认的存储引擎。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show variables like '%storage_engine%';</span><br></pre></td></tr></table></figure>
+<p><strong>查看表的存储引擎</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">table</span> <span class="keyword">status</span> <span class="keyword">like</span> <span class="string">"table_name"</span> ;</span><br></pre></td></tr></table></figure>
+<p><img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-6/查看表的存储引擎.png" alt="查看表的存储引擎"></p>
+<h3 id="MyISAM-和-InnoDB-的区别"><a href="#MyISAM-和-InnoDB-的区别" class="headerlink" title="MyISAM 和 InnoDB 的区别"></a>MyISAM 和 InnoDB 的区别</h3><p><img src="https://img-blog.csdnimg.cn/20210327145248960.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0MzM3Mjcy,size_16,color_FFFFFF,t_70" alt=""></p>
+<p>MySQL 5.5 之前，MyISAM 引擎是 MySQL 的默认存储引擎，可谓是风光一时。</p>
+<p>虽然，MyISAM 的性能还行，各种特性也还不错（比如全文索引、压缩、空间函数等）。但是，MyISAM 不支持事务和行级锁，而且最大的缺陷就是崩溃后无法安全恢复。</p>
+<p>5.5 版本之后，MySQL 引入了 InnoDB（事务性数据库引擎），MySQL 5.5 版本后默认的存储引擎为 InnoDB。小伙子，一定要记好这个 InnoDB ，你每次使用 MySQL 数据库都是用的这个存储引擎吧？</p>
+<p>言归正传！咱们下面还是来简单对比一下两者：</p>
+<p><strong>1.是否支持行级锁</strong></p>
+<p>MyISAM 只有表级锁(table-level locking)，而 InnoDB 支持行级锁(row-level locking)和表级锁,默认为行级锁。</p>
+<p>也就说，MyISAM 一锁就是锁住了整张表，这在并发写的情况下是多么滴憨憨啊！这也是为什么 InnoDB 在并发写的时候，性能更牛皮了！</p>
+<p><strong>2.是否支持事务</strong></p>
+<p>MyISAM 不提供事务支持。</p>
+<p>InnoDB 提供事务支持，具有提交(commit)和回滚(rollback)事务的能力。</p>
+<p><strong>3.是否支持外键</strong></p>
+<p>MyISAM 不支持，而 InnoDB 支持。</p>
+<p>🌈 拓展一下：</p>
+<p>一般我们也是不建议在数据库层面使用外键的，应用层面可以解决。不过，这样会对数据的一致性造成威胁。具体要不要使用外键还是要根据你的项目来决定。</p>
+<p><strong>4.是否支持数据库异常崩溃后的安全恢复</strong></p>
+<p>MyISAM 不支持，而 InnoDB 支持。</p>
+<p>使用 InnoDB 的数据库在异常崩溃后，数据库重新启动的时候会保证数据库恢复到崩溃前的状态。这个恢复的过程依赖于 <code>redo log</code> 。</p>
+<p>🌈 拓展一下：</p>
+<ul>
+<li>MySQL InnoDB 引擎使用 <strong>redo log(重做日志)</strong> 保证事务的<strong>持久性</strong>，使用 <strong>undo log(回滚日志)</strong> 来保证事务的<strong>原子性</strong>。</li>
+<li>MySQL InnoDB 引擎通过 <strong>锁机制</strong>、<strong>MVCC</strong> 等手段来保证事务的隔离性（ 默认支持的隔离级别是 <strong><code>REPEATABLE-READ</code></strong> ）。</li>
+<li>保证了事务的持久性、原子性、隔离性之后，一致性才能得到保障。</li>
+</ul>
+<p><strong>5.是否支持 MVCC</strong></p>
+<p>MyISAM 不支持，而 InnoDB 支持。</p>
+<p>讲真，这个对比有点废话，毕竟 MyISAM 连行级锁都不支持。</p>
+<p>MVCC 可以看作是行级锁的一个升级，可以有效减少加锁操作，提供性能。</p>
+<h3 id="关于-MyISAM-和-InnoDB-的选择问题"><a href="#关于-MyISAM-和-InnoDB-的选择问题" class="headerlink" title="关于 MyISAM 和 InnoDB 的选择问题"></a>关于 MyISAM 和 InnoDB 的选择问题</h3><p>大多数时候我们使用的都是 InnoDB 存储引擎，在某些读密集的情况下，使用 MyISAM 也是合适的。不过，前提是你的项目不介意 MyISAM 不支持事务、崩溃恢复等缺点（可是~我们一般都会介意啊！）。</p>
+<p>《MySQL 高性能》上面有一句话这样写到:</p>
+<blockquote>
+<p>不要轻易相信“MyISAM 比 InnoDB 快”之类的经验之谈，这个结论往往不是绝对的。在很多我们已知场景中，InnoDB 的速度都可以让 MyISAM 望尘莫及，尤其是用到了聚簇索引，或者需要访问的数据都可以放入内存的应用。</p>
+</blockquote>
+<p>一般情况下我们选择 InnoDB 都是没有问题的，但是某些情况下你并不在乎可扩展能力和并发能力，也不需要事务支持，也不在乎崩溃后的安全恢复问题的话，选择 MyISAM 也是一个不错的选择。但是一般情况下，我们都是需要考虑到这些问题的。</p>
+<p>因此，对于咱们日常开发的业务系统来说，你几乎找不到什么理由再使用 MyISAM 作为自己的 MySQL 数据库的存储引擎。</p>
+<h2 id="锁机制与-InnoDB-锁算法"><a href="#锁机制与-InnoDB-锁算法" class="headerlink" title="锁机制与 InnoDB 锁算法"></a>锁机制与 InnoDB 锁算法</h2><p><strong>MyISAM 和 InnoDB 存储引擎使用的锁：</strong></p>
+<ul>
+<li>MyISAM 采用表级锁(table-level locking)。</li>
+<li>InnoDB 支持行级锁(row-level locking)和表级锁,默认为行级锁</li>
+</ul>
+<p><strong>表级锁和行级锁对比：</strong></p>
+<ul>
+<li><strong>表级锁：</strong> MySQL 中锁定 <strong>粒度最大</strong> 的一种锁，对当前操作的整张表加锁，实现简单，资源消耗也比较少，加锁快，不会出现死锁。其锁定粒度最大，触发锁冲突的概率最高，并发度最低，MyISAM 和 InnoDB 引擎都支持表级锁。</li>
+<li><strong>行级锁：</strong> MySQL 中锁定 <strong>粒度最小</strong> 的一种锁，只针对当前操作的行进行加锁。 行级锁能大大减少数据库操作的冲突。其加锁粒度最小，并发度高，但加锁的开销也最大，加锁慢，会出现死锁。</li>
+</ul>
+<p><strong>InnoDB 存储引擎的锁的算法有三种：</strong></p>
+<ul>
+<li>Record lock：记录锁，单个行记录上的锁</li>
+<li>Gap lock：间隙锁，锁定一个范围，不包括记录本身</li>
+<li>Next-key lock：record+gap 临键锁，锁定一个范围，包含记录本身</li>
+</ul>
+<h2 id="查询缓存"><a href="#查询缓存" class="headerlink" title="查询缓存"></a>查询缓存</h2><p>执行查询语句的时候，会先查询缓存。不过，MySQL 8.0 版本后移除，因为这个功能不太实用</p>
+<p><code>my.cnf</code> 加入以下配置，重启 MySQL 开启查询缓存</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">query_cache_type</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">query_cache_size</span>=<span class="string">600000</span></span><br></pre></td></tr></table></figure>
+<p>MySQL 执行以下命令也可以开启查询缓存</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">set</span> <span class="string">global  query_cache_type=1;</span></span><br><span class="line"><span class="attr">set</span> <span class="string">global  query_cache_size=600000;</span></span><br></pre></td></tr></table></figure>
+<p>如上，<strong>开启查询缓存后在同样的查询条件以及数据情况下，会直接在缓存中返回结果</strong>。这里的查询条件包括查询本身、当前要查询的数据库、客户端协议版本号等一些可能影响结果的信息。因此任何两个查询在任何字符上的不同都会导致缓存不命中。此外，如果查询中包含任何用户自定义函数、存储函数、用户变量、临时表、MySQL 库中的系统表，其查询结果也不会被缓存。</p>
+<p>缓存建立之后，MySQL 的查询缓存系统会跟踪查询中涉及的每张表，如果这些表（数据或结构）发生变化，那么和这张表相关的所有缓存数据都将失效。</p>
+<p><strong>缓存虽然能够提升数据库的查询性能，但是缓存同时也带来了额外的开销，每次查询后都要做一次缓存操作，失效后还要销毁。</strong> 因此，开启查询缓存要谨慎，尤其对于写密集的应用来说更是如此。如果开启，要注意合理控制缓存空间大小，一般来说其大小设置为几十 MB 比较合适。此外，<strong>还可以通过 sql_cache 和 sql_no_cache 来控制某个查询语句是否需要缓存：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> sql_no_cache <span class="keyword">count</span>(*) <span class="keyword">from</span> usr;</span><br></pre></td></tr></table></figure>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h3 id="何为事务？"><a href="#何为事务？" class="headerlink" title="何为事务？"></a>何为事务？</h3><p>一言蔽之，<strong>事务是逻辑上的一组操作，要么都执行，要么都不执行。</strong></p>
+<p><strong>可以简单举一个例子不？</strong></p>
+<p>事务最经典也经常被拿出来说例子就是转账了。假如小明要给小红转账 1000 元，这个转账会涉及到两个关键操作就是：</p>
+<ol>
+<li>将小明的余额减少 1000 元</li>
+<li>将小红的余额增加 1000 元。</li>
+</ol>
+<p>事务会把这两个操作就可以看成逻辑上的一个整体，这个整体包含的操作要么都成功，要么都要失败。</p>
+<p>这样就不会出现小明余额减少而小红的余额却并没有增加的情况。</p>
+<h3 id="何为数据库事务？"><a href="#何为数据库事务？" class="headerlink" title="何为数据库事务？"></a>何为数据库事务？</h3><p>数据库事务在我们日常开发中接触的最多了。如果你的项目属于单体架构的话，你接触到的往往就是数据库事务了。</p>
+<p>平时，我们在谈论事务的时候，如果没有特指<strong>分布式事务</strong>，往往指的就是<strong>数据库事务</strong>。</p>
+<p><strong>那数据库事务有什么作用呢？</strong></p>
+<p>简单来说：数据库事务可以保证多个对数据库的操作（也就是 SQL 语句）构成一个逻辑上的整体。构成这个逻辑上的整体的这些数据库操作遵循：<strong>要么全部执行成功,要么全部不执行</strong> 。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 开启一个事务</span></span><br><span class="line"><span class="keyword">START</span> <span class="keyword">TRANSACTION</span>;</span><br><span class="line"><span class="comment"># 多条 SQL 语句</span></span><br><span class="line">SQL1,SQL2...</span><br><span class="line"><span class="comment">## 提交事务</span></span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/2020-12/640-20201207160554677.png" alt=""></p>
+<p>另外，关系型数据库（例如：<code>MySQL</code>、<code>SQL Server</code>、<code>Oracle</code> 等）事务都有 <strong>ACID</strong> 特性：</p>
+<p><img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-6/%E4%BA%8B%E5%8A%A1%E7%89%B9%E6%80%A7.png" alt="事务的特性"></p>
+<h3 id="何为-ACID-特性呢？"><a href="#何为-ACID-特性呢？" class="headerlink" title="何为 ACID 特性呢？"></a>何为 ACID 特性呢？</h3><ol>
+<li><strong>原子性</strong>（<code>Atomicity</code>） ： 事务是最小的执行单位，不允许分割。事务的原子性确保动作要么全部完成，要么完全不起作用；</li>
+<li><strong>一致性</strong>（<code>Consistency</code>）： 执行事务前后，数据保持一致，例如转账业务中，无论事务是否成功，转账者和收款人的总额应该是不变的；</li>
+<li><strong>隔离性</strong>（<code>Isolation</code>）： 并发访问数据库时，一个用户的事务不被其他事务所干扰，各并发事务之间数据库是独立的；</li>
+<li><strong>持久性</strong>（<code>Durabilily</code>）： 一个事务被提交之后。它对数据库中数据的改变是持久的，即使数据库发生故障也不应该对其有任何影响。</li>
+</ol>
+<p><strong>数据事务的实现原理呢？</strong></p>
+<p>我们这里以 MySQL 的 InnoDB 引擎为例来简单说一下。</p>
+<p>MySQL InnoDB 引擎使用 <strong>redo log(重做日志)</strong> 保证事务的<strong>持久性</strong>，使用 <strong>undo log(回滚日志)</strong> 来保证事务的<strong>原子性</strong>。</p>
+<p>MySQL InnoDB 引擎通过 <strong>锁机制</strong>、<strong>MVCC</strong> 等手段来保证事务的隔离性（ 默认支持的隔离级别是 <strong><code>REPEATABLE-READ</code></strong> ）。</p>
+<p>保证了事务的持久性、原子性、隔离性之后，一致性才能得到保障。</p>
+<h3 id="并发事务带来哪些问题"><a href="#并发事务带来哪些问题" class="headerlink" title="并发事务带来哪些问题?"></a>并发事务带来哪些问题?</h3><p>在典型的应用程序中，多个事务并发运行，经常会操作相同的数据来完成各自的任务（多个用户对同一数据进行操作）。并发虽然是必须的，但可能会导致以下的问题。</p>
+<ul>
+<li><strong>脏读（Dirty read）:</strong> 当一个事务正在访问数据并且对数据进行了修改，而这种修改还没有提交到数据库中，这时另外一个事务也访问了这个数据，然后使用了这个数据。因为这个数据是还没有提交的数据，那么另外一个事务读到的这个数据是“脏数据”，依据“脏数据”所做的操作可能是不正确的。</li>
+<li><strong>丢失修改（Lost to modify）:</strong> 指在一个事务读取一个数据时，另外一个事务也访问了该数据，那么在第一个事务中修改了这个数据后，第二个事务也修改了这个数据。这样第一个事务内的修改结果就被丢失，因此称为丢失修改。 例如：事务 1 读取某表中的数据 A=20，事务 2 也读取 A=20，事务 1 修改 A=A-1，事务 2 也修改 A=A-1，最终结果 A=19，事务 1 的修改被丢失。</li>
+<li><strong>不可重复读（Unrepeatable read）:</strong> 指在一个事务内多次读同一数据。在这个事务还没有结束时，另一个事务也访问该数据。那么，在第一个事务中的两次读数据之间，由于第二个事务的修改导致第一个事务两次读取的数据可能不太一样。这就发生了在一个事务内两次读到的数据是不一样的情况，因此称为不可重复读。</li>
+<li><strong>幻读（Phantom read）:</strong> 幻读与不可重复读类似。它发生在一个事务（T1）读取了几行数据，接着另一个并发事务（T2）插入了一些数据时。在随后的查询中，第一个事务（T1）就会发现多了一些原本不存在的记录，就好像发生了幻觉一样，所以称为幻读。</li>
+</ul>
+<p><strong>不可重复读和幻读区别：</strong></p>
+<p>不可重复读的重点是修改比如多次读取一条记录发现其中某些列的值被修改，幻读的重点在于新增或者删除比如多次读取一条记录发现记录增多或减少了。</p>
+<h3 id="事务隔离级别有哪些"><a href="#事务隔离级别有哪些" class="headerlink" title="事务隔离级别有哪些?"></a>事务隔离级别有哪些?</h3><p>SQL 标准定义了四个隔离级别：</p>
+<ul>
+<li><strong>READ-UNCOMMITTED(读取未提交)：</strong> 最低的隔离级别，允许读取尚未提交的数据变更，<strong>可能会导致脏读、幻读或不可重复读</strong>。</li>
+<li><strong>READ-COMMITTED(读取已提交)：</strong> 允许读取并发事务已经提交的数据，<strong>可以阻止脏读，但是幻读或不可重复读仍有可能发生</strong>。</li>
+<li><strong>REPEATABLE-READ(可重复读)：</strong> 对同一字段的多次读取结果都是一致的，除非数据是被本身事务自己所修改，<strong>可以阻止脏读和不可重复读，但幻读仍有可能发生</strong>。</li>
+<li><strong>SERIALIZABLE(可串行化)：</strong> 最高的隔离级别，完全服从 ACID 的隔离级别。所有的事务依次逐个执行，这样事务之间就完全不可能产生干扰，也就是说，<strong>该级别可以防止脏读、不可重复读以及幻读</strong>。</li>
+</ul>
+<hr>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">隔离级别</th>
+<th style="text-align:center">脏读</th>
+<th style="text-align:center">不可重复读</th>
+<th style="text-align:center">幻读</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">READ-UNCOMMITTED</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">READ-COMMITTED</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">REPEATABLE-READ</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">SERIALIZABLE</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="MySQL-的默认隔离级别是什么"><a href="#MySQL-的默认隔离级别是什么" class="headerlink" title="MySQL 的默认隔离级别是什么?"></a>MySQL 的默认隔离级别是什么?</h3><p>MySQL InnoDB 存储引擎的默认支持的隔离级别是 <strong>REPEATABLE-READ（可重读）</strong>。我们可以通过<code>SELECT @@tx_isolation;</code>命令来查看，MySQL 8.0 该命令改为<code>SELECT @@transaction_isolation;</code></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT @@tx_isolation;</span><br><span class="line">+<span class="comment">-----------------+</span></span><br><span class="line">| @@tx_isolation  |</span><br><span class="line">+<span class="comment">-----------------+</span></span><br><span class="line">| REPEATABLE-READ |</span><br><span class="line">+<span class="comment">-----------------+</span></span><br></pre></td></tr></table></figure>
+<p><del>这里需要注意的是：与 SQL 标准不同的地方在于 InnoDB 存储引擎在 <strong>REPEATABLE-READ（可重读）</strong> 事务隔离级别下使用的是 Next-Key Lock 锁算法，因此可以避免幻读的产生，这与其他数据库系统(如 SQL Server)是不同的。所以说 InnoDB 存储引擎的默认支持的隔离级别是 <strong>REPEATABLE-READ（可重读）</strong> 已经可以完全保证事务的隔离性要求，即达到了 SQL 标准的 <strong>SERIALIZABLE(可串行化)</strong> 隔离级别。</del></p>
+<p>🐛 问题更正：<strong>MySQL InnoDB 的 REPEATABLE-READ（可重读）并不保证避免幻读，需要应用使用加锁读来保证。而这个加锁度使用到的机制就是 Next-Key Locks。</strong></p>
+<p>因为隔离级别越低，事务请求的锁越少，所以大部分数据库系统的隔离级别都是 <strong>READ-COMMITTED(读取提交内容)</strong> ，但是你要知道的是 InnoDB 存储引擎默认使用 <strong>REPEATABLE-READ（可重读）</strong> 并不会有任何性能损失。</p>
+<p>InnoDB 存储引擎在 <strong>分布式事务</strong> 的情况下一般会用到 <strong>SERIALIZABLE(可串行化)</strong> 隔离级别。</p>
+<p>🌈 拓展一下(以下内容摘自《MySQL 技术内幕：InnoDB 存储引擎(第 2 版)》7.7 章)：</p>
+<blockquote>
+<p>InnoDB 存储引擎提供了对 XA 事务的支持，并通过 XA 事务来支持分布式事务的实现。分布式事务指的是允许多个独立的事务资源（transactional resources）参与到一个全局的事务中。事务资源通常是关系型数据库系统，但也可以是其他类型的资源。全局事务要求在其中的所有参与的事务要么都提交，要么都回滚，这对于事务原有的 ACID 要求又有了提高。另外，在使用分布式事务时，InnoDB 存储引擎的事务隔离级别必须设置为 SERIALIZABLE。</p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><p>《高性能 MySQL》</p>
+</li>
+<li><p><a href="https://www.omnisci.com/technical-glossary/relational-database" target="_blank" rel="noopener">https://www.omnisci.com/technical-glossary/relational-database</a></p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/27/fourzeroeight/os/os/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -3346,408 +3665,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/02/java/frame/spring/springLearning/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ysx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ysxBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/05/02/java/frame/spring/springLearning/" itemprop="url">spring learning</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-05-02T22:48:00+08:00">
-                2021-05-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/spring/" itemprop="url" rel="index">
-                    <span itemprop="name">spring</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="spring-learning"><a href="#spring-learning" class="headerlink" title="spring learning"></a>spring learning</h1><h2 id="spring-core"><a href="#spring-core" class="headerlink" title="spring core"></a>spring core</h2><p>Ioc(Inversion of control): 控制反转，是一个理论，概念，思想。<br>描述的：把对象的创建，赋值，管理工作都交给代码之外的容器的实现，也是对象的创建是由其他的外部资源完成</p>
-<ol>
-<li>控制：创建对象，对象的属性赋值，对象之间的关系管理</li>
-<li>反转：把原来的开发人员挂白努力，创建对象的权限转移给代码之外的容器实现。由容器代替开发人员的管理对象。创建对象，给属性赋值</li>
-<li>正转：由开发人员在代码中，使用new构造方法创建对象，开发人员主动管理对象</li>
-</ol>
-<p>容器：是一个服务器软件，一个框架(spring)</p>
-<p>为什么要是用ioc：目的就是减少代码的改动，也能实现不同的功能，实现解耦合</p>
-<h2 id="java中创建对象有那些方式"><a href="#java中创建对象有那些方式" class="headerlink" title="java中创建对象有那些方式"></a>java中创建对象有那些方式</h2><pre><code>1. 构造方法
-2. 反射
-3. 序列化
-4. 克隆
-5. ioc：容器创建对象
-6. 动态代理
-</code></pre><h2 id="ioc-的体现"><a href="#ioc-的体现" class="headerlink" title="ioc 的体现"></a>ioc 的体现</h2><pre><code>servlet 
-        1. 创建类继承HttpSevlet
-        2. 在web.xml 注册servlet，使用
-        &lt;/serlet-name&gt;myservlet&lt;/servlet-name&gt;
-        &lt;servlet-class&gt;com.sample.controleer.Myservlet&lt;/servlet&gt;
-        3. 没有创建servlet对象
-        4. servlet 是tomcat服务器创建的。tomcat也称为容器 Tomcat作为容器：里面存放的由servlet对象，Listener，Filter对象
-</code></pre><h3 id="ioc的技术实现"><a href="#ioc的技术实现" class="headerlink" title="ioc的技术实现"></a>ioc的技术实现</h3><p>DI是ioc的技术实现<br>DI(dependency injection) : 依赖注入，只需要在程序中提供要使用的对象的名称就好了，对象如何在容器中创建，查找都由容器内部实现<br>spring使用di实现ioc的功能 spring底层创建对象 使用的是反射</p>
-<h3 id="di注入"><a href="#di注入" class="headerlink" title="di注入"></a>di注入</h3><p>1.di的实现由两种<br>    1.在spring的配置文件中，使用标签和属性完成，叫做给予xml的di是实现<br>    2.使用spring中的注解，完成属性赋值，叫做基于注解的id实现</p>
-<p>di的语法分类<br>    1.set注入(设置注入) spring 调用类真的set方法, 在set方法可以实现属性的赋值<br>    2.spring 调用类的构造方法，创建对象，在构造方法中完成赋值</p>
-<h2 id="spring注解"><a href="#spring注解" class="headerlink" title="spring注解"></a>spring注解</h2><p>@Service @Service @Controller 功能基本一致，但是还有额外功能</p>
-<h3 id="扫描器"><a href="#扫描器" class="headerlink" title="扫描器"></a>扫描器</h3><p>使用扫描器时候要写对包名,要不然找不到包<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;context:component-scan base-<span class="keyword">package</span>=<span class="string">""</span>/&gt; <span class="comment">//找到包和子包中所有的注解，找到注解中的所有类，按照注解功能创建对象或给属性赋值</span></span><br></pre></td></tr></table></figure><br>不同的指定包的方式<br>1.多次组件扫描<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;context:component-scan base-<span class="keyword">package</span>=<span class="string">"com.sample.yourpackage1"</span>/&gt;</span><br><span class="line">&lt;context:component-scan base-<span class="keyword">package</span>=<span class="string">"com.sample.yourpackage2"</span>/&gt;</span><br></pre></td></tr></table></figure><br>2.使用分隔符号<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;context:component-scan base-<span class="keyword">package</span>=<span class="string">"com.sample.yourpackage1;com.sample.yourpackage2"</span>/&gt;</span><br></pre></td></tr></table></figure><br>3.指定父包<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;context:component-scan base-<span class="keyword">package</span>=<span class="string">"com.sample"</span>/&gt;<span class="comment">//不建议使用太潜层目录如使用com</span></span><br></pre></td></tr></table></figure></p>
-<p>默认调用无参数构造方法，如果不适用名称@Component 默认名称为首字母小写的类名</p>
-<h3 id="Component"><a href="#Component" class="headerlink" title="@Component"></a>@Component</h3><p>创建对象的等同与<bean> 属性<br>value 等同于bean的id值 value值是唯一的<br>位置在类的上方<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span>(value=<span class="string">"student"</span>)</span><br></pre></td></tr></table></figure></p>
-<h3 id="Repository"><a href="#Repository" class="headerlink" title="@Repository"></a>@Repository</h3><p>使用在持久层上面的：放在dao的实现类伤 表示船舰dao对象，dao对是能访问数据库的, 用法和@Component类似</p>
-<h3 id="Service"><a href="#Service" class="headerlink" title="@Service"></a>@Service</h3><p>用在业务层的：放在service的实现类伤，创建service对象，service对象是做业务处理，可以又事务等功能,用法和@Component类似</p>
-<h3 id="Controller"><a href="#Controller" class="headerlink" title="@Controller"></a>@Controller</h3><p>用在控制器伤：创建控制器对象，控制器对象，能够接受用户提交的参数，显示请求的处理结果。用法和@Component类似</p>
-<h3 id="Value"><a href="#Value" class="headerlink" title="@Value"></a>@Value</h3><p>属性：value是String 类型的 表示简单类型的属性值<br>位置：放在属性或者set方法上<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Value</span>(<span class="string">"123"</span>)</span><br><span class="line"><span class="keyword">private</span> String name;</span><br></pre></td></tr></table></figure></p>
-<h3 id="AutoWired"><a href="#AutoWired" class="headerlink" title="@AutoWired"></a>@AutoWired</h3><p>对应用类型的注入 默认使用bean中byType规则使用<br>属性：required， 是一个boolean类型的， 默认为true，<br>    required=true表示应用类型赋值失败程序报错，并终止执行<br>    required=false表示应用类型赋值失败程序正常执行，应用类型为null<br>位置：放在属性或者set方法上<br>使用ByName方式<br>1.在属性伤加入@Qualifier(value=”bean的id”)表示使用指定的bean id 完成赋值</p>
-<h3 id="Resource"><a href="#Resource" class="headerlink" title="Resource"></a>Resource</h3><p>来自jdk中的注解，spring框架提供了对这个注解的支持，可以使用他给引用类型赋值<br>    使用的也是自动注入原理，可以使用byName 和byType 默认byName,如果byName失败在使用ByType<br>    只使用ByName方法是家一个属性name @Resource(name=”myid”)<br>位置：放在属性或者set方法上  </p>
-<h2 id="aop"><a href="#aop" class="headerlink" title="aop"></a>aop</h2><ol>
-<li><p>动态代理<br> 实现方法：jdk动态代理，使用jdk中的Porxy，Method，InvocationHander创建代理对象<br> jdk动态代理要求目标必须是实现接口<br> Cglib动态代理：第三方的工具库，创建代理对象，原理是继承，通过继承目标类，创建子类，子类就是代理对象。要求目标类不能是final的，方法也不能是final的</p>
-</li>
-<li><p>动态代理的作用</p>
-<ol>
-<li>在目标类代码不改变的情况下，增加功能  2. 减少代码的重负  3. 专注鱼业务逻辑代码  </li>
-<li>解耦和，让你的代码功能和日志，事务非业务功能分离  </li>
-</ol>
-</li>
-<li><p>Aop：面向切面编程，基于动态代理的，可以使用jdk，cglib两种代理方式。Aop就是动态代理的规范化，把动态代理的实现步骤，方法都定义好了，让开发人员意欧能够一种统一的方式，使用动态代理</p>
-</li>
-<li><p>AOP(Aspect Orient Programming) 面向切面编程<br> Aspect: 切面，给你的目标类增加的功,像日志，事务都是切面。<br> 切面特点：一般都是非业务方法，独立使用</p>
-</li>
-<li><p>一个切面的三个关键的要素</p>
-<ol>
-<li>切面的功能代码，切面干什么。</li>
-<li>切面的执行位置，使用pointcut表示切面执行的位置</li>
-<li>切面的执行时间， 使用advice表示时间，在目标方法之前，还是在目标方法之后</li>
-</ol>
-</li>
-</ol>
-<h3 id="什么时候考虑用aop"><a href="#什么时候考虑用aop" class="headerlink" title="什么时候考虑用aop"></a>什么时候考虑用aop</h3><ol>
-<li>当你要给系统中的一个类修改功能，到那时原有的类功能不完善</li>
-<li>当你要给项目中多个类增加一个相同的功能时候使用aop</li>
-<li>给业务方法增加事务，日志输出</li>
-</ol>
-<h3 id="aop的实现"><a href="#aop的实现" class="headerlink" title="aop的实现"></a>aop的实现</h3><p>aop是一个规范，是动态的一个规范化，一个标准<br>aop的技术是西安框架：</p>
-<ol>
-<li>spring：spring在内部是实现了aop规范，能做aop的工作。<br> spring 主要是在事务处理时使用aop<br> 项目中很少使用spring的aop实现，因为太笨重了  </li>
-<li>aspectJ: 一个开源专门做aop的框架，spring框架中继承了aspectj框架，通过spring就能使用aspectj的功能，aspectJ框架实现aop的两种两种方式<ol>
-<li>使用xml的配置文件</li>
-<li>使用注解，我们吸纳公募中要坐aop功能，一般都是使用注解，aspectJ有五个注解</li>
-</ol>
-</li>
-</ol>
-<h2 id="学习aspectj框架的使用"><a href="#学习aspectj框架的使用" class="headerlink" title="学习aspectj框架的使用"></a>学习aspectj框架的使用</h2><h3 id="aspectJ-介绍"><a href="#aspectJ-介绍" class="headerlink" title="aspectJ 介绍"></a>aspectJ 介绍</h3><p>切面的执行时间，这个执行的时间在规范中叫做advice（通知，增强）在aspectj框架中使用注解表示的。也可以使用xml配置文件中的标签</p>
-<ol>
-<li>@Before</li>
-<li>@AfterReturning</li>
-<li>@Around</li>
-<li>AfterThrowing</li>
-<li>After</li>
-</ol>
-<p>AspectJ 定义了撞门的表达式用鱼指定切入点。表达式的原型是:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">execution(modifier-pattern? ret-type-pattern</span><br><span class="line">          declaring-type-pattern?name-pattern(parm-pattern)</span><br><span class="line">          throws-pattern?)</span><br></pre></td></tr></table></figure>
-<p>解释：<br>modifiers-pattern 访问权限类型<br>ret-type-pattern 返回值类型<br>declaring-type-pattern 包名类名<br>throws-pattern 抛出异常类型<br>? 表示可选部分</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>符号</th>
-<th>意义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>*</td>
-<td>零到多个符号</td>
-</tr>
-<tr>
-<td>..</td>
-<td>用在方法参数中，表示任意多个参数么，用在包名中表示当前包及其子包路径</td>
-</tr>
-<tr>
-<td>+</td>
-<td>用在类名后，表示当前类及其子类, 用在接口后表示当前接口和他的实现类</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>execution(访问修饰符 返回值 包名.类名.方法名(方法参数) 异常)</p>
-<h3 id="aspectJ使用"><a href="#aspectJ使用" class="headerlink" title="aspectJ使用"></a>aspectJ使用</h3><ol>
-<li>创建目标类：接口和它的实现类，要做的是给类中的方法增加功能</li>
-<li>创建切面类：普通类<ol>
-<li>在类的上面加入 @Aspect</li>
-<li>在类中定义方法，方法就是切面要执行的功能代码，在方法的上面加入aspectj的通知注解，例如@Before         有需要指定的切入点表达式execution()</li>
-</ol>
-</li>
-<li>创建spring的配置文件：声明对象，把对象交给容器统一管理<br> 声明对象你可以使用注解或者xml配置文件bean<ol>
-<li>声明对象</li>
-<li>声明切面类对象</li>
-<li>声明aspectj框架中的自动代理生成器表亲啊。<br> 自动代理生成器: 用来完成代理对象的自动创建功能<br>配置文件写法</li>
-</ol>
-</li>
-</ol>
-<p>如果期望目标类有接口，使用cglib代理就设置proxy-target-class=true<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;aop:aspctj-autoproxy proxy-target-<span class="class"><span class="keyword">class</span></span>=<span class="string">"true"</span>/&gt; <span class="comment">//aspectj-autoproxy 会把spring容器所有目标对象，一次性生成代理对象</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="Before"><a href="#Before" class="headerlink" title="@Before"></a><strong>@Before</strong></h4><p>前置通知注解<br>    属性：value， 是切入点表达式，表示切面的功能执行的位置<br>    位置： 在方法上<br>    无参数的</p>
-<h4 id="JoinPoint"><a href="#JoinPoint" class="headerlink" title="@JoinPoint"></a><strong>@JoinPoint</strong></h4><p>业务方法，要加入切面功能的业务方法<br>作用是：可以在通知方法汇总获取费纳广发执行时候的信息，方法的实际参数<br>如果切面功能中需要得到方法的信息 就加入JoinPoint<br>JoinPoint 要加就放在第一个参数,  也可不加<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Before</span>(value=<span class="string">"execution(void *..service.impl.SomeServiceImpl.*(..))"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">myBefore</span><span class="params">(JoinPoint jp)</span></span>&#123;</span><br><span class="line">   System.out.println(jp.getSignature());<span class="comment">//获取方法的定义</span></span><br><span class="line">   System.out.println(jp.getSignature().getName());<span class="comment">//获取方法的名字</span></span><br><span class="line">   Object args[] = jp.getArgs();<span class="comment">//获取方法的参数列表</span></span><br><span class="line">   <span class="keyword">for</span> (Object arg : args) &#123;</span><br><span class="line">      System.out.println(arg);</span><br><span class="line">   &#125;</span><br><span class="line">   System.out.println(<span class="string">"before advice time:"</span>+<span class="keyword">new</span> Date());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="AfterReturning"><a href="#AfterReturning" class="headerlink" title="@AfterReturning"></a><strong>@AfterReturning</strong></h4><p>后置通知方法的定义，方法是是实现切片功能的。<br>切面方法的定义要求：  </p>
-<ol>
-<li>公共的方法</li>
-<li>方法没有返回值</li>
-<li>方法名称自定义</li>
-<li>方法有参数的推荐是object，参数名自定义</li>
-</ol>
-<p>属性：</p>
-<ol>
-<li>value 切入点表达式</li>
-<li>returning 自定义的变量,表示目标方法的返回值<br>自定义变量名必须和通知方法的行参名一样</li>
-</ol>
-<p>特点</p>
-<ol>
-<li>在目标方法后执行</li>
-<li>能够获得目标方法的返回值，可以更具这个返回值做不同的处理功能</li>
-<li>如果是引用类型的话在内改变值, 会改变方法返回值</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@AfterReturning</span>(value = <span class="string">"execution(* *..SomeServiceImpl.doOther(..))"</span>,returning = <span class="string">"res"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">myAfterReturning</span><span class="params">(Object res)</span></span>&#123;</span><br><span class="line">   <span class="comment">//Object res = doOther(..); myAfterReturning(res);</span></span><br><span class="line">   System.out.println(res);</span><br><span class="line">   <span class="keyword">if</span>(<span class="string">"lisi20"</span>.equals(res))&#123;</span><br><span class="line">      <span class="comment">//do Something</span></span><br><span class="line">   &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="comment">//do Something</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="Around"><a href="#Around" class="headerlink" title="@Around"></a><strong>@Around</strong></h4><p>环绕通知的定义格式</p>
-<ol>
-<li>public</li>
-<li>必须有一个返回值，推荐使用object</li>
-<li>名称自定义</li>
-<li>方法有固定参数 ProceedingJoinPoint</li>
-</ol>
-<p>结构：<br>    属性：value 切入表达式<br>    位置：在方法的定义上面<br>特点:</p>
-<pre><code>1. 功能最强的通知
-2. 在目标方法的前和后都能增强功能
-3. 控制目标方法是否被调用执行
-4. 修改原来的目标方法的执行结果，影响最后的调用结果。
-</code></pre><p>环绕通知等同于jdk动态代理的InvocationHandler接口<br>参数：<br>    proceedingJoinpoint 等同于Method<br>    作用执行目标方法<br>返回值：<br>    就是目标方法的执行结果，可以被修改</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Around</span>(value=<span class="string">"execution(* *..SomeServiceImpl.doOther(..))"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">myAround</span><span class="params">(ProceedingJoinPoint pjp)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">   <span class="comment">//ProceedingJoinPoint extend joinPoint</span></span><br><span class="line">   Object result = <span class="keyword">null</span>;</span><br><span class="line">   Object args[] = pjp.getArgs();</span><br><span class="line"></span><br><span class="line">   String name = <span class="string">""</span>;</span><br><span class="line">   <span class="keyword">if</span>(args!=<span class="keyword">null</span> &amp;&amp; args.length &gt; <span class="number">1</span>)&#123;</span><br><span class="line">      Object arg = args[<span class="number">0</span>];</span><br><span class="line">      name = (String) arg;</span><br><span class="line">   &#125;</span><br><span class="line">   System.out.println(<span class="string">"around advise start time: "</span> + <span class="keyword">new</span> Date());</span><br><span class="line">   <span class="keyword">if</span>(<span class="string">"zhangsan"</span>.equals(name))&#123;</span><br><span class="line">      result = pjp.proceed();<span class="comment">//method.invoke(); Object result = youFunc();</span></span><br><span class="line">   &#125;</span><br><span class="line">   System.out.println(<span class="string">"around advise end  "</span>);</span><br><span class="line">   result = <span class="string">"123"</span>;<span class="comment">//可以修改返回值</span></span><br><span class="line">   <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="AfterThrowing"><a href="#AfterThrowing" class="headerlink" title="@AfterThrowing"></a><strong>@AfterThrowing</strong></h4><p>异常通知格式</p>
-<pre><code>1. public
-2. 没有返回值
-3. 方法名称自定义
-4. 方法有一个Exception ，如果还有就是joinPoint
-</code></pre><p>属性：</p>
-<pre><code>1. value 切入点表达式
-2. throwing 自定义变量，表示目标方法抛出的异常对象
-    变量名必须和方法的参数名一样
-</code></pre><p>特点: </p>
-<pre><code>1. 在目标费纳广发爆出异常的时执行的
-2. 可以做异常监控程序，监控目标方法执行时是不是有异常。
-    如果有异常，发送短信或者邮件通知
-</code></pre><p>执行类似：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    doSecond(..);</span><br><span class="line">&#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">    myAfterThrowing(e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>样例代码</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@AfterThrowing</span>(value = <span class="string">"execution(* *..SomeServiceImpl.doSecond(..))"</span>,throwing = <span class="string">"ex"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">myAfterThrowing</span><span class="params">(Exception ex)</span></span>&#123;</span><br><span class="line">   System.out.println(<span class="string">"异常通知：方法发生异常执行"</span>+ex.getMessage());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="After"><a href="#After" class="headerlink" title="@After"></a><strong>@After</strong></h4><p>最终通知的格式</p>
-<pre><code>1. public
-2. 没有返回值
-3. 方法名称自定义
-4. 方法有一个Exception ，如果还有就是joinPoint
-</code></pre><p>属性: </p>
-<pre><code>1. value 切入点表达式
-</code></pre><p>特点</p>
-<pre><code>1. 总是会执行 就算抛出异常还是执行
-2. 在目标方法之后
-3. 一般做资源清楚的
-</code></pre><p>类似于：<br>    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    doSomething(..);</span><br><span class="line">&#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">    myAfter();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>样例代码</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@After</span>(value = <span class="string">"execution(void *..SomeServiceImpl.doSecond(..))"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">myAfter</span><span class="params">()</span></span>&#123;</span><br><span class="line">   System.out.println(<span class="string">"执行最后的方法"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="PoinCut"><a href="#PoinCut" class="headerlink" title="@PoinCut"></a><strong>@PoinCut</strong></h4><p>定义和管理切入点表达式的，如果项目中有多个切入点表达式相同，可以复用，可以使用@PointCut</p>
-<p>属性：<br>    value： 切入点表达式</p>
-<p>特点：<br>当使用@PointCut定义在一个方法上面，此时这个方法的名称就是切入点表达式的别名。<br>其他通知中，value属性就是可以使用这个方法名称，代替切入点表达式</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Pointcut</span>(value = <span class="string">"execution(* *..SomeServiceImpl.doSecond(..))"</span>)</span><br><span class="line"> <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">mypt</span><span class="params">()</span></span>&#123;</span><br><span class="line">   <span class="comment">//no code</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@After</span>(value = <span class="string">"mypt()"</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><h4 id="什么是事务"><a href="#什么是事务" class="headerlink" title="什么是事务"></a>什么是事务</h4><p>讲mysql的时候提出了事务，事务是指一组sql语句的集合，集合中有多条sql语句，可能有insert，update，selelct，delete。 我们希望浙西多个sql语句都能成功，或者都失败，这些sql语句的执行是一致的，作为一个整体执行</p>
-<h4 id="在什么时候想到使用事务"><a href="#在什么时候想到使用事务" class="headerlink" title="在什么时候想到使用事务"></a>在什么时候想到使用事务</h4><p>在我们操作涉及得到多个表，或者是多个sql语句的insert，update，delete. 需要保证这些语句都是成功才能完成我们的功能或者都失败，保证操作是符合要求的。  </p>
-<p>在java代码中写程序，控制事务，此时事务应该放在哪里呢？<br>service类的业务方法是那个，因为业务方法会调用多个dao方法，执行多个sql语句</p>
-<h4 id="使用什么工具访问数据库"><a href="#使用什么工具访问数据库" class="headerlink" title="使用什么工具访问数据库"></a>使用什么工具访问数据库</h4><p>jdbc 访问数据库，处理事务 Connection conn; conn.commit(); con.rollback();<br>mybatis 访问数据库，处理事务 SqlSession.commit(); SqlSession.rollback();<br>hibernate 访问数据库，处理事务 Session.commit(); Sesison.rollback();</p>
-<h4 id="上面中事务的处理方法有什么不足"><a href="#上面中事务的处理方法有什么不足" class="headerlink" title="上面中事务的处理方法有什么不足"></a>上面中事务的处理方法有什么不足</h4><ol>
-<li>不同的数据库访问技术，处理事务的对象，方法不同。需要了解不同的数据库访问技术使用事务的原理</li>
-<li>掌握多种数据库中事务的处理罗技。什么时候提交事务，什么时候回滚事务</li>
-<li>处理事务的多种方法</li>
-</ol>
-<h4 id="怎么解决不足呢"><a href="#怎么解决不足呢" class="headerlink" title="怎么解决不足呢"></a>怎么解决不足呢</h4><p>spring 提供一种处理事务的统一模型， 能使用统一步骤，方式完成多种不同数据库访问技术的事务处理</p>
-<p>使用 spirng事务处理机制 可以完成mybatis/hibernate访问数据库的事务处理</p>
-<h4 id="处理事务，需要怎么做，做什么"><a href="#处理事务，需要怎么做，做什么" class="headerlink" title="处理事务，需要怎么做，做什么"></a>处理事务，需要怎么做，做什么</h4><p>Spring 处理事务的模型，使用步骤都是固定的，把事务使用的信息提供给spring就可以了</p>
-<ol>
-<li>事务的内部提交，回滚事务，使用的事务管理七对象，代替你完成commit, rollback。事务管理器是一个接口和他的众多实现类：<br> 接口： PlatformTransactionManager, 定义了事务的重要的commmit，rollback<br> 实现类：spring把每一种数据库反问技术对应的事务处理类都创建好了  <pre><code> mybatis 访问数据库--spring创建好的是DataSourceTransactionManager
- hibernate 访问数据库 -- spring 创建好的是HibernateTransactionManager
-</code></pre></li>
-<li>怎么使用<br> 你需要告诉spring 你用的那种数据库访问技术，声明数据库访问技术对于事务管理器的实现类，在spirng的配置文件中使用<bean> 声明就好了例如使用mybatis访问数据库在xml配置中 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"xxx"</span> <span class="attr">class</span>=<span class="string">"..DataSourceTransactionManager"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h5 id="说明方法需要的事务"><a href="#说明方法需要的事务" class="headerlink" title="说明方法需要的事务"></a>说明方法需要的事务</h5><p>事务的额隔离级别 四个值<br>    default： 采用db默认的事务处理级别，mysql默认伟REPEATABLE_READ oracle默认READ——COMMITTED</p>
-<pre><code>1. READ_UNCOMMITTED: 读取未提交，未解决任何并发问题。
-2. READ_COMMITEED： 读取以提交, 存在不可重复读和幻读。
-3. REPEATABLE_READ： 可重复读，解决脏读，不可创富读存在幻读。
-4. SERIALIZABLE：串行化。不存在并发问题。
-</code></pre><p>事务的超时时间: 如果一个事务运行超过一段时间就回滚</p>
-<p>事务的传播行为： 控制业务方法是不是有事务，是什么样的事务的，7个传播行为，表示你的业务方法调用时候，事务在方法之间是如何使用的。</p>
-<p>前三个要知道</p>
-<pre><code>1. PROPAGATION_REQUIRED
-2. PROPAGATION_REQUIRES_NEW
-3. PROPAGATION_SUPPORTS
-4. PROPAGATION_MANDATORY
-5. PROPAGATION_NESTED
-6. PROPAGATION_NEVER
-7. PROPAGATION_NOT_SUPPORTED 
-</code></pre><h5 id="提交事务，回滚事务的时机"><a href="#提交事务，回滚事务的时机" class="headerlink" title="提交事务，回滚事务的时机"></a>提交事务，回滚事务的时机</h5><pre><code>1. 当你的业务方法执行成功没有抛出异常，结束时会提交事务
-2. 当你的业务方法运行时候异常 spring就会回滚
-3. 当你的业务方法爆出非运行时异常 主要是受查异常时，提交事务
-抽查异常就是你写的代码中必须处理的和异常。例如：IOException， SQLException
-</code></pre><h5 id="spring-框架中提供的事务处理方案"><a href="#spring-框架中提供的事务处理方案" class="headerlink" title="spring 框架中提供的事务处理方案"></a>spring 框架中提供的事务处理方案</h5><ol>
-<li>适合中小项目实用的，注解方案。<br> spring 框架自己用aop给业务方法增加事务的功能，使用@Transactional注解增加事务。<br> @Transactional注解是spring框架自己的注解，放在public方法上，实现事务的管理机制<br> 可以给注解的属性赋值，表示具体的隔离级别，传播行为，异常信息等等。  </li>
-</ol>
-<p>使用@transactional的步骤</p>
-<pre><code>1. 事务管理器
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"xxx"</span> <span class="attr">class</span>=<span class="string">"DataSourceTransactionManager"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-2. 开启事务注解驱动，告诉spring框架，我们使用注解的方式管理事务
-
-spring 开启aop机制， 创建@Transactional 所在的类代理对象，给方法加入事务的功能
-    在你的业务方法执行之前，先开启事务，在业务方法之后提交或回滚事务，使用aop的环绕通知
-</code></pre><ol>
-<li><p>在大型项目中, 有很多的类，方法，需要大量的配置事务，使用aspectj框架功能，在spring配置文件中声明类，方法需要的事务，这种业务方法和事务配置完全分离<br> 实现步骤：都是在xml配置文件中完成的</p>
-<ol>
-<li><p>要使用aspectJ库那个家 mavan中加入依赖</p>
- <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-aspects<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.5.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>声明事务管理器对象</p>
- <bean id="xx" class="DataSourceTransactionManager">
-</li>
-<li><p>声明方法需要的事务类型（配置方法的事务属性（隔离级别，传播行为，超时）</p>
-</li>
-<li>配置aop： 指定那些类要创建代理</li>
-</ol>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3798,7 +3715,7 @@ spring 开启aop机制， 创建@Transactional 所在的类代理对象，给方
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">106</span>
+                  <span class="site-state-item-count">107</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -3809,7 +3726,7 @@ spring 开启aop机制， 创建@Transactional 所在的类代理对象，给方
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -3820,7 +3737,7 @@ spring 开启aop机制， 创建@Transactional 所在的类代理对象，给方
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
