@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>策略模式</title>
+      <link href="/post/f1601c32.html"/>
+      <url>/post/f1601c32.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+          <category> design pattern </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> design pattern </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/post/4a17b156.html"/>
       <url>/post/4a17b156.html</url>
@@ -112,9 +139,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> jvm </tag>
+            
+            <tag> java </tag>
             
         </tags>
       
@@ -243,7 +270,7 @@
       
         <tags>
             
-            <tag> design  pattern </tag>
+            <tag> design pattern </tag>
             
         </tags>
       
@@ -1495,31 +1522,6 @@
         <tags>
             
             <tag> English </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>mathFormula</title>
-      <link href="/post/55439229.html"/>
-      <url>/post/55439229.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="初等代数"><a href="#初等代数" class="headerlink" title="初等代数"></a>初等代数</h2><h3 id="乘法公式和因式分解"><a href="#乘法公式和因式分解" class="headerlink" title="乘法公式和因式分解"></a>乘法公式和因式分解</h3><br><p>$$ (a±b)^2&#x3D;a^2±2ab+b^2 \<br>(a+b+c)^2&#x3D;a^2+b^2+c^2+2ab+2ac+2ab\<br>a^2-b^2&#x3D;(a-b)(a+b)\<br>(a±b)^3&#x3D;a^3±3a^2b+3ab^2±b^3\<br>a^3+b^3&#x3D;(a\pm b)(a^2\mp ab+b^2)\<br>a^n-b^n&#x3D;(a-b)(a^{n-1}+a^{n-2}b+…+ab^{n-2}+b^{n-1})</p><p>$$<br><br></p><h3 id="指数"><a href="#指数" class="headerlink" title="指数"></a>指数</h3><p>$$<br>    a^m.a^n&#x3D;a^{m+n}\<br>    (a^m)^n&#x3D;a^{mn}\<br>    (ab)^n&#x3D;a^nb^n\<br>    (\frac{a}{b})^m&#x3D; \frac{a^m}{b^n}\</p><pre><code>a^&#123;-m&#125;= \frac&#123;1&#125;&#123;a^m&#125;\\</code></pre><p>$$</p><h3 id="对数-log-aN-a-0-a-neq1-N-0"><a href="#对数-log-aN-a-0-a-neq1-N-0" class="headerlink" title="对数$log_aN( a&gt;0 . a\neq1. N&gt;0)$"></a>对数$log_aN( a&gt;0 . a\neq1. N&gt;0)$</h3><p>$$<br>    N&#x3D;a^{log_aN}, N&#x3D;e^{lnN}\<br>    log_a{MN}&#x3D;log_aM+log_aN\<br>    log_aM^n&#x3D;n log_aM\<br>    log_a{\sqrt<a href="M">n</a>}&#x3D; \frac{1}{n}log_aM\  </p><pre><code>log_aM= \frac&#123;log_bM&#125;&#123;log_ba&#125;\\</code></pre><p>$$</p><h3 id="数列"><a href="#数列" class="headerlink" title="数列"></a>数列</h3><p>$$<br>    等差数列\<br>    a_n&#x3D;a_1+(n-1)d\<br>    S_n&#x3D; \frac{n(a_1+a_n)}{2}&#x3D; na_1+ \frac{n(n-1)d}{2}\<br>    等比数列\</p><pre><code>a_n=a_1q^&#123;n-1&#125;\\S_n= \frac&#123;a_1(1-q^n)&#125;&#123;1-q&#125;\\</code></pre><p>$$ </p><h2 id="三角函数公式"><a href="#三角函数公式" class="headerlink" title="三角函数公式"></a>三角函数公式</h2><h3 id="倍角公式和半角公式"><a href="#倍角公式和半角公式" class="headerlink" title="倍角公式和半角公式"></a>倍角公式和半角公式</h3><p>$$<br>    sin2x&#x3D;2sinxcosx\<br>    cos2x&#x3D;cos^2x-sin^2x&#x3D;2cos^2x-1&#x3D;1-2sin^2x\<br>    tan2x&#x3D; \frac{2tanx}{1-tan^2x}\<br>    cot2x&#x3D; \frac{cot^2x-1}{2cotx}\<br>    cos^2 \frac{x}{2}&#x3D; \frac{1+cosx}{2}\<br>    sin^2 \frac{x}{2}&#x3D; \frac{1-cosx}{2}\</p><pre><code>tan^2 \frac&#123;x&#125;&#123;2&#125;= \frac&#123;1+cosx&#125;&#123;1-cosx&#125;\\</code></pre><p>$$ </p><h3 id="三角函数恒等式"><a href="#三角函数恒等式" class="headerlink" title="三角函数恒等式"></a>三角函数恒等式</h3><p>$$<br>    sin^2x+cos^2x&#x3D;1\<br>    sec^2-tan^2&#x3D;1\<br>    csc^2-cot^2&#x3D;1\<br>    tanx.cotx&#x3D;1\<br>    secx.cosx&#x3D;1\<br>    cscx.sinx&#x3D;1\<br>    tanx&#x3D; \frac{sinx}{cosx}\</p><pre><code>cotx= \frac&#123;cosx&#125;&#123;sinx&#125;\\</code></pre><p>$$ </p><h3 id="诱导公式"><a href="#诱导公式" class="headerlink" title="诱导公式"></a>诱导公式</h3><p>$$<br>    sin(2n\pi + \alpha)&#x3D;sin\alpha\<br>    cos(2n\pi + \alpha)&#x3D; cos\alpha\<br>    sin( \frac{\pi}{2}\pm\alpha)&#x3D;cos\alpha \<br>    cos( \frac{\pi}{2}\pm\alpha)&#x3D;\mp sin\alpha\</p><pre><code>tan( \frac&#123;\pi&#125;&#123;2&#125;\pm \alpha )=\mp cot\alpha\\cot( \frac&#123;\pi&#125;&#123;2&#125;\pm \alpha) = \mp tan\alpha\\sin(\pi\pm\alpha)= \mp sin\alpha\\cos(\pi\pm\alpha)= -cos\alpha\\tan(\pi\pm\alpha)= \pm tan\alpha\\cot(\pi\pm\alpha)= \pm cot\alpha\\sin(-\alpha)=-sin\alpha\\cos(-\alpha)= cos\alpha\\tan(-\alpha)= -tan\alpha\\cot(-\alpha)= -cot(\alpha)\\sin(n\pi+\alpha)=(-1)^nsin\alpha\\cos(n\pi+\alpha)=(-1)^ncos\alpha\\</code></pre><p>$$</p><h3 id="两角和与差-和差化积-积化和差公式"><a href="#两角和与差-和差化积-积化和差公式" class="headerlink" title="两角和与差,和差化积,积化和差公式"></a>两角和与差,和差化积,积化和差公式</h3><p>$$<br>    sin(a\pm b)&#x3D;sinacosb\pm cosasinb\<br>    cos(a\pm b)&#x3D;cosacosb\mp sinasinb\<br>    tan(a\pm b)&#x3D; \frac{tana \pm tanb}{1\mp tanatanb}\<br>    sina+sinb&#x3D;2sin \frac{a+b}{2}cos \frac{a-b}{2}\<br>    sina-sinb&#x3D;2cos \frac{a+b}{2}sin\frac{a-b}{2}\<br>    cosa+cosb&#x3D;2cos \frac{a+b}{2}cos \frac{a-b}{2}\<br>    cosa - cosb &#x3D; 2sin  \frac{a+b}{2}cos \frac{a-b}{2}\<br>    sinacosb&#x3D; \frac{1}{2}[sin(a+b)+sin(a-b)]\<br>    cosacosb &#x3D; \frac{1}{2}[cos(a+b)+cos(a-b)]\<br>    sinainb &#x3D;- \ \frac{1}{2}[cos(a+b)-cos(a-b)]\</p><p>$$ </p><h3 id="反三角函数的基本关系式"><a href="#反三角函数的基本关系式" class="headerlink" title="反三角函数的基本关系式"></a>反三角函数的基本关系式</h3><p>$$</p><pre><code>arcsin(-x)=-arcsinx (-1 \leq x \leq 1 )\\arccos(-x)=\pi-arccosx(-1 \leq x \leq 1 )\\arctan(-x)=-aractanx\\arccot(-x)=\pi - arccotx\\arcsinx+arccosx= \frac&#123;\pi&#125;&#123;2&#125;(-1 \leq x \leq 1 )\\arctanx+arccotx= \frac&#123;\pi&#125;&#123;2&#125;\\arctanx=acrcot \frac&#123;1&#125;&#123;x&#125; (x \geq 1)</code></pre><p>$$</p><h3 id="常用三角函数表"><a href="#常用三角函数表" class="headerlink" title="常用三角函数表"></a>常用三角函数表</h3><table><thead><tr><th>角度\函数</th><th>sinx</th><th>cosx</th><th>tanx</th><th>cotx</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>1</td><td>0</td><td>—</td></tr><tr><td>$\frac{\pi}{6}$</td><td>$\frac{1}{2}$</td><td>$\frac{\sqrt3}{2}$</td><td>$\frac{\sqrt3}{3}$</td><td>$\sqrt3$</td></tr><tr><td>$\frac{\pi}{4}$</td><td>$\frac{\sqrt2}{2}$</td><td>$\frac{\sqrt2}{2}$</td><td>1</td><td>1</td></tr><tr><td>$\frac{\pi}{3}$</td><td>$\frac{\sqrt3}{2}$</td><td>$\frac{1}{2}$</td><td>$\sqrt3$</td><td>$\frac{\sqrt3}{3}$</td></tr><tr><td>$\frac{\pi}{2}$</td><td>1</td><td>0</td><td>—</td><td>0</td></tr></tbody></table>]]></content>
-      
-      
-      <categories>
-          
-          <category> 数学公式 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> math </tag>
             
         </tags>
       
